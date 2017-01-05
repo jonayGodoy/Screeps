@@ -18,8 +18,8 @@ module.exports.loop = function () {
       //      console.log('Spawning new upgrader: ' + newName);
         }
     }
-    for(var creep in Game.creeps){
-       // var creep = Game.creeps[name];
+    for(var name in Game.creeps){
+        var creep = Game.creeps[name];
         roleManager.runCreeper(creep);
     }
 

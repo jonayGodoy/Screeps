@@ -10,7 +10,6 @@ var roleManager = class RoleManager{
         this.roleList[constants.HARVESTER()] = roleHarvester;
         this.roleList[constants.UPGRADER()] = roleUpgrader;
         this.roleList[constants.BUILDER()] = roleBuilder;
-
     }
 
     runCreeper(creep){
