@@ -7,7 +7,7 @@ var engineRules = class EngineRules{
         //incidencia ordenadas por priorida
         this.rulesList = [
             new RuleHarverster(),
-            new RuleUpgrader
+            new RuleUpgrader()
         ];
     }
 
