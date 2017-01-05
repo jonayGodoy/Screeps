@@ -14,6 +14,7 @@ var engineRules = class EngineRules{
     update(){
         let stop = false;
         for(var number in  this.rulesList){
+            console.log(this.rulesList);
             rule = this.rulesList[number];
             stop = this.executeForPriority(stop, rule);
         }
