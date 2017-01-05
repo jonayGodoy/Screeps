@@ -10,7 +10,7 @@ var constant = class Constants {
          this._BUILDER = _BUILDER;
      }
 
-     public get HARVESTER() {
+     public  HARVESTER() {
          return _HARVESTER;
      }
 
