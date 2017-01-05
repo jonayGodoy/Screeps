@@ -5,7 +5,7 @@ var roleBuilder = require('role.builder');
 
 class ManagerCreeps{
     constructor(){
-        var roleList = [
+        this.roleList = [
             ["harvester", roleHarvester],
             ["upgrader",roleUpgrader],
             ["builder",roleBuilder]
@@ -14,7 +14,7 @@ class ManagerCreeps{
     }
 
     runCreeper(creep){
-        roleList[creep.memory.role].run(creep);
+        this.roleList[creep.memory.role].run(creep);
     }
 
 }
