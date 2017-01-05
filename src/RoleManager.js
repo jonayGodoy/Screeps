@@ -2,14 +2,13 @@ var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 
-/*
+
 class RoleManager{
     constructor(){
-        this.roleList = [
-            ["harvester", roleHarvester],
-            ["upgrader",roleUpgrader],
-            ["builder",roleBuilder]
-        ];
+        this.roleList = [];
+         roleList["harvester"] = roleHarvester;
+         roleList["upgrader"] = roleUpgrader;
+         roleList["builder"] = roleBuilder;
 
     }
 
@@ -18,7 +17,7 @@ class RoleManager{
     }
 
 }
-*/
+
 
 
 var roleManager = {
@@ -34,4 +33,4 @@ var roleManager = {
 
 };
 
-module.exports = roleManager;
+module.exports = new RoleManager();
