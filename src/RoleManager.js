@@ -25,14 +25,14 @@ var roleManager = {
 
     runCreeper: function(creep){
         var roleList = [
-            ["harvester",roleHarvester.run],
-            ["upgrader",roleUpgrader.run],
-            ["builder",roleBuilder.run]
+            ["harvester",roleHarvester],
+            ["upgrader",roleUpgrader],
+            ["builder",roleBuilder]
         ];
 
         console.log(roleHarvester.run);
         console.log(creep.memory.role);
-        (roleList[creep.memory.role])(creep);
+        (roleList[creep.memory.role]).run(creep);
     }
 
 };
