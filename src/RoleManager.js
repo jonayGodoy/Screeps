@@ -19,6 +19,9 @@ class RoleManager{
 
 }
 */
+
+module.exports.run
+
 var roleManager = {
 
     runCreeper: function(creep){
