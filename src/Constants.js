@@ -1,8 +1,8 @@
 
-var constant = class Constants {
+ class Constants {
 
 
 };
 
-module.exports  = constant;
+module.exports  = new Constants();
 
