@@ -1,12 +1,9 @@
 var roleManager = require('RoleManager');
 
 module.exports.loop = function () {
-
-    console.log("role exist "+roleHarvester);
-
     var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
     var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
-//   console.log('Harvesters: ' + harvesters.length);
+
 
     if(harvesters.length < 2) {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,CARRY,MOVE], undefined, {role: "harvester"});
