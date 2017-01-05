@@ -19,10 +19,9 @@ module.exports.loop = function () {
 
         }
     }
+    //refactoring incidencias
     for(var name in Game.creeps){
         var creep = Game.creeps[name];
-        console.log(name);
-        console.log(creep);
         roleManager.runCreeper(creep);
     }
 
