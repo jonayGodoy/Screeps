@@ -25,7 +25,7 @@ var roleManager = {
 
     runCreeper: function(creep){
         var roleList = [
-            ["harvester", roleHarvester],
+            ["harvester", require('role.harvester'),
             ["upgrader",roleUpgrader],
             ["builder",roleBuilder]
         ];
