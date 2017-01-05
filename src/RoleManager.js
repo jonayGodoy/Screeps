@@ -20,8 +20,6 @@ class RoleManager{
 }
 */
 
-module.exports.run
-
 var roleManager = {
 
     runCreeper: function(creep){
@@ -31,7 +29,7 @@ var roleManager = {
             ["builder",roleBuilder]
         ];
 
-        console.log(roleHarvester);
+        console.log(module.exports.run(creep));
         roleList[creep.memory.role].run(creep);
     }
 
