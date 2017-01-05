@@ -2,7 +2,7 @@ const constants = require('Constants');
 var MainIA = require('MainIA');
 var RoleManager = require('RoleManager');
 var roleManager = new RoleManager();
-var mainAI = new MainIA();
+//var mainAI = new MainIA();
 
 
 module.exports.loop = function () {
