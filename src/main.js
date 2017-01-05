@@ -8,14 +8,14 @@ module.exports.loop = function () {
     var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.UPGRADER());
 
 
-    const spawn1 = 0;
+    const spawn1 = 'Spawn1';
     if(harvesters.length < 2) {
         var newName = Game.spawns[spawn1].createCreep([WORK,CARRY,MOVE], undefined, {role: constants.HARVESTER()});
-        console.log('Spawning new harvester: ' + newName);
+      //  console.log('Spawning new harvester: ' + newName);
     }else{
         if(upgraders.length < 5) {
             var newName = Game.spawns[spawn1].createCreep([WORK,CARRY,MOVE], undefined, {role: constants.UPGRADER()});
-            console.log('Spawning new upgrader: ' + newName);
+      //      console.log('Spawning new upgrader: ' + newName);
 
         }
     }
