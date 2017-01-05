@@ -12,18 +12,18 @@ var engineRules = class EngineRules{
     }
 
     update(){
-        let stop = false;
+        let done = false;
         for(var number in  this.rulesList){
             let rule = this.rulesList[number];
-            this.executeForPriority(stop, rule);
+            this.executeForPriority(done, rule);
         }
     }
 
-    executeForPriority(stop, rule) {
+    executeForPriority(done, rule) {
         if (done) {
             done = rule.execute();
         }
-        return stop;
+        return done;
     }
 }
 
