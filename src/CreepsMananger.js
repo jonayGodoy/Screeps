@@ -19,4 +19,6 @@ class CreepsManager{
 
 }
 
-module.exports = new CreepsManager();
+var creepsManager = new CreepsManager();
+
+module.exports = creepsManager;
