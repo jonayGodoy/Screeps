@@ -1,6 +1,6 @@
 const constants = require('Constants');
-var RuleHarverster = require('./rules/RuleHarverster');
-var RuleUpgrader = require('./rules/RuleUpgrader');
+var RuleHarverster = require('./RuleHarverster');
+var RuleUpgrader = require('./RuleUpgrader');
 
 var engineRules = class EngineRules{
     constructor() {
