@@ -1,10 +1,15 @@
 
  class Constants {
-     HARVESTER() {
-         return _HARVESTER;
+
+
+     constructor() {
+         this.HARVESTER = "harvester";
      }
 
-     private _HARVESTER = "harvester";
+     HARVESTER() {
+         return this.HARVESTER;
+     }
+
 
 };
 
