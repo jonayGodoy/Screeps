@@ -1,11 +1,11 @@
-const constants = require('Constants');
+var constants = require('Constants');
 var RoleManager = require('RoleManager');
 var roleManager = new RoleManager();
 
 module.exports.loop = function () {
     var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
     var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
-    console.log("constante "+constants.HARVESTER);
+    console.log("constante "+constants.);
 
 
     if(harvesters.length < 2) {

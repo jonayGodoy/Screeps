@@ -1,5 +1,5 @@
 
-var constants = class Constants {
+ class Constants {
     const HARVESTER = "harvester";
     const UPGRADER = "upgrader";
     const BUILDER = "builder";
@@ -8,5 +8,5 @@ var constants = class Constants {
 
 
 
-module.exports  = constants;
+module.exports  = new Constants();
 
