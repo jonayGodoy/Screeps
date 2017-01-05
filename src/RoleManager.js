@@ -7,9 +7,9 @@ var roleBuilder = require('role.builder');
 var roleManager = class RoleManager{
     constructor(){
         this.roleList = [];
-        this.roleList[constants.HARVESTER] = roleHarvester;
-        this.roleList[constants.UPGRADER] = roleUpgrader;
-        this.roleList[constants.BUILDER] = roleBuilder;
+        this.roleList[constants.HARVESTER()] = roleHarvester;
+        this.roleList[constants.UPGRADER()] = roleUpgrader;
+        this.roleList[constants.BUILDER()] = roleBuilder;
 
     }
 
