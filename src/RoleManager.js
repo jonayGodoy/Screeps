@@ -28,7 +28,7 @@ var roleManager = {
             ["builder",roleBuilder]
         ];
 
-        console.log( roleList[creep.memory.role]);
+        console.log(roleHarvester);
         roleList[creep.memory.role].run(creep);
     }
 
