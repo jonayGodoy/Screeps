@@ -9,7 +9,6 @@
          this._UPGRADER = UPGRADER;
          this._BUILDER = BUILDER;
      }
-
      public get HARVESTER() {
          return _HARVESTER;
      }
