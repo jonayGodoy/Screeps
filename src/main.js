@@ -1,8 +1,11 @@
+require('Constants');
 var RoleManager = require('RoleManager');
 var roleManager = new RoleManager();
+
 module.exports.loop = function () {
     var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
     var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
+    console.log(module.exports.HARVESTER);
 
 
     if(harvesters.length < 2) {
@@ -18,7 +21,6 @@ module.exports.loop = function () {
     for(var name in Game.creeps){
         var creep = Game.creeps[name];
         roleManager.runCreeper(creep);
-
     }
 
 }
