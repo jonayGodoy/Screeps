@@ -18,3 +18,5 @@ class ManagerCreeps{
     }
 
 }
+
+module.exports = ManagerCreeps;
