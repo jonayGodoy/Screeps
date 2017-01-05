@@ -18,4 +18,4 @@ var roleManager = class RoleManager{
 
 }
 
-module.exports = RoleManager;
+module.exports = roleManager;
