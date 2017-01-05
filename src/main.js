@@ -8,7 +8,7 @@ module.exports.loop = function () {
     var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.UPGRADER());
 
 
-    const spawn1 = 'Spawn1';
+    const spawn1 = 0;
     if(harvesters.length < 2) {
         var newName = Game.spawns[spawn1].createCreep([WORK,CARRY,MOVE], undefined, {role: constants.HARVESTER()});
       //  console.log('Spawning new harvester: ' + newName);
