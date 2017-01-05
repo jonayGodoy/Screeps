@@ -1,8 +1,8 @@
 
  class Constants {
-     private const _HARVESTER = "harvester";
-     private const _UPGRADER = "upgrader";
-     private const  _BUILDER = "builder";
+     private  _HARVESTER = "harvester";
+     private  _UPGRADER = "upgrader";
+     private   _BUILDER = "builder";
 
      constructor(HARVESTER, UPGRADER, BUILDER) {
          this._HARVESTER = HARVESTER;
