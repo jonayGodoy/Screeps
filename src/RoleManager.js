@@ -31,7 +31,7 @@ var roleManager = {
         ];
 
         console.log(require('role.harvester').run);
-        roleList[creep.memory.role].run(creep);
+        roleList[creep.memory.role](creep);
     }
 
 };
