@@ -15,13 +15,13 @@ var engineRules = class EngineRules{
         let stop = false;
         for(var number in  this.rulesList){
             let rule = this.rulesList[number];
-            stop = this.executeForPriority(stop, rule);
+            this.executeForPriority(stop, rule);
         }
     }
 
     executeForPriority(stop, rule) {
-        if (!stop) {
-            stop = rule.execute();
+        if (done) {
+            done = rule.execute();
         }
         return stop;
     }
