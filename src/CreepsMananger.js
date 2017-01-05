@@ -18,7 +18,6 @@ class CreepsManager{
     }
 
 }
-
 var creepsManager = new CreepsManager();
 
 module.exports = creepsManager;
