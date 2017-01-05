@@ -12,7 +12,7 @@ var engineRules = class EngineRules{
     }
 
     update(){
-        let done = false;
+        let done = true;
         for(var number in  this.rulesList){
             let rule = this.rulesList[number];
             if (done) {
