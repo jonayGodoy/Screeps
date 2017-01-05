@@ -24,5 +24,5 @@ var roleHarvester = {
         }
     }
 };
-
+module.exports.roleHarvester = roleHarvester;
 module.exports = roleHarvester;
