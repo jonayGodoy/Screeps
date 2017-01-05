@@ -1,4 +1,6 @@
 //incidencia falta de interface
+const constants = require('Constants');
+
 var ruleUpgrader = class RuleUpgrader{
 
     execute(){

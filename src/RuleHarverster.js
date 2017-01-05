@@ -1,9 +1,9 @@
-
+const constants = require('Constants');
 
 var ruleHarverster = class RuleHarverster{
 
     execute(){
-        var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == constants.HARVESTER());
+        let harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == constants.HARVESTER());
         console.log("vamos "+harvesters);
         let done = false;
         if(harvesters.length < 2) {
