@@ -24,6 +24,6 @@
 };
 
 
-
-module.exports  = new Constants();
+const constant = new Constants();
+module.exports  =constant;
 
