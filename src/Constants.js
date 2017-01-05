@@ -1,7 +1,6 @@
 
  class Constants {
 
-     const _HARVESTER = "hola";
 
      constructor() {
          this.harvester = "harvester";
