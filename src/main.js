@@ -2,14 +2,14 @@ const constants = require('Constants');
 var MainIA = require('MainIA');
 var RoleManager = require('RoleManager');
 var roleManager = new RoleManager();
-var mianAI = new MainIA();
+var mainAI = new MainIA();
 
 
 module.exports.loop = function () {
     var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == constants.HARVESTER());
     var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.UPGRADER());
 
-  //  mianAI.update();
+  //  mainAI.update();
     /*
     const spawn1 = 'Spawn1';
     if(harvesters.length < 2) {
