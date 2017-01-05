@@ -1,7 +1,7 @@
 
  class Constants {
-     getHARVESTER() {
-         return this._HARVESTER;
+     HARVESTER() {
+         return _HARVESTER;
      }
 
      private _HARVESTER = "harvester";
