@@ -3,7 +3,7 @@ var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 
 
-class ManagerCreeps{
+class CreepsManager{
     constructor(){
         this.roleList = [
             ["harvester", roleHarvester],
@@ -19,4 +19,4 @@ class ManagerCreeps{
 
 }
 
-module.exports = ManagerCreeps;
+module.exports = new CreepsManager();
