@@ -5,7 +5,7 @@ var roleManager = new RoleManager();
 module.exports.loop = function () {
     var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
     var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
-    console.log(module.exports.HARVESTER);
+    console.log("constante "+module.exports.HARVESTER);
 
 
     if(harvesters.length < 2) {
