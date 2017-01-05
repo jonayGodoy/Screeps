@@ -4,10 +4,10 @@
      private  _UPGRADER = "upgrader";
      private   _BUILDER = "builder";
 
-     constructor(HARVESTER, UPGRADER, BUILDER) {
-         this._HARVESTER = HARVESTER;
-         this._UPGRADER = UPGRADER;
-         this._BUILDER = BUILDER;
+     constructor() {
+         this._HARVESTER = _HARVESTER;
+         this._UPGRADER = _UPGRADER;
+         this._BUILDER = _BUILDER;
      }
 
      public get HARVESTER() {
@@ -25,5 +25,5 @@
 
 
 var constant = new Constants();
-module.exports  =constant;
+module.exports  = constant;
 
