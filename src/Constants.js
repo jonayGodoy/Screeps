@@ -1,5 +1,5 @@
 
- class Constants {
+var constant = class Constants {
      private  _HARVESTER = "harvester";
      private  _UPGRADER = "upgrader";
      private   _BUILDER = "builder";
@@ -23,7 +23,5 @@
 
 };
 
-
-var constant = new Constants();
 module.exports  = constant;
 
