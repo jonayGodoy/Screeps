@@ -1,13 +1,24 @@
 
  class Constants {
 
+     const _HARVESTER = "hola";
 
      constructor() {
-         this.HARVESTER = "harvester";
+         this.harvester = "harvester";
+         this.upgrader = "upgrader";
+         this.builder = "builder";
      }
 
      HARVESTER() {
-         return this.HARVESTER;
+         return this.harvester;
+     }
+
+     UPGRADER() {
+         return this.upgrader;
+     }
+
+     BUILDER() {
+         return this.builder;
      }
 
 

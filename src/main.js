@@ -3,7 +3,7 @@ var roleManager = new RoleManager();
 var constants = require('Constants');
 
 module.exports.loop = function () {
-    var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
+    var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == constants.HARVESTER);
     var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
     console.log("constante "+constants.HARVESTER);
 
