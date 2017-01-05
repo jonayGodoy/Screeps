@@ -7,6 +7,7 @@ var ruleUpgrader = class RuleUpgrader{
         if(upgraders.length < 5) {
             var info = Game.spawns["Spawn1"].createCreep([WORK,CARRY,MOVE], undefined, {role: constants.UPGRADER()});
             done = false;
+
             return done;
         }else{
             done = true;
