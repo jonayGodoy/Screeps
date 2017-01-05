@@ -4,6 +4,7 @@ const constants = require('Constants');
 var ruleUpgrader = class RuleUpgrader{
 
     execute(){
+        console.log("upgrader");
         let upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.UPGRADER());
         let done = false;
         if(upgraders.length < 5) {
