@@ -1,13 +1,17 @@
-/*
-class RuleHarverster{
+
+
+var ruleHarverster = class RuleHarverster{
 
     execute(){
+        let done = false;
         if(harvesters.length < 2) {
-            var newName = Game.spawns[spawn1].createCreep([WORK,CARRY,MOVE], undefined, {role: constants.HARVESTER()});
-            return false;
+            var info = Game.spawns["Spawn1"].createCreep([WORK,CARRY,MOVE], undefined, {role: constants.HARVESTER()});
+            done = false;
+            return done;
         }else{
-          return true;
+            done = true;
+            return done;
         }
     }
 }
-*/
+module.exports = ruleHarverster;
