@@ -3,7 +3,7 @@
 var ruleHarverster = class RuleHarverster{
 
     execute(){
-        let harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == constants.HARVESTER());
+        var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == constants.HARVESTER());
         console.log("vamos "+harvesters);
         let done = false;
         if(harvesters.length < 2) {
