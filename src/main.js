@@ -7,7 +7,6 @@ var roleManager = require('RoleManager');
 
 module.exports.loop = function () {
 
-    console.log("role exist "+roleHarvester);
 
     var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
     var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
@@ -27,7 +26,7 @@ module.exports.loop = function () {
         var creep = Game.creeps[name];
        // roleManager.runCreeper(creep);
     //    creep.memory.role.run(creep);
-        console.log(creep.memory.role);
+        console.log(creep.memory.role.run);
     }
 
 
