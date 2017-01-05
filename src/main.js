@@ -1,5 +1,5 @@
 const constants = require('Constants');
-var MainIA = require('MainIA');
+var EngineRules = require('EngineRules');
 var RoleManager = require('RoleManager');
 var roleManager = new RoleManager();
 //var mainAI = new MainIA();
