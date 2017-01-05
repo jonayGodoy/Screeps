@@ -5,7 +5,8 @@ var constants = require('Constants');
 module.exports.loop = function () {
     var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
     var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
-   // console.log("constante "+constants._HARVESTER);
+    console.log("constante "+constants._HARVESTER);
+
 
     if(harvesters.length < 2) {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,CARRY,MOVE], undefined, {role: "harvester"});
