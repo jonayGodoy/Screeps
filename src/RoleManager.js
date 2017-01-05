@@ -21,7 +21,7 @@ class RoleManager{
 */
 var roleManager = {
 
-    runCreeper(creep){
+    runCreeper: function(creep){
         var roleList = [
             ["harvester", roleHarvester],
             ["upgrader",roleUpgrader],
