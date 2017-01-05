@@ -20,17 +20,6 @@ class RoleManager{
 
 
 
-var roleManager = {
 
-    runCreeper: function(creep){
-        var roleList = new Array();
-        roleList["harvester"] = roleHarvester;
-        roleList["upgrader"] = roleUpgrader;
-        roleList["builder"] = roleBuilder;
-
-        (roleList[creep.memory.role]).run(creep);
-    }
-
-};
 
 module.exports = new RoleManager();
