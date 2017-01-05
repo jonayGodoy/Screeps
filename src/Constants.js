@@ -1,7 +1,7 @@
 
  class Constants {
 
-
+    //const incidencia
      constructor() {
          this.harvester = "harvester";
          this.upgrader = "upgrader";
@@ -19,7 +19,6 @@
      BUILDER() {
          return this.builder;
      }
-
 
 };
 
