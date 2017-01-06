@@ -3,6 +3,7 @@ var EngineRules = require('EngineRules');
 var RoleManager = require('RoleManager');
 var roleManager = new RoleManager();
 var ia = new EngineRules();
+console.log("veces 2");
 
 
 module.exports.loop = function () {
