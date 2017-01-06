@@ -2,6 +2,7 @@ const constants = require('Constants');
 var RuleHarverster = require('./RuleHarverster');
 var RuleUpgrader = require('./RuleUpgrader');
 var RuleBuildExtension = require('./RuleBuildExtension');
+console.log("veces ");
 
 var engineRules = class EngineRules{
     constructor() {
