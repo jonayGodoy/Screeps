@@ -9,13 +9,13 @@ var ruleUpgrader = class RuleUpgrader{
         let done = false;
         if(upgraders.length < 5) {
 
-            let Spawn;
+            let firstSpawn;
             for(var name in Game.spawns){
-                if(Spawn == null)
-                Spawn = Game.spawns[name];
+                if(firstSpawn == null)
+                firstSpawn = Game.spawns[name];
             }
 
-            let info = Spawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.UPGRADER()});
+            let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.UPGRADER()});
             done = false;
 
             return done;
