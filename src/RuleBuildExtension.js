@@ -45,13 +45,14 @@ var ruleBuildExtension = class RuleBuildExtension{
             }
         }).length;
 
+        let builders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.BUILDER());
 
         let conditionDone = (levelRoom <= 2) && (numberSiteExtensions >= 5) && (builders.length >= 2);
 
         if (conditionDone) {
             return conditionDone;
         } else {
-            let builders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.BUILDER());
+
 
             if(numberSiteExtensions < 5){
                 for(let i = 1;i < 6;i++){
@@ -76,7 +77,7 @@ var ruleBuildExtension = class RuleBuildExtension{
                 let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.BUILDER()});
             }
 
-            }
+        }
     }
 }
 module.exports = ruleBuildExtension;
