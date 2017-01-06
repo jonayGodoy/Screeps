@@ -10,7 +10,7 @@ module.exports.loop = function () {
 
      ia.update();
 
-    console.log("test "+Memory);
+    console.log("test "+JSON.parse(RawMemory.get()));
 
     //refactoring incidencias
     for(var name in Game.creeps){
