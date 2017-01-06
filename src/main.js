@@ -9,9 +9,7 @@ var ia = new EngineRules();
 
 module.exports.loop = function () {
 
-
      ia.update();
-
 
     //refactoring incidencias
     for(var name in Game.creeps){
