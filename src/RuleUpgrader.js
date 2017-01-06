@@ -13,9 +13,6 @@ var ruleUpgrader = class RuleUpgrader{
         return this.nameRule;
     }
 
-    isDone(){
-        return this.done
-    }
 
     setDone(done){
         this.done = done;

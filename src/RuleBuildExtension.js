@@ -12,9 +12,6 @@ var ruleBuildExtension = class RuleBuildExtension{
         return this.nameRule;
     }
 
-    isDone(){
-        return this.done
-    }
 
     setDone(done){
         this.done = done;
