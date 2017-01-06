@@ -42,7 +42,7 @@ var engineRules = class EngineRules{
     }
 
     saveRuleList() {
-        let firstSpawn;
+        var firstSpawn;
         for (var name in Game.spawns) {
             if (firstSpawn == null)
                 firstSpawn = Game.spawns[name];

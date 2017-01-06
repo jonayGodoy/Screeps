@@ -23,7 +23,7 @@ var ruleBuildExtension = class RuleBuildExtension{
     execute(){
         //Game.spawns['Spawn1'].room.controller.activateSafeMode();
         //((nivel 2))
-        let firstSpawn;
+        var firstSpawn;
         for(var name in Game.spawns){
             if(firstSpawn == null)
                 firstSpawn = Game.spawns[name];
