@@ -1,5 +1,5 @@
 class CustomConsole{
-     print(){
+     static print(){
         Console.log("Prueba aaaaaaaaaaaaaaaaaaaaaaaa");
     }
 }
