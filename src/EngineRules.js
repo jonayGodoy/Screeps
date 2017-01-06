@@ -39,10 +39,11 @@ var engineRules = class EngineRules{
             if (firstSpawn == null)
                 firstSpawn = Game.spawns[name];
         }
+        //only save fields
         firstSpawn.room.memory.stateIA = this.rulesList;
     }
 
-    loadRuleList(firstSpawn) {
+    loadRuleList() {
         let firstSpawn;
         for(var name in Game.spawns){
             if(firstSpawn == null)
