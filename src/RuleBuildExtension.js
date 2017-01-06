@@ -8,14 +8,6 @@ var ruleBuildExtension = class RuleBuildExtension{
         this.done = false;
     }
 
-    getNameRule(){
-        return this.nameRule;
-    }
-
-
-    setDone(done){
-        this.done = done;
-    }
 
     execute(){
         if(!this.done){
@@ -24,7 +16,7 @@ var ruleBuildExtension = class RuleBuildExtension{
         return this.done;
     }
 
-    behaviorRule() {
+    conditionRule(){
         //Game.spawns['Spawn1'].room.controller.activateSafeMode();
         var firstSpawn;
         for(var name in Game.spawns){
@@ -34,7 +26,6 @@ var ruleBuildExtension = class RuleBuildExtension{
 
 
         let room = firstSpawn.room;
-        let posFirstSpawn = firstSpawn.pos;
 
         let levelRoom = room.controller.level;
 
@@ -49,33 +40,42 @@ var ruleBuildExtension = class RuleBuildExtension{
 
         let conditionDone = (levelRoom <= 2) && (numberSiteExtensions >= 5) && (builders.length >= 2);
 
-        if (conditionDone) {
-            return conditionDone;
-        } else {
-            if(numberSiteExtensions < 5){
-                for(let i = 1;i < 6;i++){
-                    //incidencia extraer un metodo
-                    let structureExtensionExist = room.find(FIND_CONSTRUCTION_SITES, {
-                        filter: (structure) => {
-                            return (structure.structureType == STRUCTURE_EXTENSION)  &&
-                                (structure.pos.x != posFirstSpawn.x+i) &&
-                                (structure.pos.y != posFirstSpawn.y+3);
-                        }
-                    });
+        return conditionDone;
+    }
 
-                    if(structureExtensionExist[0] == null || structureExtensionExist[0] == undefined) {
-                        room.createConstructionSite(posFirstSpawn.x + i, posFirstSpawn.y + 3, STRUCTURE_EXTENSION)
-                    }
+
+
+    behaviorRule() {
+            let numberSiteExtensions =  room.find(FIND_CONSTRUCTION_SITES, {
+                filter: (structure) => {
+                    return (structure.structureType == STRUCTURE_EXTENSION );
                 }
+            }).length;
 
-
+            if(numberSiteExtensions < 5){
+                this.generateExtensionParallelToSpawn(firstSpawn.pos,5);
             }
 
-            if((numberSiteExtensions > 0) && (builders.length < 2)){
-                let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.BUILDER()});
+            let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.BUILDER()});
+
+        }
+
+    generateExtensionParallelToSpawn(posFirstSpawn,numberExtension) {
+        for (let i = 1; i < numberExtension + 1; i++) {
+            //incidencia extraer un metodo
+            let structureExtensionExist = room.find(FIND_CONSTRUCTION_SITES, {
+                filter: (structure) => {
+                    return (structure.structureType == STRUCTURE_EXTENSION) &&
+                        (structure.pos.x != posFirstSpawn.x + i) &&
+                        (structure.pos.y != posFirstSpawn.y);
+                }
+            });
+
+            if (structureExtensionExist[0] == null || structureExtensionExist[0] == undefined) {
+                room.createConstructionSite(posFirstSpawn.x + i, posFirstSpawn.y + 3, STRUCTURE_EXTENSION)
             }
 
         }
-    }
+    };
 }
 module.exports = ruleBuildExtension;
