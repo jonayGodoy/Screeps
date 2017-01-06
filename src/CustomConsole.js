@@ -1,6 +1,6 @@
 class CustomConsole{
       print(){
-        Console.log("Prueba aaaaaaaaaaaaaaaaaaaaaaaa");
+       return "prueba aaaaaaaaaaaa";
     }
 }
 
