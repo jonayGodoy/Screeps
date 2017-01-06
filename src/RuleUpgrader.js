@@ -3,6 +3,15 @@ const constants = require('Constants');
 
 var ruleUpgrader = class RuleUpgrader{
 
+
+    constructor() {
+        this.nameRule = "RuleUpgrader";
+    }
+
+    getNameRule(){
+        return this.nameRule;
+    }
+
     execute(){
         let upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.UPGRADER());
         let done = false;

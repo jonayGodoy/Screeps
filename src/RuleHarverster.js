@@ -2,6 +2,14 @@ const constants = require('Constants');
 
 var ruleHarverster = class RuleHarverster{
 
+    constructor() {
+        this.nameRule = "RuleHarverster";
+    }
+
+    getNameRule(){
+        return this.nameRule;
+    }
+
     execute(){
         let harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == constants.HARVESTER());
 

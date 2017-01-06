@@ -21,7 +21,7 @@ var engineRules = class EngineRules{
             if (done) {
                 done = rule.execute();
                 if(!done){
-                    console.log("execute: "+rule.toString());
+                    console.log("executing rule: "+rule.getNameRule());
                 }
             }
         }

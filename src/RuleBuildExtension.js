@@ -3,6 +3,15 @@ const constants = require('Constants');
 
 var ruleBuildExtension = class RuleBuildExtension{
 
+    constructor() {
+        this.nameRule = "RuleBuildExtension";
+    }
+
+    getNameRule(){
+        return this.nameRule;
+    }
+
+
     execute(){
         //Game.spawns['Spawn1'].room.controller.activateSafeMode();
         //((nivel 2))
