@@ -31,7 +31,7 @@ var ruleBuildExtension = class RuleBuildExtension{
         let builders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.BUILDER());
 
 
-        if((levelRoom < 2) && (builders.length < 2)  ) {
+        if((levelRoom <= 2) && (builders.length < 2)  ) {
           //  firstSpawn.say("execute "+"RuleBuildExtension");
             let numberSiteExtensions =  room.find(FIND_CONSTRUCTION_SITES, {
                 filter: (structure) => {
