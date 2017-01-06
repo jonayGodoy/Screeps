@@ -13,15 +13,19 @@ var engineRules = class EngineRules{
                 firstSpawn = Game.spawns[name];
         }
 
-        if (firstSpawn.room.memory.stateIA == null || firstSpawn.room.memory.stateIA == undefined){
-            this.rulesList = [
-                new RuleHarverster(),
-                new RuleUpgrader(),
-                new RuleBuildExtension()
+        this.rulesList = [
+            new RuleHarverster(),
+            new RuleUpgrader(),
+            new RuleBuildExtension()
 
-            ];
-        }else{
+        ];
+        //incidencia no save name
+        if (firstSpawn.room.memory.stateIA != null || firstSpawn.room.memory.stateIA != undefined){
             this.rulesList = firstSpawn.room.memory.stateIA;
+            for(var number in  this.rulesList){
+                let rule = this.rulesList[number];
+                rule.done = firstSpawn.room.memory.stateIA[number]
+            }
         }
 
     }
