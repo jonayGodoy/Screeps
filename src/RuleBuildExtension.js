@@ -61,14 +61,14 @@ var ruleBuildExtension = class RuleBuildExtension extends Rule_Abstract{
             }).length;
 
             if(numberSiteExtensions < 5){
-                this.generateExtensionParallelRightToSpawn(firstSpawn.pos,5);
+                this.generateExtensionParallelRightToSpawn(firstSpawn.pos,5,room);
             }
 
             let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.BUILDER()});
 
         }
 
-    generateExtensionParallelRightToSpawn(posFirstSpawn, numberExtension) {
+    generateExtensionParallelRightToSpawn(posFirstSpawn, numberExtension,room) {
         for (let i = 1; i < numberExtension + 1; i++) {
             //incidencia extraer un metodo
             let structureExtensionExist = room.find(FIND_CONSTRUCTION_SITES, {
