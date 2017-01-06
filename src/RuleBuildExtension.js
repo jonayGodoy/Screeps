@@ -46,7 +46,7 @@ var ruleBuildExtension = class RuleBuildExtension{
                     });
                     console.log("prueba 1 "+structureExtensionExist[0]);
                     console.log("prueba 2 "+structureExtensionExist);
-                    if(structureExtensionExist == null ) {
+                    if(structureExtensionExist == null || structureExtensionExist == undefined) {
                         room.createConstructionSite(posFirstSpawn.x + i, posFirstSpawn.y + 3, STRUCTURE_EXTENSION)
                     }
                 }
