@@ -37,7 +37,7 @@ var ruleBuildExtension = class RuleBuildExtension{
                                 && (structure.pos.y !== posFirstSpawn.y+3);
                         }
                     });
-                    console.log(structureExtension);
+                    console.log(structureExtension[0]);
                     if(structureExtension == null) {
                         room.createConstructionSite(posFirstSpawn.x + i, posFirstSpawn.y + 3, STRUCTURE_EXTENSION)
                     }
