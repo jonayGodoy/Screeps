@@ -10,9 +10,18 @@ module.exports.loop = function () {
 
      ia.update();
 
-    if(Memory != undefined) {
-        console.log("test " + Memory.stateIA);
+
+
+    let firstSpawn;
+    for(var name in Game.spawns){
+        if(firstSpawn == null)
+            firstSpawn = Game.spawns[name];
     }
+
+    if(firstSpawn.room.memory != undefined) {
+        console.log("test " + firstSpawn.room.memory.stateIA);
+    }
+
     //refactoring incidencias
     for(var name in Game.creeps){
         var creep = Game.creeps[name];
