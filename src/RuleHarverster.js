@@ -5,9 +5,16 @@ var ruleHarverster = class RuleHarverster{
     execute(){
         let harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == constants.HARVESTER());
         console.log("harvesters");
+
+        let Spawn;
+        for(var name in Game.spawns){
+            if(Spawn == null)
+                Spawn = Game.spawns[name];
+        }
+
         let done = false;
         if(harvesters.length < 2) {
-            var info = Game.spawns["Spawn1"].createCreep([WORK,CARRY,MOVE], undefined, {role: constants.HARVESTER()});
+            var info = Spawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.HARVESTER()});
             done = false;
             return done;
         }else{
