@@ -5,6 +5,7 @@ var ruleBuildExtension = class RuleBuildExtension{
     //status done
     constructor() {
         this.nameRule = "RuleBuildExtension";
+        this.done = false;
     }
 
     getNameRule(){
@@ -27,11 +28,10 @@ var ruleBuildExtension = class RuleBuildExtension{
         let levelRoom = room.controller.level;
      //   console.log("level "+ levelRoom);
 
-        let done = false;
         let builders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.BUILDER());
 
 
-        if((levelRoom <= 2)  ) {
+        if((levelRoom <= 2) && this.done ) {
 
             let numberSiteExtensions =  room.find(FIND_CONSTRUCTION_SITES, {
                 filter: (structure) => {
@@ -39,7 +39,7 @@ var ruleBuildExtension = class RuleBuildExtension{
                 }
             }).length;
 
-
+            console.log("numberSists "+ levelRoom);
             if(numberSiteExtensions < 5){
                 for(let i = 1;i < 6;i++){
                     //incidencia extraer un metodo
@@ -62,13 +62,18 @@ var ruleBuildExtension = class RuleBuildExtension{
             let builders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.BUILDER());
             if((numberSiteExtensions > 0) && (builders.length < 2)){
                 let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.BUILDER()});
+            }else{
+                if((numberSiteExtensions >= 5) && (builders.length >= 2)) {
+                    this.done = true;
+                    return this.done;
+                }
             }
 
-            done = false;
-            return done;
+            this.done = false;
+            return this.done;
         }else{
-            done = true;
-            return done;
+            this.done = true;
+            return this.done;
         }
     }
 }
