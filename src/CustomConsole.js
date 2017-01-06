@@ -3,5 +3,4 @@ class CustomConsole{
        return "prueba aaaaaaaaaaaa";
     }
 }
-
 module.exports = new CustomConsole();
