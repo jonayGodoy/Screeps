@@ -3,5 +3,5 @@ class CustomConsole{
         Console.log("Prueba aaaaaaaaaaaaaaaaaaaaaaaa");
     }
 }
-var console = new CustomConsole();
-module.exports = console;
+
+module.exports = new CustomConsole();
