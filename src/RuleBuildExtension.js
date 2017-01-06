@@ -4,7 +4,6 @@ const constants = require('Constants');
 var ruleBuildExtension = class RuleBuildExtension{
 
     execute(){
-        console.log("build extension");
         //Game.spawns['Spawn1'].room.controller.activateSafeMode();
         //((nivel 2))
         let firstSpawn;
@@ -17,17 +16,16 @@ var ruleBuildExtension = class RuleBuildExtension{
         let posFirstSpawn = firstSpawn.pos;
 
         let levelRoom = room.controller.level;
-        console.log("level "+ levelRoom);
+     //   console.log("level "+ levelRoom);
 
         let done = false;
         if(levelRoom == 2) {
-
+            firstSpawn.say("execute "+"RuleBuildExtension");
             let numberSiteExtensions =  room.find(FIND_CONSTRUCTION_SITES, {
                 filter: (structure) => {
                     return (structure.structureType == STRUCTURE_EXTENSION );
                 }
             }).length;
-
 
 
             if(numberSiteExtensions < 5){
@@ -55,7 +53,6 @@ var ruleBuildExtension = class RuleBuildExtension{
             }
 
             done = false;
-
             return done;
         }else{
             done = true;
