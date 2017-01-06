@@ -21,7 +21,6 @@ var engineRules = class EngineRules{
         ];
         //incidencia no save name
         if (firstSpawn.room.memory.stateIA != null || firstSpawn.room.memory.stateIA != undefined){
-            this.rulesList = firstSpawn.room.memory.stateIA;
             for(var number in  this.rulesList){
                 let rule = this.rulesList[number];
                 rule.done = firstSpawn.room.memory.stateIA[number].done
