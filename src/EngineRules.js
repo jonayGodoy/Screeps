@@ -48,7 +48,6 @@ var engineRules = class EngineRules{
                 firstSpawn = Game.spawns[name];
         }
         //only save fields
-        console.log("Engine "+firstSpawn.toString());
         firstSpawn.room.memory.stateIA = this.rulesList;
     }
 
