@@ -1,13 +1,15 @@
 const constants = require('Constants');
 var RuleHarverster = require('./RuleHarverster');
 var RuleUpgrader = require('./RuleUpgrader');
+var RuleBuildExtension = require('./RuleBuildExtension');
 
 var engineRules = class EngineRules{
     constructor() {
         //incidencia ordenadas por priorida
         this.rulesList = [
             new RuleHarverster(),
-            new RuleUpgrader()
+            new RuleUpgrader(),
+
         ];
     }
 
