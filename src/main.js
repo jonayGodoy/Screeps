@@ -1,4 +1,4 @@
-const console = require('CustomConsole');
+require('CustomConsole');
 const constants = require('Constants');
 var EngineRules = require('EngineRules');
 var RoleManager = require('RoleManager');
