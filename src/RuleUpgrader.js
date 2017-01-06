@@ -1,6 +1,8 @@
 //incidencia falta de interface
 const constants = require('Constants');
+var callGame = require('CallGame');
 var Rule_Abstract = require("Rule_Abstract");
+
 
 var ruleUpgrader = class RuleUpgrader extends Rule_Abstract{
 
@@ -17,16 +19,7 @@ var ruleUpgrader = class RuleUpgrader extends Rule_Abstract{
     }
 
     behaviorRule() {
-
-        var firstSpawn;
-        for (var name in Game.spawns) {
-            if (firstSpawn == null)
-                firstSpawn = Game.spawns[name];
-        }
-
-        let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.UPGRADER()});
-
-
+        callGame.createCreeper(constants.UPGRADER());
     }
 }
 module.exports = ruleUpgrader;

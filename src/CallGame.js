@@ -31,7 +31,7 @@ class CallGame{
 
     createCreeper(role){
         let structureCreeps = this.structureCreepsList[role];
-        let info = this.getFirstSpawn().createCreep(structureCreeps[0], structureCreeps[1], {role: role});
+        /*let info =*/ this.getFirstSpawn().createCreep(structureCreeps[0], structureCreeps[1], {role: role});
     }
 
 

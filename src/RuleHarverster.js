@@ -8,8 +8,6 @@ var ruleHarverster = class RuleHarverster extends Rule_Abstract{
         super("RuleHarverster");
     }
 
-
-
     conditionRule(){
         let harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == constants.HARVESTER());
 
@@ -18,10 +16,8 @@ var ruleHarverster = class RuleHarverster extends Rule_Abstract{
         return conditionDone;
     }
 
-
-
     behaviorRule(){
-         var info = callGame.createCreeper(constants.HARVESTER());
+         callGame.createCreeper(constants.HARVESTER());
     }
 }
 module.exports = ruleHarverster;
