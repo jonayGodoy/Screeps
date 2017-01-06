@@ -1,7 +1,7 @@
 var rule_abstract = class Rule_Abstract{
 
     constructor(nameRule) {
-        this.nameRule = "nameRule";
+        this.nameRule = nameRule;
         this.done = false;
     }
 
