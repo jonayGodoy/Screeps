@@ -1,11 +1,11 @@
 //incidencia falta de interface
 const constants = require('Constants');
+var Rule_Abstract = require("Rule_Abstract");
 
-var ruleBuildExtension = class RuleBuildExtension{
+var ruleBuildExtension = class RuleBuildExtension extends Rule_Abstract{
     //status done
     constructor() {
-        this.nameRule = "RuleBuildExtension";
-        this.done = false;
+        super("RuleBuildExtension");
     }
 
 
@@ -53,14 +53,14 @@ var ruleBuildExtension = class RuleBuildExtension{
             }).length;
 
             if(numberSiteExtensions < 5){
-                this.generateExtensionParallelToSpawn(firstSpawn.pos,5);
+                this.generateExtensionParallelRightToSpawn(firstSpawn.pos,5);
             }
 
             let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.BUILDER()});
 
         }
 
-    generateExtensionParallelToSpawn(posFirstSpawn,numberExtension) {
+    generateExtensionParallelRightToSpawn(posFirstSpawn, numberExtension) {
         for (let i = 1; i < numberExtension + 1; i++) {
             //incidencia extraer un metodo
             let structureExtensionExist = room.find(FIND_CONSTRUCTION_SITES, {
