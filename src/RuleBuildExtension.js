@@ -18,31 +18,40 @@ var ruleBuildExtension = class RuleBuildExtension{
     }
 
     execute(){
+        if(!this.done){
+            this.done = this.behaviorRule();
+        }
+        return this.done;
+    }
+
+    behaviorRule() {
         //Game.spawns['Spawn1'].room.controller.activateSafeMode();
-        //((nivel 2))
         var firstSpawn;
         for(var name in Game.spawns){
             if(firstSpawn == null)
                 firstSpawn = Game.spawns[name];
         }
 
+
         let room = firstSpawn.room;
         let posFirstSpawn = firstSpawn.pos;
 
         let levelRoom = room.controller.level;
-     //   console.log("level "+ levelRoom);
-
-        let builders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.BUILDER());
 
 
-        if((levelRoom <= 2) && !this.done ) {
+        let numberSiteExtensions =  room.find(FIND_CONSTRUCTION_SITES, {
+            filter: (structure) => {
+                return (structure.structureType == STRUCTURE_EXTENSION );
+            }
+        }).length;
 
-            let numberSiteExtensions =  room.find(FIND_CONSTRUCTION_SITES, {
-                filter: (structure) => {
-                    return (structure.structureType == STRUCTURE_EXTENSION );
-                }
-            }).length;
 
+        let conditionDone = (levelRoom <= 2) && (numberSiteExtensions >= 5) && (builders.length >= 2);
+
+        if (conditionDone) {
+            return conditionDone;
+        } else {
+            let builders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.BUILDER());
 
             if(numberSiteExtensions < 5){
                 for(let i = 1;i < 6;i++){
@@ -51,7 +60,7 @@ var ruleBuildExtension = class RuleBuildExtension{
                         filter: (structure) => {
                             return (structure.structureType == STRUCTURE_EXTENSION)  &&
                                 (structure.pos.x != posFirstSpawn.x+i) &&
-                                 (structure.pos.y != posFirstSpawn.y+3);
+                                (structure.pos.y != posFirstSpawn.y+3);
                         }
                     });
 
@@ -63,22 +72,11 @@ var ruleBuildExtension = class RuleBuildExtension{
 
             }
 
-            let builders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.BUILDER());
             if((numberSiteExtensions > 0) && (builders.length < 2)){
                 let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.BUILDER()});
-            }else{
-                if((numberSiteExtensions >= 5) && (builders.length >= 2)) {
-
-                    this.done = true;
-                    return this.done;
-                }
             }
 
-            return this.done;
-        }else{
-            this.done = true;
-            return this.done;
-        }
+            }
     }
 }
 module.exports = ruleBuildExtension;
