@@ -25,7 +25,7 @@ var ruleUpgrader = class RuleUpgrader{
         let upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.UPGRADER());
         if(!this.done){
             if(upgraders.length < 2) {
-                let firstSpawn;
+                var firstSpawn;
                 for (var name in Game.spawns) {
                     if (firstSpawn == null)
                         firstSpawn = Game.spawns[name];
