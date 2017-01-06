@@ -37,7 +37,7 @@ var ruleHarverster = class RuleHarverster{
 
 
         if (conditionDone) {
-            this.done = conditionDone;
+            return conditionDone;
         } else {
             var info = firstSpawn.createCreep([WORK, CARRY, MOVE], undefined, {role: constants.HARVESTER()});
         }
