@@ -29,8 +29,9 @@ var ruleBuildExtension = class RuleBuildExtension{
             }).length;
 
             console.log("numero de extensiones "+ numberSiteExtensions);
-            if(numberSiteExtensions.length < 5){
+            if(numberSiteExtensions < 5){
                 for(let i = 1;i < 6;i++){
+
                     let structureExtension = creep.room.find(FIND_STRUCTURES, {
                         filter: (structure) => {
                             return (structure.structureType == STRUCTURE_EXTENSION)  &&
@@ -47,7 +48,7 @@ var ruleBuildExtension = class RuleBuildExtension{
 
             }
 
-            let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.BUILDER()});
+        //    let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.BUILDER()});
             done = false;
 
             return done;
