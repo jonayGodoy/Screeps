@@ -46,6 +46,14 @@ var ruleBuildExtension = class RuleBuildExtension extends Rule_Abstract{
 
 
     behaviorRule() {
+        var firstSpawn;
+        for(var name in Game.spawns){
+            if(firstSpawn == null)
+                firstSpawn = Game.spawns[name];
+        }
+
+        let room = firstSpawn.room;
+
             let numberSiteExtensions =  room.find(FIND_CONSTRUCTION_SITES, {
                 filter: (structure) => {
                     return (structure.structureType == STRUCTURE_EXTENSION );
