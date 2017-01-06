@@ -17,7 +17,7 @@ var ruleBuildExtension = class RuleBuildExtension{
         let posFirstSpawn = firstSpawn.pos;
 
         let levelRoom = room.controller.level;
-
+        console.log("level "+ levelRoom);
 
         let done = false;
         if(levelRoom == 2) {
@@ -28,6 +28,7 @@ var ruleBuildExtension = class RuleBuildExtension{
                 }
             }).length;
 
+            console.log("numero de extensiones "+ numberSiteExtensions);
             if(numberSiteExtensions.length < 5){
                 for(let i = 1;i < 6;i++){
                     let structureExtension = creep.room.find(FIND_STRUCTURES, {
