@@ -23,22 +23,21 @@ var ruleUpgrader = class RuleUpgrader{
 
     execute(){
         let upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.UPGRADER());
-        let done = false;
-        if(upgraders.length < 2) {
-            let firstSpawn;
-            for(var name in Game.spawns){
-                if(firstSpawn == null)
-                firstSpawn = Game.spawns[name];
-            }
-
+        if(!this.done){
+            if(upgraders.length < 2) {
+                let firstSpawn;
+                for (var name in Game.spawns) {
+                    if (firstSpawn == null)
+                        firstSpawn = Game.spawns[name];
+                }
+        }
 
             let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.UPGRADER()});
-            done = false;
-            return done;
+            this.done = false;
         }else{
-            done = true;
-            return done;
+            this.done = true;
         }
+        return this.done;
     }
 }
 module.exports = ruleUpgrader;
