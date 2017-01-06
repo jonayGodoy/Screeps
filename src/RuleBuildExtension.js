@@ -22,18 +22,14 @@ var ruleBuildExtension = class RuleBuildExtension{
         let done = false;
         if(levelRoom == 2) {
 
-            let numberSiteExtensions =  room.find(FIND_STRUCTURES, {
+            let numberSiteExtensions =  room.find(FIND_CONSTRUCTION_SITES, {
                 filter: (structure) => {
                     return (structure.structureType == STRUCTURE_EXTENSION );
                 }
             }).length;
 
 
-            let testSites = room.find(FIND_STRUCTURES, {
-                filter: (structure) => {
-                    return (structure.structureType == STRUCTURE_EXTENSION );
-                }
-            });
+            let testSites = room.find(FIND_CONSTRUCTION_SITES);
             console.log("test sitios "+ testSites);
 
 
@@ -50,7 +46,7 @@ var ruleBuildExtension = class RuleBuildExtension{
                     });
                     console.log("prueba 1 "+structureExtensionExist[0]);
                     console.log("prueba 2 "+structureExtensionExist);
-                    if(structureExtensionExist == null) {
+                    if(structureExtensionExist == null ) {
                         room.createConstructionSite(posFirstSpawn.x + i, posFirstSpawn.y + 3, STRUCTURE_EXTENSION)
                     }
                 }
