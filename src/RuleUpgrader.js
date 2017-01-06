@@ -30,7 +30,6 @@ var ruleUpgrader = class RuleUpgrader{
 
         let conditionDone = (upgraders.length >= 2);
 
-
         var firstSpawn;
         for (var name in Game.spawns) {
             if (firstSpawn == null)
