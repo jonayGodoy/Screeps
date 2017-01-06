@@ -37,11 +37,12 @@ var ruleUpgrader = class RuleUpgrader{
         }
 
 
-        if (!conditionDone) {
-            let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.UPGRADER()});
-        } else {
+        if (conditionDone) {
             this.done = conditionDone;
+        } else {
+            let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.UPGRADER()});
         }
+
     }
 }
 module.exports = ruleUpgrader;

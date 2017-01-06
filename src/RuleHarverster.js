@@ -36,10 +36,10 @@ var ruleHarverster = class RuleHarverster{
         }
 
 
-        if (!conditionDone) {
-            var info = firstSpawn.createCreep([WORK, CARRY, MOVE], undefined, {role: constants.HARVESTER()});
-        } else {
+        if (conditionDone) {
             this.done = conditionDone;
+        } else {
+            var info = firstSpawn.createCreep([WORK, CARRY, MOVE], undefined, {role: constants.HARVESTER()});
         }
     }
 }
