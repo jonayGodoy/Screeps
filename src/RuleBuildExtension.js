@@ -69,7 +69,6 @@ var ruleBuildExtension = class RuleBuildExtension{
                 }
             }
 
-            this.done = false;
             return this.done;
         }else{
             this.done = true;
