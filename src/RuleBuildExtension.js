@@ -31,16 +31,16 @@ var ruleBuildExtension = class RuleBuildExtension{
             console.log("numero de extensiones "+ numberSiteExtensions);
             if(numberSiteExtensions < 5){
                 for(let i = 1;i < 6;i++){
-
-                    let structureExtension = room.find(FIND_STRUCTURES, {
+                    //incidencia extraer un metodo
+                    let structureExtensionExist = room.find(FIND_STRUCTURES, {
                         filter: (structure) => {
                             return (structure.structureType == STRUCTURE_EXTENSION)  &&
                                 (structure.pos.x !== posFirstSpawn.x+i)
                                 && (structure.pos.y !== posFirstSpawn.y+3);
                         }
                     });
-                    console.log(structureExtension[0]);
-                    if(structureExtension == null) {
+                    console.log(structureExtensionExist[0]);
+                    if(structureExtensionExist == null) {
                         room.createConstructionSite(posFirstSpawn.x + i, posFirstSpawn.y + 3, STRUCTURE_EXTENSION)
                     }
                 }
