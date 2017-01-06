@@ -21,7 +21,6 @@ var ruleHarverster = class RuleHarverster{
 
         let done = false;
         if(harvesters.length < 2) {
-            firstSpawn.room.memory.stateIA = "funciona";
             var info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.HARVESTER()});
             done = false;
             return done;

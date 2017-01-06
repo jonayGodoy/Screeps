@@ -6,13 +6,24 @@ var RuleBuildExtension = require('./RuleBuildExtension');
 
 var engineRules = class EngineRules{
     constructor() {
-        //incidencia ordenadas por priorida
-        this.rulesList = [
-            new RuleHarverster(),
-            new RuleUpgrader(),
-            new RuleBuildExtension()
+        //incidencia ordenadas por prioridad
+        let firstSpawn;
+        for(var name in Game.spawns){
+            if(firstSpawn == null)
+                firstSpawn = Game.spawns[name];
+        }
 
-        ];
+        if (firstSpawn.room.memory.stateIA == null || firstSpawn.room.memory.stateIA == undefined){
+            this.rulesList = [
+                new RuleHarverster(),
+                new RuleUpgrader(),
+                new RuleBuildExtension()
+
+            ];
+        }else{
+            this.rulesList = firstSpawn.room.memory.stateIA;
+        }
+
     }
 
     update(){
@@ -26,6 +37,16 @@ var engineRules = class EngineRules{
                 }
             }
         }
+
+
+
+        let firstSpawn;
+        for(var name in Game.spawns){
+            if(firstSpawn == null)
+                firstSpawn = Game.spawns[name];
+        }
+        firstSpawn.room.memory.stateIA = this.rulesList ;
+
     }
 
 

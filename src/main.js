@@ -19,7 +19,7 @@ module.exports.loop = function () {
     }
 
     if(firstSpawn.room.memory != undefined) {
-        console.log("test " + firstSpawn.room.memory.stateIA);
+        console.log("test " + firstSpawn.room.memory.stateIA[0].getNameRule());
     }
 
     //refactoring incidencias
