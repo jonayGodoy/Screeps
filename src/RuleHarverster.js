@@ -11,9 +11,7 @@ var ruleHarverster = class RuleHarverster extends Rule_Abstract{
     conditionRule(){
         let harvesters = callGame.findCreepersForRole(constants.HARVESTER());
 
-        let conditionDone = (harvesters.length >= 2);
-
-        return conditionDone;
+        return (harvesters.length >= 2);
     }
 
     behaviorRule(){

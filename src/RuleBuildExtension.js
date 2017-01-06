@@ -1,5 +1,6 @@
 //incidencia falta de interface
 const constants = require('Constants');
+var callGame = require('CallGame');
 var Rule_Abstract = require("Rule_Abstract");
 
 var ruleBuildExtension = class RuleBuildExtension extends Rule_Abstract{
@@ -8,78 +9,65 @@ var ruleBuildExtension = class RuleBuildExtension extends Rule_Abstract{
         super("RuleBuildExtension");
     }
 
-
     conditionRule(){
         //Game.spawns['Spawn1'].room.controller.activateSafeMode();
-        var firstSpawn;
-        for(var name in Game.spawns){
-            if(firstSpawn == null)
-                firstSpawn = Game.spawns[name];
-        }
-
-
-        let room = firstSpawn.room;
-
+        let room = callGame.getFirstRoom();
         let levelRoom = room.controller.level;
+        let numberSiteExtensions =   this.numberSitesExtensions(room);
+        let builders = callGame.findCreepersForRole(constants.BUILDER());
 
 
-        let numberSiteExtensions =  room.find(FIND_CONSTRUCTION_SITES, {
-            filter: (structure) => {
-                return (structure.structureType == STRUCTURE_EXTENSION );
-            }
-        }).length;
-
-
-        let builders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.BUILDER());
-
-        let conditionDone = (levelRoom <= 2) && (numberSiteExtensions >= 5) && (builders.length >= 2);
-
-        return conditionDone;
+        return (levelRoom <= 2) && (numberSiteExtensions >= 5) && (builders.length >= 2);
     }
 
 
 
     behaviorRule() {
-        var firstSpawn;
-        for(var name in Game.spawns){
-            if(firstSpawn == null)
-                firstSpawn = Game.spawns[name];
-        }
-
+        var firstSpawn = callGame.getFirstSpawn();
         let room = firstSpawn.room;
+        let numberSiteExtensions = this.numberSitesExtensions(room);
 
-            let numberSiteExtensions =  room.find(FIND_CONSTRUCTION_SITES, {
-                filter: (structure) => {
-                    return (structure.structureType == STRUCTURE_EXTENSION );
-                }
-            }).length;
-
-            if(numberSiteExtensions < 5){
-                this.generateExtensionParallelRightToSpawn(firstSpawn.pos,5,room);
+        let quantity = 5;
+        if(numberSiteExtensions < quantity){
+                this.generateExtensionParallelRightToSpawn(firstSpawn.pos,quantity,room);
             }
 
-            let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.BUILDER()});
+        callGame.createCreeper(constants.BUILDER());
 
         }
+
+
 
     generateExtensionParallelRightToSpawn(posFirstSpawn, numberExtension,room) {
 
         let margin = 3;
         for (let i = margin; i < numberExtension + margin; i++) {
             //incidencia extraer un metodo
-            let structureExtensionExist = room.find(FIND_CONSTRUCTION_SITES, {
-                filter: (structure) => {
-                    return (structure.structureType == STRUCTURE_EXTENSION) &&
-                        (structure.pos.x != posFirstSpawn.x + i) &&
-                        (structure.pos.y != posFirstSpawn.y);
-                }
-            });
-
-            if (structureExtensionExist[0] == null || structureExtensionExist[0] == undefined) {
+            if (!this.existStructureExtension()) {
                 room.createConstructionSite(posFirstSpawn.x + i, posFirstSpawn.y, STRUCTURE_EXTENSION)
             }
 
         }
     };
+
+    existStructureExtension(){
+        let structureExtension = room.find(FIND_CONSTRUCTION_SITES, {
+            filter: (structure) => {
+                return (structure.structureType == STRUCTURE_EXTENSION) &&
+                    (structure.pos.x != posFirstSpawn.x + i) &&
+                    (structure.pos.y != posFirstSpawn.y);
+            }
+        });
+
+        return (structureExtension[0] != null || structureExtension[0] != undefined);
+    }
+
+    numberSitesExtensions(room) {
+        return room.find(FIND_CONSTRUCTION_SITES, {
+            filter: (structure) => {
+                return (structure.structureType == STRUCTURE_EXTENSION );
+            }
+        }).length;
+    }
 }
 module.exports = ruleBuildExtension;

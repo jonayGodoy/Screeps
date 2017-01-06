@@ -13,9 +13,8 @@ var ruleUpgrader = class RuleUpgrader extends Rule_Abstract{
     conditionRule(){
         let upgraders = callGame.findCreepersForRole(constants.UPGRADER());
 
-        let conditionDone = (upgraders.length >= 2);
 
-        return conditionDone;
+        return (upgraders.length >= 2);
     }
 
     behaviorRule() {
