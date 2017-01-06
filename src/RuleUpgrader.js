@@ -30,10 +30,11 @@ var ruleUpgrader = class RuleUpgrader{
                     if (firstSpawn == null)
                         firstSpawn = Game.spawns[name];
                 }
-        }
+
 
             let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.UPGRADER()});
             this.done = false;
+            }
         }else{
             this.done = true;
         }
