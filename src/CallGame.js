@@ -3,7 +3,7 @@ class CallGame{
 
 
     constructor() {
-        this.structureCreepsBasic =new Array[[WORK, CARRY, MOVE], undefined];
+        this.structureCreepsBasic = [[WORK, CARRY, MOVE], undefined];
 
         this.structureCreepsList = [];
         this.structureCreepsList[constants.HARVESTER()] = this.structureCreepsBasic;
