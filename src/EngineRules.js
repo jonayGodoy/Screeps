@@ -20,6 +20,9 @@ var engineRules = class EngineRules{
             let rule = this.rulesList[number];
             if (done) {
                 done = rule.execute();
+                if(!done){
+                    console.log("execute: "+rule.toString());
+                }
             }
         }
     }
