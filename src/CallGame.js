@@ -29,5 +29,5 @@ class CallGame{
 
 
 
-
 }
+module.exports  = new CallGame();

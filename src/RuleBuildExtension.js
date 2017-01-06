@@ -35,6 +35,7 @@ var ruleBuildExtension = class RuleBuildExtension extends Rule_Abstract{
                 return (structure.structureType == STRUCTURE_EXTENSION );
             }
         }).length;
+        console.log("number extenions"+numberSiteExtensions);
 
         let builders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.BUILDER());
 
@@ -69,7 +70,9 @@ var ruleBuildExtension = class RuleBuildExtension extends Rule_Abstract{
         }
 
     generateExtensionParallelRightToSpawn(posFirstSpawn, numberExtension,room) {
-        for (let i = 1; i < numberExtension + 1; i++) {
+
+        let margin = 3;
+        for (let i = margin; i < numberExtension + margin; i++) {
             //incidencia extraer un metodo
             let structureExtensionExist = room.find(FIND_CONSTRUCTION_SITES, {
                 filter: (structure) => {
@@ -80,7 +83,7 @@ var ruleBuildExtension = class RuleBuildExtension extends Rule_Abstract{
             });
 
             if (structureExtensionExist[0] == null || structureExtensionExist[0] == undefined) {
-                room.createConstructionSite(posFirstSpawn.x + i, posFirstSpawn.y + 3, STRUCTURE_EXTENSION)
+                room.createConstructionSite(posFirstSpawn.x + i, posFirstSpawn.y, STRUCTURE_EXTENSION)
             }
 
         }
