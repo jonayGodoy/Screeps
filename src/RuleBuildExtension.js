@@ -52,8 +52,6 @@ var ruleBuildExtension = class RuleBuildExtension{
         if (conditionDone) {
             return conditionDone;
         } else {
-
-
             if(numberSiteExtensions < 5){
                 for(let i = 1;i < 6;i++){
                     //incidencia extraer un metodo

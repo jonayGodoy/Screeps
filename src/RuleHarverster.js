@@ -18,17 +18,31 @@ var ruleHarverster = class RuleHarverster{
 
     execute(){
         if(!this.done){
-            this.done = this.behaviorRule();
+            this.done = this.conditionRule();
+
+            if (this.done) {
+                return this.done;
+            } else {
+                this.behaviorRule();
+            }
+
+
         }
         return this.done;
     }
 
-    behaviorRule() {
+
+    conditionRule(){
         let harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == constants.HARVESTER());
 
         let conditionDone = (harvesters.length >= 2);
 
+        return conditionDone;
+    }
 
+
+
+    behaviorRule(){
         var firstSpawn;
         for (var name in Game.spawns) {
             if (firstSpawn == null)
@@ -36,11 +50,8 @@ var ruleHarverster = class RuleHarverster{
         }
 
 
-        if (conditionDone) {
-            return conditionDone;
-        } else {
-            var info = firstSpawn.createCreep([WORK, CARRY, MOVE], undefined, {role: constants.HARVESTER()});
-        }
+         var info = firstSpawn.createCreep([WORK, CARRY, MOVE], undefined, {role: constants.HARVESTER()});
+
     }
 }
 module.exports = ruleHarverster;
