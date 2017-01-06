@@ -29,11 +29,7 @@ var ruleBuildExtension = class RuleBuildExtension{
             }).length;
 
 
-            let testSites = room.find(FIND_CONSTRUCTION_SITES);
-            console.log("test sitios "+ testSites);
 
-
-            console.log("numero de extensiones "+ numberSiteExtensions);
             if(numberSiteExtensions < 5){
                 for(let i = 1;i < 6;i++){
                     //incidencia extraer un metodo
@@ -44,8 +40,7 @@ var ruleBuildExtension = class RuleBuildExtension{
                                  (structure.pos.y != posFirstSpawn.y+3);
                         }
                     });
-                    console.log("prueba 1 "+structureExtensionExist[0]);
-                    console.log("prueba 2 "+structureExtensionExist);
+
                     if(structureExtensionExist[0] == null || structureExtensionExist[0] == undefined) {
                         room.createConstructionSite(posFirstSpawn.x + i, posFirstSpawn.y + 3, STRUCTURE_EXTENSION)
                     }
