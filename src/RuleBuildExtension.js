@@ -28,6 +28,15 @@ var ruleBuildExtension = class RuleBuildExtension{
                 }
             }).length;
 
+
+            let testSites = room.find(FIND_STRUCTURES, {
+                filter: (structure) => {
+                    return (structure.structureType == STRUCTURE_EXTENSION );
+                }
+            });
+            console.log("test sitios "+ testSites);
+
+
             console.log("numero de extensiones "+ numberSiteExtensions);
             if(numberSiteExtensions < 5){
                 for(let i = 1;i < 6;i++){
@@ -35,11 +44,12 @@ var ruleBuildExtension = class RuleBuildExtension{
                     let structureExtensionExist = room.find(FIND_STRUCTURES, {
                         filter: (structure) => {
                             return (structure.structureType == STRUCTURE_EXTENSION)  &&
-                                (structure.pos.x !== posFirstSpawn.x+i)
-                                && (structure.pos.y !== posFirstSpawn.y+3);
+                                (structure.pos.x != posFirstSpawn.x+i) &&
+                                 (structure.pos.y != posFirstSpawn.y+3);
                         }
                     });
-                    console.log(structureExtensionExist[0]);
+                    console.log("prueba 1 "+structureExtensionExist[0]);
+                    console.log("prueba 2 "+structureExtensionExist);
                     if(structureExtensionExist == null) {
                         room.createConstructionSite(posFirstSpawn.x + i, posFirstSpawn.y + 3, STRUCTURE_EXTENSION)
                     }
@@ -48,7 +58,11 @@ var ruleBuildExtension = class RuleBuildExtension{
 
             }
 
-        //    let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.BUILDER()});
+            let builders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.BUILDER());
+            if((numberSiteExtensions > 0) && (builders.length < 2)){
+                let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.BUILDER()});
+            }
+
             done = false;
 
             return done;
