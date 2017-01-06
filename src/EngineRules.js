@@ -9,6 +9,7 @@ var engineRules = class EngineRules{
         this.rulesList = [
             new RuleHarverster(),
             new RuleUpgrader(),
+            new RuleBuildExtension()
 
         ];
     }
