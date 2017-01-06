@@ -19,18 +19,26 @@ var engineRules = class EngineRules{
     }
 
     update(){
+        this.updateRuleListForPriority();
+        this.saveRuleList();
+
+    }
+
+    updateRuleListForPriority() {
         let done = true;
-        for(var number in  this.rulesList){
+        for (var number in  this.rulesList) {
             let rule = this.rulesList[number];
             if (done) {
                 done = rule.execute();
-                if(!done){
-                    console.log("executing rule: "+rule.getNameRule());
+                if (!done) {
+                    this.printState(rule);
                 }
             }
         }
-        this.saveRuleList();
+    }
 
+    printState(rule) {
+        console.log("executing rule: " + rule.getNameRule());
     }
 
     saveRuleList() {
