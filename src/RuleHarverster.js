@@ -31,9 +31,11 @@ var ruleHarverster = class RuleHarverster{
             if(harvesters.length < 2) {
                 var info = firstSpawn.createCreep([WORK, CARRY, MOVE], undefined, {role: constants.HARVESTER()});
                 this.done = false;
+            }else{
+                this.done = true;
             }
-        }else{
-            this.done = true;
+
+
         }
         return this.done;
     }
