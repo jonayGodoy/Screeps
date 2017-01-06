@@ -10,7 +10,7 @@ module.exports.loop = function () {
 
      ia.update();
 
-    if(Game.memory.stateIA != undefined)
+    if(Game.memory != undefined)
     console.log("test "+Game.memory.stateIA);
 
     //refactoring incidencias
