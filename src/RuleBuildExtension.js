@@ -32,7 +32,7 @@ var ruleBuildExtension = class RuleBuildExtension{
             if(numberSiteExtensions < 5){
                 for(let i = 1;i < 6;i++){
 
-                    let structureExtension = creep.room.find(FIND_STRUCTURES, {
+                    let structureExtension = room.find(FIND_STRUCTURES, {
                         filter: (structure) => {
                             return (structure.structureType == STRUCTURE_EXTENSION)  &&
                                 (structure.pos.x !== posFirstSpawn.x+i)
