@@ -1,5 +1,5 @@
 var console = class CustomConsole{
-    static print(){
+     print(){
         Console.log("Prueba aaaaaaaaaaaaaaaaaaaaaaaa");
     }
 }
