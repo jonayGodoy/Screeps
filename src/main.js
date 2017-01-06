@@ -10,7 +10,7 @@ module.exports.loop = function () {
 
      ia.update();
 
-    Console.log("test "+Game.memory.stateIA);
+    console.log("test "+Game.memory.stateIA);
 
     //refactoring incidencias
     for(var name in Game.creeps){
