@@ -1,34 +1,22 @@
 //incidencia falta de interface
 const constants = require('Constants');
+var Rule_Abstract = require("Rule_Abstract");
 
-var ruleUpgrader = class RuleUpgrader{
-
+var ruleUpgrader = class RuleUpgrader extends Rule_Abstract{
 
     constructor() {
-        this.nameRule = "RuleUpgrader";
-        this.done = false;
+        super("RuleUpgrader");
     }
 
-    getNameRule(){
-        return this.nameRule;
-    }
-
-
-    setDone(done){
-        this.done = done;
-    }
-
-    execute(){
-        if(!this.done){
-            this.done = this.behaviorRule();
-        }
-        return this.done;
-    }
-
-    behaviorRule() {
+    conditionRule(){
         let upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.UPGRADER());
 
         let conditionDone = (upgraders.length >= 2);
+
+        return conditionDone;
+    }
+
+    behaviorRule() {
 
         var firstSpawn;
         for (var name in Game.spawns) {
@@ -36,12 +24,8 @@ var ruleUpgrader = class RuleUpgrader{
                 firstSpawn = Game.spawns[name];
         }
 
+        let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.UPGRADER()});
 
-        if (conditionDone) {
-            return conditionDone;
-        } else {
-            let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.UPGRADER()});
-        }
 
     }
 }

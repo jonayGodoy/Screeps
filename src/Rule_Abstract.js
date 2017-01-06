@@ -23,8 +23,6 @@ var rule_abstract = class Rule_Abstract{
             } else {
                 this.behaviorRule();
             }
-
-
         }
         return this.done;
     }
