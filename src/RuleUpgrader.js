@@ -19,23 +19,30 @@ var ruleUpgrader = class RuleUpgrader{
     }
 
     execute(){
-        let upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.UPGRADER());
         if(!this.done){
-            if(upgraders.length < 2) {
-                var firstSpawn;
-                for (var name in Game.spawns) {
-                    if (firstSpawn == null)
-                        firstSpawn = Game.spawns[name];
-                }
-
-
-            let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.UPGRADER()});
-            this.done = false;
-            }
-        }else{
-            this.done = true;
+            this.done = this.behaviorRule();
         }
         return this.done;
+    }
+
+    behaviorRule() {
+        let upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.UPGRADER());
+
+        let conditionDone = (upgraders.length >= 2);
+
+
+        var firstSpawn;
+        for (var name in Game.spawns) {
+            if (firstSpawn == null)
+                firstSpawn = Game.spawns[name];
+        }
+
+
+        if (!conditionDone) {
+            let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.UPGRADER()});
+        } else {
+            this.done = conditionDone;
+        }
     }
 }
 module.exports = ruleUpgrader;
