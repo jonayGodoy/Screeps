@@ -32,7 +32,7 @@ var ruleBuildExtension = class RuleBuildExtension{
 
 
         if((levelRoom <= 2)  ) {
-          //  firstSpawn.say("execute "+"RuleBuildExtension");
+
             let numberSiteExtensions =  room.find(FIND_CONSTRUCTION_SITES, {
                 filter: (structure) => {
                     return (structure.structureType == STRUCTURE_EXTENSION );
@@ -43,7 +43,7 @@ var ruleBuildExtension = class RuleBuildExtension{
             if(numberSiteExtensions < 5){
                 for(let i = 1;i < 6;i++){
                     //incidencia extraer un metodo
-                    let structureExtensionExist = room.find(FIND_STRUCTURES, {
+                    let structureExtensionExist = room.find(FIND_CONSTRUCTION_SITES, {
                         filter: (structure) => {
                             return (structure.structureType == STRUCTURE_EXTENSION)  &&
                                 (structure.pos.x != posFirstSpawn.x+i) &&
