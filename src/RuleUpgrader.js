@@ -25,7 +25,7 @@ var ruleUpgrader = class RuleUpgrader{
 
             let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.UPGRADER()});
             done = false;
-
+            Game.memory.stateIA = "save state"
             return done;
         }else{
             done = true;

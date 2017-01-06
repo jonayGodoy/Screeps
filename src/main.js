@@ -9,7 +9,9 @@ console.log("veces 2");
 module.exports.loop = function () {
 
      ia.update();
-    console.log("veces 3");
+
+    Console.log("test "+Game.memory.stateIA);
+
     //refactoring incidencias
     for(var name in Game.creeps){
         var creep = Game.creeps[name];

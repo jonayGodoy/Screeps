@@ -64,6 +64,7 @@ var ruleBuildExtension = class RuleBuildExtension{
                 let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.BUILDER()});
             }else{
                 if((numberSiteExtensions >= 5) && (builders.length >= 2)) {
+
                     this.done = true;
                     return this.done;
                 }
