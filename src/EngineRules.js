@@ -7,25 +7,14 @@ var RuleBuildExtension = require('./RuleBuildExtension');
 var engineRules = class EngineRules{
     constructor() {
         //incidencia ordenadas por prioridad
-        let firstSpawn;
-        for(var name in Game.spawns){
-            if(firstSpawn == null)
-                firstSpawn = Game.spawns[name];
-        }
-
         this.rulesList = [
             new RuleHarverster(),
             new RuleUpgrader(),
             new RuleBuildExtension()
 
         ];
-        //incidencia no save name
-        if (firstSpawn.room.memory.stateIA != null && firstSpawn.room.memory.stateIA != undefined){
-            for(var number in  this.rulesList){
-                let rule = this.rulesList[number];
-                rule.done = firstSpawn.room.memory.stateIA[number].done
-            }
-        }
+
+        this.loadRuleList();
 
     }
 
@@ -40,16 +29,33 @@ var engineRules = class EngineRules{
                 }
             }
         }
+        this.saveRuleList();
 
+    }
 
+    saveRuleList() {
+        let firstSpawn;
+        for (var name in Game.spawns) {
+            if (firstSpawn == null)
+                firstSpawn = Game.spawns[name];
+        }
+        firstSpawn.room.memory.stateIA = this.rulesList;
+    }
 
+    loadRuleList(firstSpawn) {
         let firstSpawn;
         for(var name in Game.spawns){
             if(firstSpawn == null)
                 firstSpawn = Game.spawns[name];
         }
-        firstSpawn.room.memory.stateIA = this.rulesList ;
 
+
+        if (firstSpawn.room.memory.stateIA != null && firstSpawn.room.memory.stateIA != undefined) {
+            for (var number in  this.rulesList) {
+                let rule = this.rulesList[number];
+                rule.done = firstSpawn.room.memory.stateIA[number].done
+            }
+        }
     }
 
 

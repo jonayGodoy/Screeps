@@ -3,24 +3,13 @@ var EngineRules = require('EngineRules');
 var RoleManager = require('RoleManager');
 var roleManager = new RoleManager();
 var ia = new EngineRules();
-console.log("veces 2");
+//se resetea por el serve
 
 
 module.exports.loop = function () {
 
      ia.update();
 
-
-
-    let firstSpawn;
-    for(var name in Game.spawns){
-        if(firstSpawn == null)
-            firstSpawn = Game.spawns[name];
-    }
-
-    if(firstSpawn.room.memory != undefined) {
-        console.log("test " + firstSpawn.room.memory.stateIA.toString());
-    }
 
     //refactoring incidencias
     for(var name in Game.creeps){
