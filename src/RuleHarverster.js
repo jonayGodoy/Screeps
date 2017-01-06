@@ -9,7 +9,7 @@ var ruleHarverster = class RuleHarverster extends Rule_Abstract{
     }
 
     conditionRule(){
-        let harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == constants.HARVESTER());
+        let harvesters = callGame.findCreepersForRole(constants.HARVESTER());
 
         let conditionDone = (harvesters.length >= 2);
 

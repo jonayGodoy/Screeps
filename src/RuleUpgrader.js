@@ -11,7 +11,7 @@ var ruleUpgrader = class RuleUpgrader extends Rule_Abstract{
     }
 
     conditionRule(){
-        let upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.UPGRADER());
+        let upgraders = callGame.findCreepersForRole(constants.UPGRADER());
 
         let conditionDone = (upgraders.length >= 2);
 

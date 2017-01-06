@@ -34,6 +34,9 @@ class CallGame{
         /*let info =*/ this.getFirstSpawn().createCreep(structureCreeps[0], structureCreeps[1], {role: role});
     }
 
+    findCreepersForRole(role){
+        return _.filter(Game.creeps, (creep) => creep.memory.role == role);
+    }
 
 
 }
