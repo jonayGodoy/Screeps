@@ -1,5 +1,5 @@
 var CustomConsole = require('CustomConsole');
-var console = new CustomConsole();
+
 const constants = require('Constants');
 var EngineRules = require('EngineRules');
 var RoleManager = require('RoleManager');
