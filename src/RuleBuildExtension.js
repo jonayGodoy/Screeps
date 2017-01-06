@@ -43,14 +43,14 @@ var ruleBuildExtension = class RuleBuildExtension extends Rule_Abstract{
         let margin = 3;
         for (let i = margin; i < numberExtension + margin; i++) {
             //incidencia extraer un metodo
-            if (!this.existStructureExtension()) {
+            if (!this.existStructureExtension(room)) {
                 room.createConstructionSite(posFirstSpawn.x + i, posFirstSpawn.y, STRUCTURE_EXTENSION)
             }
 
         }
     };
 
-    existStructureExtension(){
+    existStructureExtension(room){
         let structureExtension = room.find(FIND_CONSTRUCTION_SITES, {
             filter: (structure) => {
                 return (structure.structureType == STRUCTURE_EXTENSION) &&
