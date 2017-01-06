@@ -3,6 +3,8 @@ class CallGame{
 
 
     constructor() {
+        this.firstSpawn = null;
+
         this.structureCreepsBasic = [[WORK, CARRY, MOVE], undefined];
 
         this.structureCreepsList = [];
@@ -14,12 +16,17 @@ class CallGame{
     }
 
     getFirstSpawn(){
-        var firstSpawn;
-        for(var name in Game.spawns){
-            if(firstSpawn == null)
+        if( this.firstSpawn == null || this.firstSpawn == undefined){
+            var firstSpawn;
+            for(var name in Game.spawns) {
                 firstSpawn = Game.spawns[name];
+                this.firstSpawn = firstSpawn;
+                return this.firstSpawn;
+            }
+        }else{
+                return this.firstSpawn;
         }
-        return firstSpawn;
+
     }
 
     createCreeper(role){

@@ -9,13 +9,6 @@ var ruleBuildExtension = class RuleBuildExtension extends Rule_Abstract{
     }
 
 
-    execute(){
-        if(!this.done){
-            this.done = this.behaviorRule();
-        }
-        return this.done;
-    }
-
     conditionRule(){
         //Game.spawns['Spawn1'].room.controller.activateSafeMode();
         var firstSpawn;
