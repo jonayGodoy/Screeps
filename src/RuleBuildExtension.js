@@ -20,7 +20,7 @@ var ruleBuildExtension = class RuleBuildExtension{
 
         let done = false;
         if(levelRoom == 2) {
-            firstSpawn.saying("execute "+"RuleBuildExtension");
+            firstSpawn.say("execute "+"RuleBuildExtension");
             let numberSiteExtensions =  room.find(FIND_CONSTRUCTION_SITES, {
                 filter: (structure) => {
                     return (structure.structureType == STRUCTURE_EXTENSION );

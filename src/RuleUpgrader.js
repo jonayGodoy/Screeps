@@ -13,7 +13,7 @@ var ruleUpgrader = class RuleUpgrader{
                 firstSpawn = Game.spawns[name];
             }
 
-            firstSpawn.saying("execute "+"RuleUpgrader");
+            firstSpawn.say("execute "+"RuleUpgrader");
 
             let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.UPGRADER()});
             done = false;
