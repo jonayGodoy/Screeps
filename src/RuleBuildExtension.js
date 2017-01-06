@@ -11,7 +11,7 @@ var ruleBuildExtension = class RuleBuildExtension extends Rule_Abstract{
 
     conditionRule(){
         //Game.spawns['Spawn1'].room.controller.activateSafeMode();
-        let room = callGame.getFirstRoom();
+        let room = callGame.getFirstSpawn().room;
         let levelRoom = room.controller.level;
         let numberSiteExtensions =   this.numberSitesExtensions(room);
         let builders = callGame.findCreepersForRole(constants.BUILDER());
@@ -23,7 +23,7 @@ var ruleBuildExtension = class RuleBuildExtension extends Rule_Abstract{
 
 
     behaviorRule() {
-        var firstSpawn = callGame.getFirstSpawn();
+        let firstSpawn = callGame.getFirstSpawn();
         let room = firstSpawn.room;
         let numberSiteExtensions = this.numberSitesExtensions(room);
 
@@ -43,14 +43,14 @@ var ruleBuildExtension = class RuleBuildExtension extends Rule_Abstract{
         let margin = 3;
         for (let i = margin; i < numberExtension + margin; i++) {
             //incidencia extraer un metodo
-            if (!this.existStructureExtension(room)) {
+            if (!this.existStructureExtension(posFirstSpawn,room)) {
                 room.createConstructionSite(posFirstSpawn.x + i, posFirstSpawn.y, STRUCTURE_EXTENSION)
             }
 
         }
     };
 
-    existStructureExtension(room){
+    existStructureExtension(posFirstSpawn,room){
         let structureExtension = room.find(FIND_CONSTRUCTION_SITES, {
             filter: (structure) => {
                 return (structure.structureType == STRUCTURE_EXTENSION) &&

@@ -29,11 +29,6 @@ class CallGame{
 
     }
 
-    getFirstRoom(){
-        return this.firstSpawn.room;
-    }
-
-
 
     createCreeper(role){
         let structureCreeps = this.structureCreepsList[role];
