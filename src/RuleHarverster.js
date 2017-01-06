@@ -1,35 +1,12 @@
 const constants = require('Constants');
+var Rule_Abstract = require("Rule_Abstract");
 
-var ruleHarverster = class RuleHarverster{
+var ruleHarverster = class RuleHarverster extends Rule_Abstract{
 
     constructor() {
-        this.nameRule = "RuleHarverster";
-        this.done = false;
+        super("RuleHarverster");
     }
 
-    getNameRule(){
-        return this.nameRule;
-    }
-
-
-    setDone(done){
-        this.done = done;
-    }
-
-    execute(){
-        if(!this.done){
-            this.done = this.conditionRule();
-
-            if (this.done) {
-                return this.done;
-            } else {
-                this.behaviorRule();
-            }
-
-
-        }
-        return this.done;
-    }
 
 
     conditionRule(){
@@ -48,7 +25,6 @@ var ruleHarverster = class RuleHarverster{
             if (firstSpawn == null)
                 firstSpawn = Game.spawns[name];
         }
-
 
          var info = firstSpawn.createCreep([WORK, CARRY, MOVE], undefined, {role: constants.HARVESTER()});
 
