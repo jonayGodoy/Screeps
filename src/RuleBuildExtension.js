@@ -28,7 +28,7 @@ var ruleBuildExtension = class RuleBuildExtension extends Rule_Abstract{
                 return (structure.structureType == STRUCTURE_EXTENSION );
             }
         }).length;
-        console.log("number extenions"+numberSiteExtensions);
+
 
         let builders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.BUILDER());
 

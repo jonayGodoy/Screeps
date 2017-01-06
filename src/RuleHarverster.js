@@ -21,14 +21,7 @@ var ruleHarverster = class RuleHarverster extends Rule_Abstract{
 
 
     behaviorRule(){
-        var firstSpawn;
-        for (var name in Game.spawns) {
-            if (firstSpawn == null)
-                firstSpawn = Game.spawns[name];
-        }
-
-         var info = firstSpawn.createCreep([WORK, CARRY, MOVE], undefined, {role: constants.HARVESTER()});
-
+         var info = callGame.createCreeper(constants.HARVESTER());
     }
 }
 module.exports = ruleHarverster;
