@@ -11,6 +11,14 @@ var ruleHarverster = class RuleHarverster{
         return this.nameRule;
     }
 
+    isDone(){
+        return this.done
+    }
+
+    setDone(done){
+        this.done = done;
+    }
+
     execute(){
         let harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == constants.HARVESTER());
 

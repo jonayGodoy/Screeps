@@ -13,6 +13,14 @@ var ruleUpgrader = class RuleUpgrader{
         return this.nameRule;
     }
 
+    isDone(){
+        return this.done
+    }
+
+    setDone(done){
+        this.done = done;
+    }
+
     execute(){
         let upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.UPGRADER());
         let done = false;

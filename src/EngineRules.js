@@ -54,7 +54,7 @@ var engineRules = class EngineRules{
         if (firstSpawn.room.memory.stateIA != null && firstSpawn.room.memory.stateIA != undefined) {
             for (var number in  this.rulesList) {
                 let rule = this.rulesList[number];
-                rule.done = firstSpawn.room.memory.stateIA[number].done
+                rule.setDone(firstSpawn.room.memory.stateIA[number].done);
             }
         }
     }
