@@ -38,7 +38,7 @@ var ruleUpgrader = class RuleUpgrader{
 
 
         if (conditionDone) {
-            this.done = conditionDone;
+            return conditionDone;
         } else {
             let info = firstSpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: constants.UPGRADER()});
         }
