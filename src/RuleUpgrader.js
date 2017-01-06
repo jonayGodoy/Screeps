@@ -6,6 +6,7 @@ var ruleUpgrader = class RuleUpgrader{
 
     constructor() {
         this.nameRule = "RuleUpgrader";
+        this.done = false;
     }
 
     getNameRule(){

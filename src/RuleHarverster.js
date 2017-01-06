@@ -4,6 +4,7 @@ var ruleHarverster = class RuleHarverster{
 
     constructor() {
         this.nameRule = "RuleHarverster";
+        this.done = false;
     }
 
     getNameRule(){
