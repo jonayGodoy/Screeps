@@ -2,7 +2,7 @@
 const constants = require('Constants');
 
 var ruleBuildExtension = class RuleBuildExtension{
-
+    //status done
     constructor() {
         this.nameRule = "RuleBuildExtension";
     }
@@ -28,7 +28,10 @@ var ruleBuildExtension = class RuleBuildExtension{
      //   console.log("level "+ levelRoom);
 
         let done = false;
-        if(levelRoom == 2) {
+        let builders = _.filter(Game.creeps, (creep) => creep.memory.role == constants.BUILDER());
+
+
+        if((levelRoom == 2) && (builders.length == 2)  ) {
           //  firstSpawn.say("execute "+"RuleBuildExtension");
             let numberSiteExtensions =  room.find(FIND_CONSTRUCTION_SITES, {
                 filter: (structure) => {
