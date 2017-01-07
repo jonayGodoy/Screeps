@@ -1,10 +1,9 @@
-const constants = require('Constants');
 var RuleHarverster = require('./RuleHarverster');
 var RuleUpgrader = require('./RuleUpgrader');
 var RuleBuildExtension = require('./RuleBuildExtension');
+var callGame = require('CallGame');
 
-
-var engineRules = class EngineRules{
+module.exports = class EngineRules{
     constructor() {
         //incidencia ordenadas por prioridad
         this.rulesList = [
@@ -42,22 +41,12 @@ var engineRules = class EngineRules{
     }
 
     saveRuleList() {
-        var firstSpawn;
-        for (var name in Game.spawns) {
-            if (firstSpawn == null)
-                firstSpawn = Game.spawns[name];
-        }
         //only save fields
-        firstSpawn.room.memory.stateIA = this.rulesList;
+        callGame.getFirstSpawn().room.memory.stateIA = this.rulesList;
     }
 
     loadRuleList() {
-        let firstSpawn;
-        for(var name in Game.spawns){
-            if(firstSpawn == null)
-                firstSpawn = Game.spawns[name];
-        }
-
+        let firstSpawn = callGame.getFirstSpawn();
 
         if (firstSpawn.room.memory.stateIA != null && firstSpawn.room.memory.stateIA != undefined) {
             for (var number in  this.rulesList) {
@@ -70,4 +59,3 @@ var engineRules = class EngineRules{
 
 }
 
-module.exports = engineRules;
