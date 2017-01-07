@@ -1,5 +1,6 @@
 incidences
 
++cuando empiezas y aun no has colocado el spawn aparece un error por consola
 +quitar los warning
 +rules solo trabajan para el primerSpawn(rule o roleSpawn)
 + añadir test
