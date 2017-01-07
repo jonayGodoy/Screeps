@@ -3,7 +3,7 @@ module.exports = class RoleMonitor{
         this.message;
     }
 
-    run = function(creep){
+    run(creep){
         creep.moveTo(sources[0]);
         creep.say(this.message);
     }
