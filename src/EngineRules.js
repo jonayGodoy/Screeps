@@ -1,12 +1,12 @@
 var RuleHarverster = require('./RuleHarverster');
 var RuleUpgrader = require('./RuleUpgrader');
 var RuleBuildExtension = require('./RuleBuildExtension');
+var RoleMonitor = require('RoleMonitor');
 var callGame = require('CallGame');
 
 module.exports = class EngineRules{
     constructor() {
-        //incidencia ordenadas por prioridad
-        this.rulesList = [
+        this.rulesListSortedByPriority = [
             new RuleHarverster(),
             new RuleUpgrader(),
             new RuleBuildExtension()
@@ -25,8 +25,8 @@ module.exports = class EngineRules{
 
     updateRuleListForPriority() {
         let done = true;
-        for (var number in  this.rulesList) {
-            let rule = this.rulesList[number];
+        for (var number in  this.rulesListSortedByPriority) {
+            let rule = this.rulesListSortedByPriority[number];
             if (done) {
                 done = rule.execute();
                 if (!done) {
@@ -37,20 +37,21 @@ module.exports = class EngineRules{
     }
 
     printState(rule) {
-        console.log("executing rule: " + rule.getNameRule());
+      //  console.log("executing rule: " + rule.getNameRule());
+        RoleMonitor.creepMonitorPrint("executing rule: " + rule.getNameRule())
     }
 
     saveRuleList() {
         //only save fields
-        callGame.getFirstSpawn().room.memory.stateIA = this.rulesList;
+        callGame.getFirstSpawn().room.memory.stateIA = this.rulesListSortedByPriority;
     }
 
     loadRuleList() {
         let firstSpawn = callGame.getFirstSpawn();
 
         if (firstSpawn.room.memory.stateIA != null && firstSpawn.room.memory.stateIA != undefined) {
-            for (var number in  this.rulesList) {
-                let rule = this.rulesList[number];
+            for (var number in  this.rulesListSortedByPriority) {
+                let rule = this.rulesListSortedByPriority[number];
                 rule.setDone(firstSpawn.room.memory.stateIA[number].done);
             }
         }

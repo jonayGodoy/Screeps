@@ -6,6 +6,7 @@
          this.harvester = "harvester";
          this.upgrader = "upgrader";
          this.builder = "builder";
+         this.monitor = "monitor";
      }
 
 
@@ -22,6 +23,9 @@
          return this.builder;
      }
 
+     MONITOR(){
+         return this.monitor;
+     }
 };
 
 module.exports  = new Constants();

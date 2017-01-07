@@ -1,6 +1,9 @@
 incidences
 
 +cuando empiezas y aun no has colocado el spawn aparece un error por consola
-+quitar los warning
++quedan 5 warning dificiles de quitar
 +rules solo trabajan para el primerSpawn(rule o roleSpawn)
 + añadir test
++ mira haber si puedes crear un warning para static
++usa el enum o mira como crear mejor las constantes en javascript
++como poner variable privadas en javascript
