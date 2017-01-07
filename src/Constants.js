@@ -6,7 +6,7 @@
          this.harvester = "harvester";
          this.upgrader = "upgrader";
          this.builder = "builder";
-         this.monitor = "";
+         this.monitor = "monitor";
      }
 
      HARVESTER() {
