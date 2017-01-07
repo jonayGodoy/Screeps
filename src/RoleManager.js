@@ -16,7 +16,7 @@ module.exports = class RoleManager{
         console.log(roleMonitor.run);
         console.log(roleUpgrader.run);
         this.roleList[constants.MONITOR()] = roleMonitor;
-        console.log(this.roleList[constants.MONITOR().run]);
+        console.log(this.roleList[constants.MONITOR().message]);
 
 
     }
