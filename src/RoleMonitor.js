@@ -4,7 +4,6 @@ module.exports = class RoleMonitor{
     }
 
     run(creep){
-        creep.moveTo(sources[0]);
         creep.say(this.message);
     }
 
