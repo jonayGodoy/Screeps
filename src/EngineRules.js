@@ -20,6 +20,7 @@ module.exports = class EngineRules{
     update(){
         this.updateRuleListForPriority();
         this.saveRuleList();
+
     }
 
     updateRuleListForPriority() {
@@ -37,7 +38,6 @@ module.exports = class EngineRules{
 
     printState(rule) {
       //  console.log("executing rule: " + rule.getNameRule());
-        RoleMonitor.creepMonitorPrint("executing rule: " + rule.getNameRule())
     }
 
     saveRuleList() {
@@ -55,6 +55,7 @@ module.exports = class EngineRules{
             }
         }
     }
+
 
 };
 
