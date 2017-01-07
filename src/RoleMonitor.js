@@ -8,6 +8,7 @@ module.exports = class RoleMonitor{
     }
 
     static creepMonitorPrint(message){
+        console.log("call engine");
         this.message = "IA MONITOR: \n"+message;
     }
 
