@@ -2,7 +2,7 @@ const constants = require('Constants');
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
-var RoleMonitor = require('role.builder');
+var RoleMonitor = require('RoleMonitor');
 
 module.exports = class RoleManager{
     constructor(){

@@ -6,14 +6,12 @@
          this.harvester = "harvester";
          this.upgrader = "upgrader";
          this.builder = "builder";
-         this.monitor = "monitor";
+         this.monitor = "";
      }
-
 
      HARVESTER() {
          return this.harvester;
      }
-
 
      UPGRADER() {
          return this.upgrader;
