@@ -22,6 +22,8 @@ module.exports = class RoleManager{
     }
 
     runCreeps(creep){
+
+        console.log("message "+this.roleList[constants.MONITOR()].run);
         this.roleList[creep.memory.role].run(creep);
     }
 
