@@ -2,7 +2,7 @@ const constants = require('Constants');
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
-
+var RoleMonitor = require('role.builder');
 
 module.exports = class RoleManager{
     constructor(){
@@ -10,6 +10,7 @@ module.exports = class RoleManager{
         this.roleList[constants.HARVESTER()] = roleHarvester;
         this.roleList[constants.UPGRADER()] = roleUpgrader;
         this.roleList[constants.BUILDER()] = roleBuilder;
+        this.roleList[constants.MONITOR()] = new RoleMonitor();
     }
 
     runCreeps(creep){
