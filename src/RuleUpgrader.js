@@ -4,7 +4,7 @@ var callGame = require('CallGame');
 var Rule_Abstract = require("Rule_Abstract");
 
 
-var ruleUpgrader = class RuleUpgrader extends Rule_Abstract{
+module.exports  = class RuleUpgrader extends Rule_Abstract{
 
     constructor() {
         super("RuleUpgrader");
@@ -20,5 +20,4 @@ var ruleUpgrader = class RuleUpgrader extends Rule_Abstract{
     behaviorRule() {
         callGame.createCreeper(constants.UPGRADER());
     }
-}
-module.exports = ruleUpgrader;
+};

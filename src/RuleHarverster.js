@@ -2,7 +2,7 @@ const constants = require('Constants');
 var callGame = require('CallGame');
 var Rule_Abstract = require("Rule_Abstract");
 
-var ruleHarverster = class RuleHarverster extends Rule_Abstract{
+module.exports = class RuleHarverster extends Rule_Abstract{
 
     constructor() {
         super("RuleHarverster");
@@ -17,5 +17,4 @@ var ruleHarverster = class RuleHarverster extends Rule_Abstract{
     behaviorRule(){
          callGame.createCreeper(constants.HARVESTER());
     }
-}
-module.exports = ruleHarverster;
+};

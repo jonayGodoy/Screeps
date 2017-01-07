@@ -1,4 +1,4 @@
-var rule_abstract = class Rule_Abstract{
+module.exports = class Rule_Abstract{
 
     constructor(nameRule) {
         this.nameRule = nameRule;
@@ -36,4 +36,4 @@ var rule_abstract = class Rule_Abstract{
       //override
     }
 }
-module.exports = rule_abstract;
+

@@ -3,7 +3,7 @@ const constants = require('Constants');
 var callGame = require('CallGame');
 var Rule_Abstract = require("Rule_Abstract");
 
-var ruleBuildExtension = class RuleBuildExtension extends Rule_Abstract{
+module.exports = class RuleBuildExtension extends Rule_Abstract{
     //status done
     constructor() {
         super("RuleBuildExtension");
@@ -69,5 +69,5 @@ var ruleBuildExtension = class RuleBuildExtension extends Rule_Abstract{
             }
         }).length;
     }
-}
-module.exports = ruleBuildExtension;
+};
+
