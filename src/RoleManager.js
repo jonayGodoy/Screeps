@@ -12,11 +12,7 @@ module.exports = class RoleManager{
         this.roleList[constants.BUILDER()] = roleBuilder;
 
 
-        var roleMonitor =  new RoleMonitor();
-        console.log(roleMonitor.run);
-        console.log(roleUpgrader.run);
-        this.roleList[constants.MONITOR()] = roleMonitor;
-        console.log("message "+this.roleList[constants.MONITOR()].run);
+        this.roleList[constants.MONITOR()] =  new RoleMonitor();
 
 
     }

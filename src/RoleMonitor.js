@@ -4,7 +4,7 @@ module.exports = class RoleMonitor{
     }
 
     run(creep){
-        creep.say("IA MONITOR: \nddd");
+        creep.say("IA MONITOR: ddd");
     }
 
     static creepMonitorPrint(message){
