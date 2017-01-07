@@ -20,7 +20,6 @@ module.exports = class EngineRules{
     update(){
         this.updateRuleListForPriority();
         this.saveRuleList();
-
     }
 
     updateRuleListForPriority() {
