@@ -10,7 +10,10 @@ module.exports = class RoleManager{
         this.roleList[constants.HARVESTER()] = roleHarvester;
         this.roleList[constants.UPGRADER()] = roleUpgrader;
         this.roleList[constants.BUILDER()] = roleBuilder;
-        this.roleList[constants.MONITOR()] = new RoleMonitor();
+
+        var roleMonitor =  new RoleMonitor()
+        roleMonitor.run(undefined);
+        this.roleList[constants.MONITOR()] = roleMonitor;
     }
 
     runCreeps(creep){
