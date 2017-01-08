@@ -19,6 +19,6 @@ module.exports  = class RuleCreateCreeps extends Rule_Abstract{
     }
 
     behaviorRule() {
-        callGame.createCreeper(constants.UPGRADER());
+        callGame.createCreeper(this.role);
     }
 };
