@@ -1,19 +1,20 @@
 module.exports = class RoleMonitor{
     constructor() {
         this.message = [""];
+        this.cont = 0;
     }
 
     run(creep){
 
-        let cont =0;
+
 
         for(var number in this.message){
             if(creep.ticksToLive % 15 == 0) {
-                creep.say(this.message[cont]);
-                if(cont < message.length){
-                    cont = cont +1;
+                creep.say(this.message[this.cont]);
+                if(this.cont < message.length){
+                    this.cont = cont +1;
                 }else{
-                    cont = 0;
+                    this.cont = 0;
                 }
             }
         }
