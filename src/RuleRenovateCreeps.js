@@ -7,6 +7,7 @@ var Rule_Abstract = require("RuleActive_Abstract");
 module.exports  = class RuleRenovateCreeps extends Rule_Abstract{
 
     constructor() {
+        console.log("constructor pasivo");
         super("RenovateCreeps ");
         this.limitTicks = 200;
         this.creepOld = undefined;
