@@ -9,7 +9,8 @@ class ConstantsGame {
     }
 
     getCostPartCreep(part){
-        console.log(this.listPartsCreep[part]);
+
+        console.log(part);
        return (this.listPartsCreep[part])[0];
     }
 
