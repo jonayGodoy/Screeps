@@ -15,6 +15,7 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
     conditionRule(){
         var listRoleSorterForPriority = [constants.HARVESTER(),constants.MONITOR(),constants.UPGRADER(),constants.BUILDER()];
 
+        console.log("creep "+this.creepOld);
         if(this.creepOld != undefined) {
             console.log("llama rule pasive");
             for (var index in listRoleSorterForPriority) {
