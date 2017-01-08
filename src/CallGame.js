@@ -23,8 +23,8 @@ class CallGame{
 
     calculateCostCreep(partsCreep){
         let costTotal = 0;
-        for(var part in partsCreep){
-            costTotal = costTotal + constantsGame.getCostPartCreep(part);
+        for(var index in partsCreep){
+            costTotal = costTotal + constantsGame.getCostPartCreep(partsCreep[index]);
         }
 
         return costTotal;
