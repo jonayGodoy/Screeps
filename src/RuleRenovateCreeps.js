@@ -1,13 +1,12 @@
 const constants = require('Constants');
 const constantsGame = require('ConstantsGame');
 var callGame = require('CallGame');
-var Rule_Abstract = require("RuleActive_Abstract");
+var RulePasive_Abstract = require("RulePasive_Abstract");
 
 
-module.exports  = class RuleRenovateCreeps extends Rule_Abstract{
+module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
 
     constructor() {
-        console.log("constructor pasivo");
         super("RenovateCreeps ");
         this.limitTicks = 200;
         this.creepOld = undefined;
