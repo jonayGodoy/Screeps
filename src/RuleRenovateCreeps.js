@@ -13,6 +13,7 @@ module.exports  = class RuleRenovateCreeps extends Rule_Abstract{
     }
 
     conditionRule(){
+        console.log("llama rule pasive");
         var listRoleSorterForPriority = [constants.HARVESTER(),constants.MONITOR(),constants.UPGRADER(),constants.BUILDER()];
 
         if(this.creepOld != undefined) {
