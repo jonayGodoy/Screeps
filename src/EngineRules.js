@@ -38,7 +38,7 @@ module.exports = class EngineRules{
 
     printState(rule) {
       //  console.log("executing rule: " + rule.getNameRule());
-        RoleMonitor.creepMonitorPrint("executing rule: " + rule.getNameRule());
+        RoleMonitor.creepMonitorPrint(rule.getNameRule());
     }
 
     saveRuleList() {

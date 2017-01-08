@@ -4,12 +4,12 @@ module.exports = class RoleMonitor{
     }
 
     run(creep){
-        creep.say("IA MONITOR: ddd");
+        creep.say("message");
     }
 
     static creepMonitorPrint(message){
         console.log("call engine");
-        this.message = "IA MONITOR: \n"+message;
+        this.message = message;
     }
 
 };
