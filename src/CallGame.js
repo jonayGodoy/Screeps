@@ -58,8 +58,9 @@ class CallGame{
     cleanMemoryCreep() {
         console.log("memoria creeps "+Memory.creeps);
         for (var name in Memory.creeps) {
+            console.log("creeps  en la memoria "+name);
             if (!Game.creeps[name]) {
-                console.log("creeps  en la memoria "+name);
+                console.log("creeps Muertos en la memoria "+name);
                 delete Memory.creeps[name];
             }
         }
