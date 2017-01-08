@@ -4,13 +4,13 @@ module.exports = class RoleMonitor{
     }
 
     run(creep){
-        for(var number in message){
+        for(var number in this.message){
             creep.say(this.message[number]);
         }
     }
 
     creepMonitorPrint(message){
-        this.message = message;
+        this.message = message.split(" ");
     }
 
 };
