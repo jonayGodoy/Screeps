@@ -55,7 +55,7 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
     }
 
     isCreepOld(creep){
-        if(creep.ticksToLive <= this.limitTicks()){
+        if(creep.ticksToLive <= this.limitTicks){
             return true;
         }else{
             return false;
