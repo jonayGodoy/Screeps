@@ -6,13 +6,12 @@ module.exports = class RoleMonitor{
 
     run(creep){
         for(var number in this.message){
-             SetTimeout(this.creepDelaySay,1000,number);
+            if(Game.time %5 ==0){
+                creep.say(this.message[number]);
+            }
         }
     }
 
-    creepDelaySay(number){
-        creep.say(this.message[number]);
-    }
 
     creepMonitorPrint(message){
         this.message = message.split(" ");
