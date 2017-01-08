@@ -3,7 +3,6 @@ module.exports = class RoleMonitor{
         this.message = [""];
     }
 
-
     run(creep){
         for(var number in this.message){
             this.sleep(2000);
