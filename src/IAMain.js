@@ -1,3 +1,4 @@
+const constants = require('Constants');
 var EngineRules = require('EngineRules');
 var RuleCreateCreeps = require('./RuleCreateCreeps');
 var RuleBuildExtension = require('./RuleBuildExtension')
