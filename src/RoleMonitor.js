@@ -5,8 +5,8 @@ module.exports = class RoleMonitor{
 
     run(creep){
         for(var number in this.message){
-            if(creep.ticksToLive % 10)
-            creep.say(number);
+            if(creep.ticksToLive % 15)
+            creep.say(this.message[number]);
         }
     }
 
