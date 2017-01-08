@@ -9,7 +9,7 @@ module.exports = class EngineRules{
         this.rulesListActivesSortedByPriority = rulesListActivesSortedByPriority;
         this.rulesListPasivesSortedByPriority = rulesListPasivesSortedByPriority;
 
-        this.loadRuleList(rulesListActivesSortedByPriority);
+        this.loadRuleListActives(rulesListActivesSortedByPriority);
 
     }
 
@@ -57,7 +57,7 @@ module.exports = class EngineRules{
 
 
 
-    loadRuleList(ruleList) {
+    loadRuleListActives(ruleList) {
         let firstSpawn = callGame.getFirstSpawn();
 
         if (firstSpawn.room.memory.stateIAActive != undefined ) {
