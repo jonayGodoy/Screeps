@@ -6,7 +6,7 @@ var Rule_Abstract = require("Rule_Abstract");
 module.exports = class RuleBuildExtension extends Rule_Abstract{
     //status done
     constructor() {
-        super("RuleBuildExtension");
+        super("BuildExtension");
     }
 
     conditionRule(){

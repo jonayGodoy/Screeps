@@ -6,7 +6,7 @@ var Rule_Abstract = require("Rule_Abstract");
 module.exports  = class RuleCreateCreeps extends Rule_Abstract{
 
     constructor(quantity, role) {
-        super("RuleCreateCreep "+role);
+        super("CreateCreep "+role);
         this.quantity = quantity;
         this.role = role;
     }
