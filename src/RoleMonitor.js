@@ -1,10 +1,11 @@
 module.exports = class RoleMonitor{
     constructor() {
         this.message = "";
+
     }
 
     run(creep){
-        creep.say("message");
+        creep.say(this.message);
     }
 
     static creepMonitorPrint(message){
