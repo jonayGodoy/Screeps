@@ -7,19 +7,6 @@ module.exports = class RoleMonitor{
     run(creep){
         let delayTicksCreeps = 10;
         this.setTickOutSay(creep,delayTicksCreeps);
-        /*
-            if(creep.ticksToLive % delayTicksCreeps == 0) {
-                if(this.cont < this.message.length){
-                    creep.say(this.message[this.cont]);
-                    this.cont = this.cont +1;
-                }else{
-                    this.cont = 0;
-                }
-
-
-            }
-            */
-
     }
 
     setTickOutSay(creep, delayTicksCreeps){
