@@ -6,21 +6,13 @@ Backlog------------------
 +monitorizar energia de la habitación
 +añadir a la ruleCreateCreeps un contructor altenativo donde puedes elegir nivel
 
-+arregla el tema de la memoria de los creeps
-    for(var name in Memory.creeps) {
-            if(!Game.creeps[name]) {
-                delete Memory.creeps[name];
-                console.log('Clearing non-existing creep memory:', name);
-            }
-        }
 
-
+refactor ruleBuildExtension
 Sprint------------
 
 
 +refactor roles
 +que los creeps busquen nuevos sitios con energia
 +los creepes de mueren de viejos remplazarlos
-+crear celulas más potentes
-+añadir el siguiente comportamiento
++crear celulas más potentes y que createcreeper de callGame, como las reglas rulerenovate y RulecreateCreeps se adapten a el
 +añadir test

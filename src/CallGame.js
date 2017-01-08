@@ -39,7 +39,7 @@ class CallGame{
                 return this.firstSpawn;
             }
         }else{
-                return this.firstSpawn;
+            return this.firstSpawn;
         }
 
     }
@@ -47,7 +47,20 @@ class CallGame{
 
     createCreeper(role){
         let structureCreeps = this.structureCreepsList[role];
-        /*let info =*/ this.getFirstSpawn().createCreep(structureCreeps[0], structureCreeps[1], {role: role});
+        return this.getFirstSpawn().createCreep(structureCreeps[0], structureCreeps[1], {role: role});
+    }
+
+    deleteCreep(creep){
+        creep.suicide();
+        this.cleanMemoryCreep();
+    }
+
+    cleanMemoryCreep() {
+        for (var name in Memory.creeps) {
+            if (!Game.creeps[name]) {
+                delete Memory.creeps[name];
+            }
+        }
     }
 
     findCreepersForRole(role){
