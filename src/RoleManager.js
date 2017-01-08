@@ -4,6 +4,7 @@ var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var RoleMonitor = require('RoleMonitor');
 
+
 class RoleManager{
     constructor(){
         this.roleList = [];
