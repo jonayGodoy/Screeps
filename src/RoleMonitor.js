@@ -1,4 +1,4 @@
-module.exports = class RoleMonitor{
+class RoleMonitor{
     constructor() {
         this.message = "";
 
@@ -14,3 +14,4 @@ module.exports = class RoleMonitor{
     }
 
 };
+ module.exports = new RoleMonitor();
