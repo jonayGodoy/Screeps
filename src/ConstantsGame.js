@@ -12,11 +12,11 @@ class ConstantsGame {
        return (this.listPartsCreep[part])[0];
     }
 
-    getInfoPratCreep(part){
+    getInfoPartCreep(part){
         return (this.listPartsCreep[part])[1];
     }
 
 
 };
 
-module.exports  = new Constants();
+module.exports  = new ConstantsGame();

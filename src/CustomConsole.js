@@ -1,9 +1,5 @@
 var callGame = require('CallGame');
 class CustomConsole{
-      print(){
-       return "prueba aaaaaaaaaaaa";
-    }
-
     printCostPart(partsCreep){
         let stringListParts = "the parts are "
         for(var part in partsCreep){
