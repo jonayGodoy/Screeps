@@ -2,6 +2,7 @@ const constants = require('Constants');
 var RuleHarverster = require('./RuleHarverster');
 var RuleUpgrader = require('./RuleUpgrader');
 var RuleBuildExtension = require('./RuleBuildExtension');
+var RuleMonitor = require('./RuleMonitor');
 var roleManager = require('RoleManager');
 var callGame = require('CallGame');
 
