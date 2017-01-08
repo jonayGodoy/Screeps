@@ -20,13 +20,13 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
             for (var index in listRoleSorterForPriority) {
                 let listCreep = callGame.findCreepersForRole(listRoleSorterForPriority[index]);
                 if (this.existOldCreep(listCreep)) {
-                    return true;
+                    return false;
                 }
             }
         }else{
             return false;
         }
-        return false;
+        return true;
     }
 
 
