@@ -9,9 +9,9 @@ module.exports = class RulePasive_Abstract{
     }
 
     execute(){
-            if (!this.conditionRule()) {
-                this.behaviorRule();
-            }
+        if (!this.conditionRule()) {
+            this.behaviorRule();
+        }
 
         return !this.conditionRule();
     }
