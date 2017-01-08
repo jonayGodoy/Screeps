@@ -16,7 +16,4 @@ class CustomConsole{
 
 }
 
-
-
-
 module.exports = new CustomConsole();
