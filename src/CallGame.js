@@ -17,7 +17,7 @@ class CallGame{
     }
 
     getCreeps(){
-
+        return Game.creeps;
     }
 
     getFirstSpawn(){
