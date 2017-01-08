@@ -1,4 +1,5 @@
 const constants = require('Constants');
+const constantsGame = require('ConstantsGame');
 class CallGame{
 
 
@@ -18,6 +19,15 @@ class CallGame{
 
     getCreeps(){
         return Game.creeps;
+    }
+
+    calculateCostCreep(partsCreep){
+        let costTotal = 0;
+        for(var part in partsCreep){
+            costTotal = constantsGame.getCostPartCreep();
+        }
+
+        return costTotal;
     }
 
     getFirstSpawn(){

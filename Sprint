@@ -1,9 +1,26 @@
-Sprint
-
-
+Backlog------------------
++que si los creepes tiene energia no obstruyan a los que no tienen
 +crear consola
-+los creepes de mueren de viejos remplazarlos
++mirar si puedes acceder a archivos
++mirar si puedes ordenar por carpetas
++monitorizar energia de la habitación
++añadir a la ruleCreateCreeps un contructor altenativo donde puedes elegir nivel
+
++arregla el tema de la memoria de los creeps
+    for(var name in Memory.creeps) {
+            if(!Game.creeps[name]) {
+                delete Memory.creeps[name];
+                console.log('Clearing non-existing creep memory:', name);
+            }
+        }
+
+
+Sprint------------
+
++calcular coste de creeps
++refactor roles
 +que los creeps busquen nuevos sitios con energia
++los creepes de mueren de viejos remplazarlos
 +crear celulas más potentes
 +añadir el siguiente comportamiento
 +añadir test
