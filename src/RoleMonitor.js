@@ -20,10 +20,6 @@ module.exports = class RoleMonitor{
     }
 
 
-    creepDelaySay(creep,number){
-        console.log("funciona");
-    }
-
     creepMonitorPrint(message){
         this.message = message.split(" ");
     }
