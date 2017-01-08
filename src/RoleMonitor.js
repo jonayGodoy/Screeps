@@ -6,12 +6,15 @@ module.exports = class RoleMonitor{
 
     run(creep){
         for(var number in this.message){
-            console.log(creep.saying);
+            this.sleep(5000);
             creep.say(this.message[number]);
         }
     }
 
-
+    sleep(delay) {
+        var start = new Date().getTime();
+        while (new Date().getTime() < start + delay);
+    }
 
     creepDelaySay(creep,number){
         console.log("funciona");
