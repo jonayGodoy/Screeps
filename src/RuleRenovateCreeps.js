@@ -31,7 +31,7 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
 
 
     behaviorRule() {
-        console.log("llama rule behavior");
+      //  console.log("llama rule behavior");
         if(this.creepOld != undefined) {
             let result = callGame.createCreeper(this.creepOld.memory.role);
 
