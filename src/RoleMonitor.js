@@ -11,7 +11,6 @@ module.exports = class RoleMonitor{
     }
 
 
-
     creepDelaySay(creep,number){
         console.log("funciona");
     }
