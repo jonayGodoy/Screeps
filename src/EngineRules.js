@@ -3,13 +3,14 @@ var RuleHarverster = require('./RuleHarverster');
 var RuleUpgrader = require('./RuleUpgrader');
 var RuleBuildExtension = require('./RuleBuildExtension');
 var RuleMonitor = require('./RuleMonitor');
+var RuleCreateCreeps = require('./RuleCreateCreeps');
 var roleManager = require('RoleManager');
 var callGame = require('CallGame');
 
 module.exports = class EngineRules{
     constructor() {
         this.rulesListSortedByPriority = [
-            new RuleHarverster(),
+            new RuleCreateCreeps(2,constants.HARVESTER()),
             new RuleMonitor(),
             new RuleUpgrader(),
             new RuleBuildExtension()
