@@ -16,6 +16,10 @@ class CallGame{
 
     }
 
+    getCreeps(){
+
+    }
+
     getFirstSpawn(){
         if( this.firstSpawn == null || this.firstSpawn == undefined){
             var firstSpawn;
