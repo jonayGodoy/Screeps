@@ -5,8 +5,10 @@ module.exports = class RoleMonitor{
     }
 
     run(creep){
-        let delayTicks = 10;
-            if(creep.ticksToLive % delayTicks == 0) {
+        let delayTicksCreeps = 10;
+        this.setTickOut(creep,delayTicksCreeps,this.creepSaySlow,creep);
+        /*
+            if(creep.ticksToLive % delayTicksCreeps == 0) {
                 if(this.cont < this.message.length){
                     creep.say(this.message[this.cont]);
                     this.cont = this.cont +1;
@@ -16,6 +18,22 @@ module.exports = class RoleMonitor{
 
 
             }
+            */
+
+    }
+    creepSaySlow(creep){
+        if(this.cont < this.message.length){
+            creep.say(this.message[this.cont]);
+            this.cont = this.cont +1;
+        }else{
+            this.cont = 0;
+        }
+    }
+
+    setTickOut(creep,delayTicksCreeps,functionDelay,parameter){
+        if(creep.ticksToLive % delayTicksCreeps == 0) {
+            functionDelay(parameter);
+        }
 
     }
 
