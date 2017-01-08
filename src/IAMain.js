@@ -4,14 +4,16 @@ var RuleCreateCreeps = require('./RuleCreateCreeps');
 var RuleBuildExtension = require('./RuleBuildExtension')
 class IAMain {
     constructor() {
-        this.rulesListSortedByPriority = [
+        this.rulesListActivesSortedByPriority = [
             new RuleCreateCreeps(2,constants.HARVESTER()),
             new RuleCreateCreeps(1,constants.MONITOR()),
             new RuleCreateCreeps(2,constants.UPGRADER()),
             new RuleBuildExtension()
         ];
 
-        this.engineRules = new EngineRules(this.rulesListSortedByPriority);
+        this.rulesListPasiveSortedByPriority =[];
+
+        this.engineRules = new EngineRules(this.rulesListActivesSortedByPriority, this.rulesListPasiveSortedByPriority);
 
     }
 

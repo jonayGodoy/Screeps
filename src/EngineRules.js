@@ -5,26 +5,37 @@ var roleManager = require('RoleManager');
 var callGame = require('CallGame');
 
 module.exports = class EngineRules{
-    constructor(rulesListSortedByPriority) {
-        this.rulesListSortedByPriority = rulesListSortedByPriority;
-        this.loadRuleList();
+    constructor(rulesListActivesSortedByPriority,rulesListPasivesSortedByPriority) {
+        this.rulesListActivesSortedByPriority = rulesListActivesSortedByPriority;
+        this.rulesListPasivesSortedByPriority = rulesListPasivesSortedByPriority;
+
+        this.loadRuleList(rulesListActivesSortedByPriority);
+        this.loadRuleList(rulesListPasivesSortedByPriority);
     }
 
     updateRules(){
         this.updateRuleActiveListForPriority();
-        this.saveRuleList();
+        this.saveRuleListActive();
+        this.saveRuleListPasive();
     }
 
     updateRuleActiveListForPriority() {
         let done = true;
-        for (var number in  this.rulesListSortedByPriority) {
-            let rule = this.rulesListSortedByPriority[number];
+        for (var index in  this.rulesListActivesSortedByPriority) {
+            let rule = this.rulesListActivesSortedByPriority[index];
             if (done) {
                 done = rule.execute();
                 if (!done) {
                     this.printState(rule);
                 }
             }
+        }
+    }
+
+    updateRulePasiveListForPriority() {
+        for (var index in  this.rulesListPasivesSortedByPriority) {
+            let rule = this.rulesListPasivesSortedByPriority[index];
+            rule.execute();
         }
     }
 
@@ -38,18 +49,23 @@ module.exports = class EngineRules{
 
     }
 
-    saveRuleList() {
+    saveRuleListActive() {
         //only save fields
-        callGame.getFirstSpawn().room.memory.stateIA = this.rulesListSortedByPriority;
+        callGame.getFirstSpawn().room.memory.stateIAActive = this.rulesListActivesSortedByPriority;
     }
 
-    loadRuleList() {
+    saveRuleListPasive() {
+        //only save fields
+        callGame.getFirstSpawn().room.memory.stateIAAPasive = this.rulesListActivesSortedByPriority;
+    }
+
+    loadRuleList(ruleList) {
         let firstSpawn = callGame.getFirstSpawn();
 
-        if (firstSpawn.room.memory.stateIA != null && firstSpawn.room.memory.stateIA != undefined) {
-            for (var number in  this.rulesListSortedByPriority) {
-                let rule = this.rulesListSortedByPriority[number];
-                rule.setDone(firstSpawn.room.memory.stateIA[number].done);
+        if (firstSpawn.room.memory.stateIAActive != undefined || firstSpawn.room.memory.stateIAPasive) {
+            for (var index in  ruleList) {
+                let rule = ruleList[index];
+                rule.setDone(firstSpawn.room.memory.stateIAActive[index].done);
             }
         }
     }
