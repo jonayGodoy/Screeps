@@ -5,14 +5,15 @@ module.exports = class RoleMonitor{
     }
 
     run(creep){
-
-            if(creep.ticksToLive % 10 == 0) {
-                creep.say(this.message[this.cont]);
+        let delayTicks = 10;
+            if(creep.ticksToLive % delayTicks == 0) {
                 if(this.cont < this.message.length){
                     this.cont = this.cont +1;
                 }else{
                     this.cont = 0;
                 }
+
+                creep.say(this.message[this.cont]);
             }
 
     }
