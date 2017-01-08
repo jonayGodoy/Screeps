@@ -7,7 +7,6 @@ module.exports = class EngineRules{
     constructor(rulesListSortedByPriority) {
         this.rulesListSortedByPriority = rulesListSortedByPriority;
         this.loadRuleList();
-
     }
 
     updateRules(){
