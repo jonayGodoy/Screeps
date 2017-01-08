@@ -6,7 +6,7 @@ Backlog------------------
 +monitorizar energia de la habitación
 +añadir a la ruleCreateCreeps un contructor altenativo donde puedes elegir nivel
 +crear un mensaje de alerta si un pasivo para de ejecutarse
-
++ crear rol explorator
 refactor ruleBuildExtension
 Sprint------------
 
