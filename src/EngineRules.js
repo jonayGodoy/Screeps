@@ -4,7 +4,7 @@ var RuleBuildExtension = require('./RuleBuildExtension');
 var roleManager = require('RoleManager');
 var callGame = require('CallGame');
 
-module.exports = class EngineRules{
+ class EngineRules{
     constructor() {
         this.rulesListSortedByPriority = [
             new RuleCreateCreeps(2,constants.HARVESTER()),
@@ -17,7 +17,7 @@ module.exports = class EngineRules{
 
     }
 
-    update(){
+    updateRules(){
         this.updateRuleListForPriority();
         this.saveRuleList();
     }
@@ -36,7 +36,6 @@ module.exports = class EngineRules{
     }
 
     printState(rule) {
-      //  console.log("executing rule: " + rule.getNameRule());
         if(roleManager.getRole(constants.MONITOR()) != undefined){
             let message = "executing rule: " + rule.getNameRule();
             roleManager.getRole(constants.MONITOR()).creepMonitorPrint(message);
@@ -59,7 +58,7 @@ module.exports = class EngineRules{
             }
         }
     }
-
-
 };
+
+module.exports = new EngineRules();
 
