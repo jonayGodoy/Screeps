@@ -6,7 +6,7 @@ module.exports = class RoleMonitor{
 
     run(creep){
 
-            if(creep.ticksToLive % 15 == 0) {
+            if(creep.ticksToLive % 10 == 0) {
                 creep.say(this.message[this.cont]);
                 if(this.cont < this.message.length){
                     this.cont = this.cont +1;
