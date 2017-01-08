@@ -8,12 +8,13 @@ module.exports = class RoleMonitor{
         let delayTicks = 10;
             if(creep.ticksToLive % delayTicks == 0) {
                 if(this.cont < this.message.length){
+                    creep.say(this.message[this.cont]);
                     this.cont = this.cont +1;
                 }else{
                     this.cont = 0;
                 }
 
-                creep.say(this.message[this.cont]);
+
             }
 
     }
