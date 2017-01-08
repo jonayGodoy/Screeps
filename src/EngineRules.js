@@ -15,7 +15,7 @@ module.exports = class EngineRules{
 
     updateRules(){
         this.updateRuleActiveListForPriority();
-        updateRulePasiveListForPriority();
+        this.updateRulePasiveListForPriority();
         this.saveRuleListActive();
         this.saveRuleListPasive();
     }
