@@ -1,12 +1,13 @@
-var ia = require('EngineRules');
+var ia= require('IAMain');
 var roleManager = require('RoleManager');
 var callGame = require('CallGame');
+
 //se resetea por el serve
 
 
 module.exports.loop = function () {
 
-    ia.updateRules();
+    ia.updateIA();
 
     creepsUpdate();
 

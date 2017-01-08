@@ -1,18 +1,11 @@
 const constants = require('Constants');
-var RuleCreateCreeps = require('./RuleCreateCreeps');
-var RuleBuildExtension = require('./RuleBuildExtension');
+var Rule_Abstract = require('./Rule_Abstract');
 var roleManager = require('RoleManager');
 var callGame = require('CallGame');
 
- class EngineRules{
-    constructor() {
-        this.rulesListSortedByPriority = [
-            new RuleCreateCreeps(2,constants.HARVESTER()),
-            new RuleCreateCreeps(1,constants.MONITOR()),
-            new RuleCreateCreeps(2,constants.UPGRADER()),
-            new RuleBuildExtension()
-        ];
-
+module.exports = class EngineRules{
+    constructor(rulesListSortedByPriority) {
+        this.rulesListSortedByPriority = rulesListSortedByPriority;
         this.loadRuleList();
 
     }
@@ -58,7 +51,7 @@ var callGame = require('CallGame');
             }
         }
     }
-};
 
-module.exports = new EngineRules();
+
+};
 
