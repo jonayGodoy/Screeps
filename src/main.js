@@ -15,7 +15,7 @@ module.exports.loop = function () {
 
 function creepsUpdate() {
     for (var name in callGame.getCreeps()) {
-        var creep = callGame.getCreeps();
+        var creep = callGame.getCreeps()[name];
         roleManager.runCreeps(creep);
     }
 }
