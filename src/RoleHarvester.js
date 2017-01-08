@@ -1,7 +1,5 @@
-var roleHarvester = {
-
-    /** @param {Creep} creep aaaaaaaaaaaaaa**/
-    run: function(creep) {
+module.exports = class RoleHarvester{
+    run(creep){
         if(creep.carry.energy < creep.carryCapacity) {
             var sources = creep.room.find(FIND_SOURCES);
             if(creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
@@ -10,12 +8,12 @@ var roleHarvester = {
         }
         else {
             var targets = creep.room.find(FIND_STRUCTURES, {
-                    filter: (structure) => {
+                filter: (structure) => {
                     return (structure.structureType == STRUCTURE_EXTENSION ||
-                    structure.structureType == STRUCTURE_SPAWN ||
-                    structure.structureType == STRUCTURE_TOWER) && structure.energy < structure.energyCapacity;
-        }
-        });
+                        structure.structureType == STRUCTURE_SPAWN ||
+                        structure.structureType == STRUCTURE_TOWER) && structure.energy < structure.energyCapacity;
+                }
+            });
             if(targets.length > 0) {
                 if(creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(targets[0]);
@@ -23,6 +21,6 @@ var roleHarvester = {
             }
         }
     }
+
 };
-module.exports.roleHarvester = "funciona";
-module.exports = roleHarvester;
+

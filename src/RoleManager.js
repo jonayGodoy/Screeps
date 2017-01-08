@@ -1,5 +1,5 @@
 const constants = require('Constants');
-var roleHarvester = require('role.harvester');
+var RoleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var RoleMonitor = require('RoleMonitor');
@@ -7,7 +7,7 @@ var RoleMonitor = require('RoleMonitor');
 class RoleManager{
     constructor(){
         this.roleList = [];
-        this.roleList[constants.HARVESTER()] = roleHarvester;
+        this.roleList[constants.HARVESTER()] = new RoleHarvester();
         this.roleList[constants.UPGRADER()] = roleUpgrader;
         this.roleList[constants.BUILDER()] = roleBuilder;
         this.roleList[constants.MONITOR()] =  new RoleMonitor();
