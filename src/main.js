@@ -1,4 +1,4 @@
-var ia= require('IAMain');
+var ia = require('IAMain');
 var roleManager = require('RoleManager');
 var callGame = require('CallGame');
 

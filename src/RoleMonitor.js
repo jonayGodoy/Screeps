@@ -5,7 +5,7 @@ module.exports = class RoleMonitor{
     }
 
     run(creep){
-        let delayTicksCreeps = 10;
+        let delayTicksCreeps = 5;
         this.setTickOutSay(creep,delayTicksCreeps);
     }
 
