@@ -36,7 +36,7 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
             let result = callGame.createCreeper(this.creepOld.memory.role);
 
             if (this.isCreateCreep(result)) {
-                callGame.deleteCreep(this.creepOld);
+             /*  callGame.deleteCreep(this.creepOld);  */
                 this.creepOld = undefined;
             } else {
                 return constantsGame.getErrorCreateCreeps(result);

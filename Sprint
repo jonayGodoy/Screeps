@@ -12,6 +12,7 @@ Sprint------------
 
 
 +refactor roles
++reparar error no poder eleiminar creeps en memoria
 +que los creeps busquen nuevos sitios con energia
 +los creepes de mueren de viejos remplazarlos
 +crear celulas más potentes y que createcreeper de callGame, como las reglas rulerenovate y RulecreateCreeps se adapten a el
