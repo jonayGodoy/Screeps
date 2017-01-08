@@ -57,13 +57,13 @@ module.exports = class EngineRules{
 
     saveRuleListPasive() {
         //only save fields
-        callGame.getFirstSpawn().room.memory.stateIAAPasive = this.rulesListActivesSortedByPriority;
+        callGame.getFirstSpawn().room.memory.stateIAPasive = this.rulesListActivesSortedByPriority;
     }
 
     loadRuleList(ruleList) {
         let firstSpawn = callGame.getFirstSpawn();
 
-        if (firstSpawn.room.memory.stateIAActive != undefined || firstSpawn.room.memory.stateIAPasive) {
+        if (firstSpawn.room.memory.stateIAActive != undefined || firstSpawn.room.memory.stateIAPasive != undefined) {
             for (var index in  ruleList) {
                 let rule = ruleList[index];
                 rule.setDone(firstSpawn.room.memory.stateIAActive[index].done);
