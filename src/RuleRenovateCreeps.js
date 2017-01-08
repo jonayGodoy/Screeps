@@ -15,7 +15,6 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
     conditionRule(){
         var listRoleSorterForPriority = [constants.HARVESTER(),constants.MONITOR(),constants.UPGRADER(),constants.BUILDER()];
 
-        console.log("creep "+this.creepOld);
         if(this.creepOld == undefined) {
             console.log("llama rule pasive");
             for (var index in listRoleSorterForPriority) {
@@ -32,6 +31,7 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
 
 
     behaviorRule() {
+        console.log("llama rule behavior");
         if(this.creepOld != undefined) {
             let result = callGame.createCreeper(this.creepOld.memory.role);
 
@@ -48,7 +48,8 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
         for(var index in listCreep){
             let creep = listCreep[index];
             if(this.isCreepOld(creep)){
-                this.creepOld;
+                this.creepOld = creep;
+                return true;
             }
 
         }
