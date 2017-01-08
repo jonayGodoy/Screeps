@@ -9,7 +9,7 @@ module.exports = class EngineRules{
         this.rulesListSortedByPriority = [
             new RuleCreateCreeps(2,constants.HARVESTER()),
             new RuleCreateCreeps(1,constants.MONITOR()),
-            new RuleCreateCreeps(1,constants.UPGRADER()),
+            new RuleCreateCreeps(2,constants.UPGRADER()),
             new RuleBuildExtension()
         ];
 
