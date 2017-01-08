@@ -9,7 +9,7 @@ module.exports = class RoleMonitor{
         }
     }
 
-    creepDelaySay(){
+    creepDelaySay(number){
         creep.say(this.message[number]);
     }
 
