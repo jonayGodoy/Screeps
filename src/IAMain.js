@@ -13,7 +13,7 @@ class IAMain {
         ];
 
         this.rulesListPasiveSortedByPriority =[
-
+            new RuleRenovateCreeps()
         ];
 
         this.engineRules = new EngineRules(this.rulesListActivesSortedByPriority, this.rulesListPasiveSortedByPriority);
