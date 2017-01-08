@@ -9,9 +9,9 @@ module.exports = class EngineRules{
     constructor() {
         this.rulesListSortedByPriority = [
             new RuleHarverster(),
+            new RuleMonitor(),
             new RuleUpgrader(),
-            new RuleBuildExtension(),
-            new RuleMonitor()
+            new RuleBuildExtension()
         ];
 
         this.loadRuleList();
