@@ -1,8 +1,8 @@
 var callGame = require('CallGame');
-var Rule_Abstract = require("Rule_Abstract");
+var RuleActive_Abstract = require("RuleActive_Abstract");
 
 
-module.exports  = class RuleCreateCreeps extends Rule_Abstract{
+module.exports  = class RuleCreateCreeps extends RuleActive_Abstract{
 
     constructor(quantity, role) {
         super("CreateCreep "+role);

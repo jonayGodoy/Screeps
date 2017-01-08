@@ -1,6 +1,7 @@
 incidences
 
 ver como usar el polimorfismo en ECMAScript6
++ver si puedes comprobar que sea una instacia de una herencia
 + probar sustituir por singleton
 + ARREGLAR la nesecidad que mantenrr los roles en rolemanger y en constantes y callgame
 +refactorizar a un nuevo tipo de regla

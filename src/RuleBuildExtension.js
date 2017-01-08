@@ -1,9 +1,9 @@
 //incidencia falta de interface
 const constants = require('Constants');
 var callGame = require('CallGame');
-var Rule_Abstract = require("Rule_Abstract");
+var RuleActive_Abstract = require("RuleActive_Abstract");
 
-module.exports = class RuleBuildExtension extends Rule_Abstract{
+module.exports = class RuleBuildExtension extends RuleActive_Abstract{
     //status done
     constructor() {
         super("BuildExtension");

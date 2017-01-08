@@ -1,5 +1,6 @@
 const constants = require('Constants');
-var Rule_Abstract = require('./Rule_Abstract');
+var RuleActive_Abstract = require('./RuleActive_Abstract');
+var RulePasive_Abstract = require('./RulePasive_Abstract');
 var roleManager = require('RoleManager');
 var callGame = require('CallGame');
 
@@ -10,11 +11,11 @@ module.exports = class EngineRules{
     }
 
     updateRules(){
-        this.updateRuleListForPriority();
+        this.updateRuleActiveListForPriority();
         this.saveRuleList();
     }
 
-    updateRuleListForPriority() {
+    updateRuleActiveListForPriority() {
         let done = true;
         for (var number in  this.rulesListSortedByPriority) {
             let rule = this.rulesListSortedByPriority[number];
@@ -26,6 +27,8 @@ module.exports = class EngineRules{
             }
         }
     }
+
+
 
     printState(rule) {
         if(roleManager.getRole(constants.MONITOR()) != undefined){

@@ -1,14 +1,10 @@
-module.exports = class Rule_Abstract{
+var RulePasive_Abstract = require('./RulePasive_Abstract');
+module.exports = class RuleActive_Abstract extends RulePasive_Abstract{
 
     constructor(nameRule) {
-        this.nameRule = nameRule;
+        super(nameRule);
         this.done = false;
     }
-
-    getNameRule(){
-        return this.nameRule;
-    }
-
 
     setDone(done){
         this.done = done;
