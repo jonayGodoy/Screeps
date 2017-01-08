@@ -7,7 +7,7 @@ module.exports = class RoleMonitor{
         creep.say(this.message);
     }
 
-    creepMonitorPrint(message){
+    static creepMonitorPrint(message){
         console.log("call engine");
         this.message = message;
     }
