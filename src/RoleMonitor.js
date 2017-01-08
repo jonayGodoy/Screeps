@@ -1,7 +1,6 @@
-class RoleMonitor{
+module.exports = class RoleMonitor{
     constructor() {
         this.message = "";
-
     }
 
     run(creep){
@@ -14,4 +13,3 @@ class RoleMonitor{
     }
 
 };
- module.exports = new RoleMonitor();

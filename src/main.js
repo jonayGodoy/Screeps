@@ -1,6 +1,5 @@
 var EngineRules = require('EngineRules');
-var RoleManager = require('RoleManager');
-var roleManager = new RoleManager();
+var roleManager = require('RoleManager');
 var ia = new EngineRules();
 //se resetea por el serve
 

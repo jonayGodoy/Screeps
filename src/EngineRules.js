@@ -1,8 +1,8 @@
+const constants = require('Constants');
 var RuleHarverster = require('./RuleHarverster');
 var RuleUpgrader = require('./RuleUpgrader');
 var RuleBuildExtension = require('./RuleBuildExtension');
-var RuleMonitor = require('./RuleMonitor')
-var RoleMonitor = require('RoleMonitor');
+var roleManager = require('RoleManager');
 var callGame = require('CallGame');
 
 module.exports = class EngineRules{
@@ -38,7 +38,7 @@ module.exports = class EngineRules{
 
     printState(rule) {
       //  console.log("executing rule: " + rule.getNameRule());
-        RoleMonitor.creepMonitorPrint(rule.getNameRule());
+        roleMonitor.getRole(constants.MONITOR()).creepMonitorPrint(rule.getNameRule());
     }
 
     saveRuleList() {
