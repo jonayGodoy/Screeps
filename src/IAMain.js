@@ -1,7 +1,8 @@
 const constants = require('Constants');
 var EngineRules = require('EngineRules');
 var RuleCreateCreeps = require('./RuleCreateCreeps');
-var RuleBuildExtension = require('./RuleBuildExtension')
+var RuleBuildExtension = require('./RuleBuildExtension');
+var RuleRenovateCreeps = require('./RuleRenovateCreeps');
 class IAMain {
     constructor() {
         this.rulesListActivesSortedByPriority = [
@@ -11,7 +12,9 @@ class IAMain {
             new RuleBuildExtension()
         ];
 
-        this.rulesListPasiveSortedByPriority =[];
+        this.rulesListPasiveSortedByPriority =[
+
+        ];
 
         this.engineRules = new EngineRules(this.rulesListActivesSortedByPriority, this.rulesListPasiveSortedByPriority);
 
