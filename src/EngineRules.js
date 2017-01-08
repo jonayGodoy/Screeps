@@ -38,7 +38,10 @@ module.exports = class EngineRules{
 
     printState(rule) {
       //  console.log("executing rule: " + rule.getNameRule());
-        roleMonitor.getRole(constants.MONITOR()).creepMonitorPrint(rule.getNameRule());
+        if(roleMonitor.getRole(constants.MONITOR()) != undefined){
+            roleMonitor.getRole(constants.MONITOR()).creepMonitorPrint(rule.getNameRule());
+        }
+
     }
 
     saveRuleList() {
