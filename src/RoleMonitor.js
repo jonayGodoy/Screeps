@@ -5,9 +5,12 @@ module.exports = class RoleMonitor{
 
     run(creep){
         for(var number in this.message){
-            console.log(this.message[number]);
-            creep.say(this.message[number]);
+            timeoutID = window.setTimeout(this.creepDelaySay(number), 1000);
         }
+    }
+
+    creepDelaySay(){
+        creep.say(this.message[number]);
     }
 
     creepMonitorPrint(message){
