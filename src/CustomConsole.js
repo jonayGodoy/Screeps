@@ -6,8 +6,8 @@ class CustomConsole{
             stringListParts = stringListParts+part+" ";
         }
 
-        let result = "how much is "+callGame.calculateCostCreep(partsCreep)+" units.";
-        return "\n "+result;
+        let result = "and how much is "+callGame.calculateCostCreep(partsCreep)+" units.";
+        return stringListParts+"\n "+result;
     }
 
 }
