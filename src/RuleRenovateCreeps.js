@@ -10,6 +10,7 @@ module.exports  = class RuleRenovateCreeps extends Rule_Abstract{
     }
 
     conditionRule(){
+        var listRole = [constants.H];
 
     }
 
