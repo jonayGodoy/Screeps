@@ -1,5 +1,5 @@
 const constants = require('Constants');
-var RoleHarvester = require('role.harvester');
+var RoleHarvester = require('RoleHarvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var RoleMonitor = require('RoleMonitor');
