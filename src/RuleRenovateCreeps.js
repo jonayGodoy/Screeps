@@ -16,7 +16,6 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
         var listRoleSorterForPriority = [constants.HARVESTER(),constants.MONITOR(),constants.UPGRADER(),constants.BUILDER()];
 
         if(this.creepOld == undefined) {
-            console.log("llama rule pasive");
             for (var index in listRoleSorterForPriority) {
                 let listCreep = callGame.findCreepersForRole(listRoleSorterForPriority[index]);
                 if (this.existOldCreep(listCreep)) {
@@ -26,6 +25,7 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
         }else{
             return false;
         }
+
         return true;
     }
 
