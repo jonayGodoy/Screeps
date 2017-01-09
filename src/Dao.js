@@ -7,7 +7,7 @@ module.exports = class Dao{
 
 
     loadListCreepData(){
-        console.log("llamada load");
+        console.log("llamada load "+firstSpawn.room.memory.stateIAListCreepData.toString());
         let firstSpawn = callGame.getFirstSpawn();
 
         if (firstSpawn.room.memory.stateIAListCreepData != undefined ) {
