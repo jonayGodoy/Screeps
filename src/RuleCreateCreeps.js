@@ -17,9 +17,9 @@ module.exports  = class RuleCreateCreeps extends RuleActive_Abstract{
 
 
         let condition = (roleListCreeps.length >= this.quantity);;
-        if(condition){
-            this.contParche = this.contParche +1;
-        }
+
+        this.contParche = roleListCreeps.length;
+
         return condition;
     }
 
