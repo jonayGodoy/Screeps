@@ -56,7 +56,7 @@ class CallGame{
     createCreeper(name, role){
         let structureCreeps = this.structureCreepsList[role];
         let nameCreep = this.getFirstSpawn().createCreep(structureCreeps[0], name, {role: role});
-     //   this.saveListIAcreepData(nameCreep);
+        this.saveListIAcreepData(nameCreep);
         return nameCreep;
     }
 
@@ -93,15 +93,16 @@ class CallGame{
     isCreateCreep(name) {
         //repared
         let isNotError = _.isString(name);
+        /*
         let isCreate = false;
         if(isNotError){
             isCreate = (this.ticksWithDelayPARCHE(name) != undefined);
         }
+        */
 
+   //     console.log(isNotError && isCreate+" name "+name+ " TICKS1 "+this.ticksWithDelayPARCHE(name)+ " IScREATE "+isCreate+ " role "+Game.creeps[name].memory.role);
 
-        console.log(isNotError && isCreate+" name "+name+ " TICKS1 "+this.ticksWithDelayPARCHE(name)+ " IScREATE "+isCreate+ " role "+Game.creeps[name].memory.role);
-
-        return isNotError && isCreate;
+        return isNotError;
     }
 
 
