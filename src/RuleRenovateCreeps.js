@@ -32,6 +32,7 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
 
     behaviorRule() {
       //  console.log("llama rule behavior");
+        /*
         if(this.creepOld != undefined) {
             let result = callGame.createCreeper(this.creepOld.memory.role);
 
@@ -41,6 +42,19 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
             } else {
                 return constantsGame.getErrorCreateCreeps(result);
             }
+        }
+        */
+
+        if(this.creepOld != undefined) {
+            let nameOldCreep = this.creepOld.name;
+            callGame.deleteCreep(this.creepOld);
+            this.creepOld = undefined;
+            let isCreate = false;
+            while(!isCreate){
+                let result = callGame.createCreeper(this.creepOld.memory.role);
+                isCreate = this.isCreateCreep(result);
+            }
+
         }
     }
 
