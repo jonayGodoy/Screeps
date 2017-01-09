@@ -1,4 +1,4 @@
-var CallGame = require('CallGame');
+var callGame = require('CallGame');
 var RuleActive_Abstract = require("RuleActive_Abstract");
 
 
@@ -11,11 +11,11 @@ module.exports  = class RuleCreateCreeps extends RuleActive_Abstract{
     }
 
     conditionRule(){
-      //  let roleListCreeps = CallGame.findCreepersForRole(this.role);
-      //  return (roleListCreeps.length >= this.quantity);
+        let roleListCreeps = callGame.findCreepersForRole(this.role);
+        return (roleListCreeps.length >= this.quantity);
     }
 
     behaviorRule() {
-     //   CallGame.createCreeper(this.role);
+        callGame.createCreeper(this.role);
     }
 };
