@@ -90,7 +90,7 @@ class CallGame{
 
     isCreateCreep(name) {
         //repared
-        console.log("estado"+_.isString(name));
+        console.log("estado "+_.isString(name)+" name "+name);
         return _.isString(name);
     }
 
