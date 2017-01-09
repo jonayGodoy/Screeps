@@ -32,8 +32,7 @@ class IAMain {
 
     addCreepListData(creepData){
         console.log("his index is "+creepData.getRoleCreepData());
-      // this.listCreepData.push(creepData);
-        this.listCreepData[0] =  creepData;
+        this.listCreepData.push(creepData);
         this.dao.saveListCreepData(this.listCreepData);
     }
 
