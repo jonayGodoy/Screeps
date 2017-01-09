@@ -105,7 +105,7 @@ class CallGame{
 
 
     ticksWithDelayPARCHE(name){
-        let delayTicksCreeps = 5;
+        let delayTicksCreeps = 10;
         if(Game.time % delayTicksCreeps == 0) {
             return Game.creeps[name].ticksToLive;
         }
