@@ -1,8 +1,8 @@
 const constants = require('Constants');
 var EngineRules = require('EngineRules');
 var RuleCreateCreeps = require('./RuleCreateCreeps');
-var RuleBuildExtension = require('./RuleBuildExtension');
-var RuleRenovateCreeps = require('./RuleRenovateCreeps');
+//var RuleBuildExtension = require('./RuleBuildExtension');
+//var RuleRenovateCreeps = require('./RuleRenovateCreeps');
 var Dao = require('./Dao');
 class IAMain {
     constructor() {
