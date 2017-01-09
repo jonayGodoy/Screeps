@@ -89,20 +89,20 @@ class CallGame{
     }
 
     isCreateCreep(name) {
-        //repared
+        let delayTicksCreeps = 5;
+        return this.setTickOutSay(delayTicksCreeps,name);
+    }
 
-
-        let isCreate = false;
-        for(var nameAux in Game.creeps){
-            if(name === nameAux){
-                isCreate = true;
-                console.log("idCreep "+Game.creeps[nameAux].id);
-            }
-
+    setTickOutSay(delayTicksCreeps,name){
+        console.log("ticks game");
+        if(Game.time % delayTicksCreeps == 0) {
+            this.isCreateCreepParcheSlow(name);
         }
-        console.log(_.isString(name) && isCreate+" name "+name+"  nameGame "+nameAux);
+    }
 
-        return _.isString(name) && isCreate;
+
+    isCreateCreepParcheSlow(name){
+        return _.isString(name);
     }
 
 
