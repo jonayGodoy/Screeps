@@ -94,10 +94,11 @@ class CallGame{
 
         let isCreate = false;
         for(var nameAux in Game.creeps){
-            if(name == nameAux){
+            if(name === nameAux){
                 isCreate = true;
                 console.log("idCreep "+Game.creeps[nameAux].id);
             }
+            console.log("idCreep "+Game.creeps[nameAux].id);
         }
         console.log(_.isString(name) && isCreate+" name "+name+"  nameGame "+nameAux);
 
