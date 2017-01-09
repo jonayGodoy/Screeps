@@ -13,6 +13,7 @@ module.exports = class Dao{
         if (firstSpawn.room.memory.stateIAListCreepData != undefined ) {
              listCreepData = firstSpawn.room.memory.stateIAListCreepData;
         }
+        return listCreepData;
     }
 
 
