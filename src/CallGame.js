@@ -15,6 +15,7 @@ class CallGame{
         this.structureCreepsList = [];
         this.structureCreepsList[constants.HARVESTER()] = this.structureCreepsBasic;
         this.structureCreepsList[constants.UPGRADER()] = this.structureCreepsBasic;
+        this.structureCreepsList[constants.BUILDER()] = this.structureCreepsBasic;
         this.structureCreepsList[constants.MONITOR()] = this.structureCreepsBasic;
 
     }
