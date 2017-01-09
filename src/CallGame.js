@@ -1,6 +1,6 @@
 const constants = require('Constants');
 const constantsGame = require('ConstantsGame');
-//var ia = require('IAMain');
+var CreepData = require('CreepData');
 
 class CallGame{
 
@@ -55,16 +55,19 @@ class CallGame{
 
     createCreeper(role){
         let structureCreeps = this.structureCreepsList[role];
-        return this.getFirstSpawn().createCreep(structureCreeps[0], structureCreeps[1], {role: role});
+        let nameCreep = this.getFirstSpawn().createCreep(structureCreeps[0], structureCreeps[1], {role: role});
+        this.saveListIAcreepData(nameCreep);
+        return nameCreep;
     }
 
 
     saveListIAcreepData(nameCreep){
+        if(this.isCreateCreep(nameCreep)){
+            let creep = Game.creeps[nameCreep];
+            let creepData = new CreepData(creep.id,creep.memory.role);
+            this.ia.addCreepListData(creepData);
 
-        let creep = Game.creeps[nameCreep];
-
-
-
+        }
     }
 
 
@@ -87,6 +90,9 @@ class CallGame{
         return _.filter(Game.creeps, (creep) => creep.memory.role == role);
     }
 
+    isCreateCreep(name) {
+        return _.isString(name);
+    }
 
 }
 module.exports  = new CallGame();
