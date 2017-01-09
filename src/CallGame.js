@@ -103,7 +103,6 @@ class CallGame{
     }
 
 
-
     ticksWithDelayPARCHE(name){
         let delayTicksCreeps = 20;
         if(Game.time % delayTicksCreeps == 0) {
