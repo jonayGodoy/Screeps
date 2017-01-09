@@ -12,15 +12,12 @@ module.exports = class EngineRules{
 
         this.dao = new Dao();
         this.dao.loadRuleListActives(rulesListActivesSortedByPriority);
-       // this.loadRuleListActives(rulesListActivesSortedByPriority);
     }
 
     updateRules(){
         this.updateRuleActiveListForPriority();
         this.updateRulePasiveListForPriority();
         this.dao.saveRuleListActive();
-       // this.saveRuleListActive();
-
     }
 
     updateRuleActiveListForPriority() {
@@ -52,25 +49,6 @@ module.exports = class EngineRules{
         }
 
     }
-
-    saveRuleListActive() {
-        //only save fields
-        callGame.getFirstSpawn().room.memory.stateIARuleActive = this.rulesListActivesSortedByPriority;
-    }
-
-
-
-    loadRuleListActives(ruleList) {
-        let firstSpawn = callGame.getFirstSpawn();
-
-        if (firstSpawn.room.memory.stateIARuleActive != undefined ) {
-            for (var index in  ruleList) {
-                let rule = ruleList[index];
-                rule.setDone(firstSpawn.room.memory.stateIARuleActive[index].done);
-            }
-        }
-    }
-
 
 };
 
