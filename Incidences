@@ -25,3 +25,4 @@ ver como usar el polimorfismo en ECMAScript6
 +refactorizar duplicación en dao
 +refactoriza la llamadas para guardar y cargar deben pasar por callgame
 +refactor el guradado de la lista de creeps en dao y iaMain
+++++ cuando creo creeps el juego me crea un montons de creeps en memoria

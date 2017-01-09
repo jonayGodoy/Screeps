@@ -91,7 +91,16 @@ class CallGame{
     isCreateCreep(name) {
         //repared
         console.log("estado "+_.isString(name)+" name "+name);
-        return _.isString(name);
+
+        let create = false;
+        for(var nameAux in Game.creeps){
+            if(name = nameAux){
+                create = true;
+            }
+        }
+
+
+        return _.isString(name) && create;
     }
 
 
