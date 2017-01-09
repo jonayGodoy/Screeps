@@ -90,25 +90,17 @@ class CallGame{
 
     isCreateCreep(name) {
         //repared
-        let isCreate = false;
-        for(var nameAux in Game.creeps){
-            if(name === nameAux){
-                isCreate = true;
-                console.log("idCreep tick1 "+Game.creeps[nameAux].ticksToLive+" ticks2 "+this.ticksWithDelay(name));
-            }
+        let isCreate = (this.ticksWithDelayPARCHE(name) != undefined);
+        let isNotError = _.isString(name) && isCreate;
 
-        }
         console.log(_.isString(name) && isCreate+" name "+name+"  nameGame "+nameAux);
 
-        return _.isString(name) && isCreate;
+        return isNotError && isCreate;
     }
 
 
-     gameTicksPost(){
 
-     }
-
-    ticksWithDelay(name){
+    ticksWithDelayPARCHE(name){
         let delayTicksCreeps = 20;
         if(Game.time % delayTicksCreeps == 0) {
             return Game.creeps[name].ticksToLive;
