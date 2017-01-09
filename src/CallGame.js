@@ -66,7 +66,6 @@ class CallGame{
             let creep = Game.creeps[nameCreep];
             let creepData = new CreepData(creep.id,creep.memory.role);
             this.ia.addCreepListData(creepData);
-
         }
     }
 
