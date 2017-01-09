@@ -94,7 +94,7 @@ class CallGame{
         for(var nameAux in Game.creeps){
             if(name === nameAux){
                 isCreate = true;
-                console.log("idCreep tick1"+Game.creeps[nameAux].ticksToLive+" ticks2 "+this.ticksWithDelay(name));
+                console.log("idCreep tick1 "+Game.creeps[nameAux].ticksToLive+" ticks2 "+this.ticksWithDelay(name));
             }
 
         }
