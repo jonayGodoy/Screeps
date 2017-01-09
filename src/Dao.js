@@ -1,4 +1,5 @@
 var callGame = require('CallGame');
+var CreepData = require('CreepData');
 module.exports = class Dao{
 
     saveListCreepData(rulesListCreepData){
@@ -8,9 +9,15 @@ module.exports = class Dao{
 
     loadListCreepData(rulesListCreepData){
         let firstSpawn = callGame.getFirstSpawn();
+        let newRuleListCreepData = [];
 
         if (firstSpawn.room.memory.stateIARuleActive != undefined ) {
-            rulesListCreepData = firstSpawn.room.memory.stateIARuleActive;
+            for (var index in  firstSpawn.room.memory.stateIARuleActive) {
+                let fakeCreepData = firstSpawn.room.memory.stateIARuleActive[index];
+                let creepData = new CreepData(fakeCreepData.id,fakeCreepData.role);
+                newRuleListCreepData.push(creepData);
+            }
+            rulesListCreepData = newRuleListCreepData;
         }
     }
 
