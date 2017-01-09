@@ -1,6 +1,6 @@
 var callGame = require('CallGame');
 var RuleActive_Abstract = require("RuleActive_Abstract");
-var ia = require('IAMain');
+//var ia = require('IAMain');
 var CreepData = require('CreepData');
 module.exports  = class RuleCreateCreeps extends RuleActive_Abstract{
 
