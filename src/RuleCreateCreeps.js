@@ -8,6 +8,8 @@ module.exports  = class RuleCreateCreeps extends RuleActive_Abstract{
         super("CreateCreep "+role);
         this.quantity = quantity;
         this.role = role;
+        this.cont = 0;
+
     }
 
     conditionRule(){
@@ -16,6 +18,7 @@ module.exports  = class RuleCreateCreeps extends RuleActive_Abstract{
     }
 
     behaviorRule() {
-        callGame.createCreeper(this.role);
+        this.cont = this.cont +1;
+        callGame.createCreeper("CreateCreep"+this.cont,this.role);
     }
 };

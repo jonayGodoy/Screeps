@@ -9,7 +9,7 @@ module.exports.loop = function () {
 
     ia.updateIA();
     creepsUpdate();
-    callGame.cleanMemoryCreep();
+
 
 };
 

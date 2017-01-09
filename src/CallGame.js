@@ -10,7 +10,7 @@ class CallGame{
 
         this.firstSpawn = null;
 
-        this.structureCreepsBasic = [[WORK, CARRY, MOVE], undefined];
+        this.structureCreepsBasic = [[WORK, CARRY, MOVE]];
 
         this.structureCreepsList = [];
         this.structureCreepsList[constants.HARVESTER()] = this.structureCreepsBasic;
@@ -53,9 +53,9 @@ class CallGame{
     }
 
 
-    createCreeper(role){
+    createCreeper(name, role){
         let structureCreeps = this.structureCreepsList[role];
-        let nameCreep = this.getFirstSpawn().createCreep(structureCreeps[0], structureCreeps[1], {role: role});
+        let nameCreep = this.getFirstSpawn().createCreep(structureCreeps[0], name, {role: role});
      //   this.saveListIAcreepData(nameCreep);
         return nameCreep;
     }
