@@ -94,7 +94,7 @@ class CallGame{
         for(var nameAux in Game.creeps){
             if(name === nameAux){
                 isCreate = true;
-                console.log("idCreep "+Game.creeps[nameAux].ticksToLive);
+                console.log("idCreep tick1"+Game.creeps[nameAux].ticksToLive+" ticks2 "+this.ticksWithDelay(name));
             }
 
         }
@@ -103,6 +103,17 @@ class CallGame{
         return _.isString(name) && isCreate;
     }
 
+
+     gameTicksPost(){
+
+     }
+
+    ticksWithDelay(name){
+        let delayTicksCreeps = 5;
+        if(Game.time % delayTicksCreeps == 0) {
+            return Game.creeps[name].ticksToLive;
+        }
+    }
 
 
 
