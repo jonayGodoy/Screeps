@@ -32,7 +32,9 @@ module.exports = class RuleBuildExtension extends RuleActive_Abstract{
                 this.generateExtensionParallelRightToSpawn(firstSpawn.pos,quantity,room);
             }
 
-        callGame.createCreeper("monitor1",constants.BUILDER());
+        let builders = callGame.findCreepersForRole(constants.BUILDER());
+
+        callGame.createCreeper("builder_"+builders.length,constants.BUILDER());
 
         }
 
