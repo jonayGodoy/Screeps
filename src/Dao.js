@@ -21,7 +21,6 @@ module.exports = class Dao{
     }
 
 
-
     loadRuleListActives(ruleList) {
         let firstSpawn = callGame.getFirstSpawn();
 
