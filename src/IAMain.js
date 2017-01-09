@@ -17,11 +17,12 @@ class IAMain {
             new RuleRenovateCreeps()
         ];
 
+        this.engineRules = new EngineRules(this.rulesListActivesSortedByPriority, this.rulesListPasiveSortedByPriority);
+
         this.dao = new Dao();
         this.listCreepData = [];
         this.dao.loadListCreepData(this.listCreepData);
 
-        this.engineRules = new EngineRules(this.rulesListActivesSortedByPriority, this.rulesListPasiveSortedByPriority);
 
     }
 
