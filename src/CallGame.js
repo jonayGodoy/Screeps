@@ -94,7 +94,7 @@ class CallGame{
         for(var nameAux in Game.creeps){
             if(name === nameAux){
                 isCreate = true;
-                console.log("idCreep "+Game.creeps[nameAux].pos.x+"  pos "+Game.creeps[nameAux].pos);
+                console.log("idCreep "+ Game.getObjectById(Game.creeps[name]));
             }
 
         }
