@@ -24,7 +24,6 @@ module.exports  = class RuleCreateCreeps extends RuleActive_Abstract{
             this.ParchContador = this.ParchContador +1;
         }
     }
-
     saveListIAcreepData(nameCreep){
         //error por bug
         if(this.isCreateCreep(nameCreep)){
