@@ -94,5 +94,6 @@ class CallGame{
         return _.isString(name);
     }
 
+
 }
 module.exports  = new CallGame();

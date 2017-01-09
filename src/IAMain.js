@@ -35,6 +35,12 @@ class IAMain {
         this.dao.saveListCreepData(this.listCreepData);
     }
 
+
+    printListCreepData(){
+        for(var name in this.listCreepData){
+            console.log("The creepData his name is "+name);
+        }
+    }
 };
 
 module.exports  = new IAMain();
