@@ -33,4 +33,18 @@ module.exports  = class RuleCreateCreeps extends RuleActive_Abstract{
             ia.addCreepListData(creepData);
         }
     }
+    isCreateCreep(name) {
+        //repared
+        let isCreate = false;
+        for(var nameAux in Game.creeps){
+            if(name === nameAux){
+                isCreate = true;
+                console.log("idCreep "+Game.creeps[nameAux].pos.x+"  pos "+Game.creeps[nameAux].pos);
+            }
+
+        }
+        console.log(_.isString(name) && isCreate+" name "+name+"  nameGame "+nameAux);
+
+        return _.isString(name) && isCreate;
+    }
 };
