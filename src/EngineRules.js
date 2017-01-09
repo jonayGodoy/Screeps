@@ -3,20 +3,22 @@ var RulePasive_Abstract = require('./RulePasive_Abstract');
 var RuleActive_Abstract = require('./RuleActive_Abstract');
 var roleManager = require('RoleManager');
 var callGame = require('CallGame');
+var Dao = require('Dao');
 
 module.exports = class EngineRules{
     constructor(rulesListActivesSortedByPriority,rulesListPasivesSortedByPriority) {
         this.rulesListActivesSortedByPriority = rulesListActivesSortedByPriority;
         this.rulesListPasivesSortedByPriority = rulesListPasivesSortedByPriority;
 
-        this.loadRuleListActives(rulesListActivesSortedByPriority);
+        this.dao = new Dao();
+        this.dao.loadRuleListActives(rulesListActivesSortedByPriority);
 
     }
 
     updateRules(){
         this.updateRuleActiveListForPriority();
         this.updateRulePasiveListForPriority();
-        this.saveRuleListActive();
+        this.dao.saveRuleListActive();
 
     }
 
@@ -52,7 +54,7 @@ module.exports = class EngineRules{
 
     saveRuleListActive() {
         //only save fields
-        callGame.getFirstSpawn().room.memory.stateIAActive = this.rulesListActivesSortedByPriority;
+        callGame.getFirstSpawn().room.memory.stateIARuleActive = this.rulesListActivesSortedByPriority;
     }
 
 
@@ -60,10 +62,10 @@ module.exports = class EngineRules{
     loadRuleListActives(ruleList) {
         let firstSpawn = callGame.getFirstSpawn();
 
-        if (firstSpawn.room.memory.stateIAActive != undefined ) {
+        if (firstSpawn.room.memory.stateIARuleActive != undefined ) {
             for (var index in  ruleList) {
                 let rule = ruleList[index];
-                rule.setDone(firstSpawn.room.memory.stateIAActive[index].done);
+                rule.setDone(firstSpawn.room.memory.stateIARuleActive[index].done);
             }
         }
     }
