@@ -8,6 +8,7 @@ callGame.setIa(ia);
 module.exports.loop = function () {
 
     ia.updateIA();
+    callGame.cleanMemoryCreep();
 
     creepsUpdate();
 

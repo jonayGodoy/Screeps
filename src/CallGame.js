@@ -72,16 +72,16 @@ class CallGame{
 
     deleteCreep(creep){
         creep.suicide();
-        this.cleanMemoryCreep();
+       // this.cleanMemoryCreep();
     }
 
     cleanMemoryCreep() {
         for (var name in Memory.creeps) {
          //   console.log("creeps  en la memoria "+name);
             console.log("creeps Muertos en la memoria "+name+ "  ticks" +Game.creeps[name].ticksToLive);
-            if (!Game.creeps[name]) {
+            if (/*Game.creeps[name].ticksToLive === undefined*/false) {
                 console.log("creeps Muertos en la memoria "+name+ "  ticks" +Game.creeps[name].ticksToLive);
-                 Memory.creeps[name] = null;
+                delete Memory.creeps[name];
             }
         }
     }
