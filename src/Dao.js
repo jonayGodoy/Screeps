@@ -8,6 +8,7 @@ module.exports = class Dao{
 
 
     loadListCreepData(rulesListCreepData){
+        console.log("llamada al load");
         let firstSpawn = callGame.getFirstSpawn();
         let newRuleListCreepData = [];
 
