@@ -23,3 +23,4 @@ ver como usar el polimorfismo en ECMAScript6
 +cuando hay energia extra me genera demasiados creeps
 + el id no reconoce clases  los metodos solo los dintingue por el nombre;
 +refactorizar duplicación en dao
++refactoriza la llamadas para guardar y cargar deben pasar por callgame
