@@ -8,6 +8,8 @@ module.exports  = class RuleCreateCreeps extends RuleActive_Abstract{
         super("CreateCreep "+role);
         this.quantity = quantity;
         this.role = role;
+
+        this.ParchContador = 0;
     }
 
     conditionRule(){
@@ -16,8 +18,10 @@ module.exports  = class RuleCreateCreeps extends RuleActive_Abstract{
     }
 
     behaviorRule() {
-       let name = callGame.createCreeper(this.role);
-        this.saveListIAcreepData(name);
+        if(this.ParchContador <= this.quantity ){
+            let name = callGame.createCreeper(this.role);
+            this.saveListIAcreepData(name);
+        }
     }
 
     saveListIAcreepData(nameCreep){
@@ -25,7 +29,7 @@ module.exports  = class RuleCreateCreeps extends RuleActive_Abstract{
         if(this.isCreateCreep(nameCreep)){
             let creep = Game.creeps[nameCreep];
             let creepData = new CreepData(creep.id,creep.memory.role);
-            this.ia.addCreepListData(creepData);
+            ia.addCreepListData(creepData);
         }
     }
 };
