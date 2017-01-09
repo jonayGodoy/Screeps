@@ -1,7 +1,7 @@
 const constants = require('Constants');
 const constantsGame = require('ConstantsGame');
-var CreepData = require('CreepData');
 //var ia = require('IAMain');
+
 class CallGame{
 
 
@@ -13,7 +13,6 @@ class CallGame{
         this.structureCreepsList = [];
         this.structureCreepsList[constants.HARVESTER()] = this.structureCreepsBasic;
         this.structureCreepsList[constants.UPGRADER()] = this.structureCreepsBasic;
-        this.structureCreepsList[constants.BUILDER()] = this.structureCreepsBasic;
         this.structureCreepsList[constants.MONITOR()] = this.structureCreepsBasic;
 
 
@@ -56,8 +55,7 @@ class CallGame{
     saveListIAcreepData(nameCreep){
 
         let creep = Game.creeps[nameCreep];
-        let creepData = new CreepData(creep.id,creep.memory.role);
-        ia.addCreepListData(creepData);
+
 
     }
 
