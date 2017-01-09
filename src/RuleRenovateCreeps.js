@@ -51,7 +51,7 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
             this.creepOld = undefined;
             let isCreate = false;
             while(!isCreate){
-                let result = callGame.createCreeper(this.creepOld.memory.role);
+                let result = callGame.createCreeper(nameOldCreep,this.creepOld.memory.role);
                 isCreate = this.isCreateCreep(result);
             }
 
