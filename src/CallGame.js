@@ -4,7 +4,6 @@ var CreepData = require('CreepData');
 //var ia = require('IAMain');
 class CallGame{
 
-
     constructor() {
         this.firstSpawn = null;
 
