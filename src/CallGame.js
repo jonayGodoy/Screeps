@@ -93,7 +93,7 @@ class CallGame{
         let isCreate = (this.ticksWithDelayPARCHE(name) != undefined);
         let isNotError = _.isString(name);
 
-        console.log(isNotError && isCreate+" name "+name+ " TICKS1 "+this.ticksWithDelayPARCHE(name));
+        console.log(isNotError && isCreate+" name "+name+ " TICKS1 "+this.ticksWithDelayPARCHE(name)+ "IScREATE "+isCreate);
 
         return isNotError && isCreate;
     }
