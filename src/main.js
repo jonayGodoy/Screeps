@@ -1,6 +1,6 @@
 var ia = require('IAMain');
 var roleManager = require('RoleManager');
-//var callGame = require('CallGame');
+var callGame = require('CallGame');
 
 //se resetea por el serve
 
@@ -9,7 +9,7 @@ module.exports.loop = function () {
 
     ia.updateIA();
 
- //   creepsUpdate();
+    creepsUpdate();
 
 };
 

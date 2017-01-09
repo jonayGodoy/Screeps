@@ -1,7 +1,6 @@
 module.exports = class RulePasive_Abstract{
 
-    constructor(nameRule,callGame) {
-        this.callGame = callGame;
+    constructor(nameRule) {
         this.nameRule = nameRule;
     }
 
