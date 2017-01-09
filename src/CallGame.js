@@ -91,9 +91,9 @@ class CallGame{
     isCreateCreep(name) {
         //repared
         let isCreate = (this.ticksWithDelayPARCHE(name) != undefined);
-        let isNotError = _.isString(name) && isCreate;
+        let isNotError = _.isString(name);
 
-        console.log(_.isString(name) && isCreate+" name "+name+ " TICKS1 "+this.ticksWithDelayPARCHE(name));
+        console.log(isNotError && isCreate+" name "+name+ " TICKS1 "+this.ticksWithDelayPARCHE(name));
 
         return isNotError && isCreate;
     }
