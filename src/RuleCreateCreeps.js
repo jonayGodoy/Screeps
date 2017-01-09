@@ -8,7 +8,7 @@ module.exports  = class RuleCreateCreeps extends RuleActive_Abstract{
         super("CreateCreep "+role);
         this.quantity = quantity;
         this.role = role;
-        this.cont = 0;
+        this.contParche = 0;
 
     }
 
@@ -18,7 +18,7 @@ module.exports  = class RuleCreateCreeps extends RuleActive_Abstract{
     }
 
     behaviorRule() {
-        this.cont = this.cont +1;
-        callGame.createCreeper("CreateCreep"+this.cont,this.role);
+        this.contParche = this.contParche +1;
+        callGame.createCreeper("CreateCreep"+this.contParche,this.role);
     }
 };

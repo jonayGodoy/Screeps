@@ -1,7 +1,7 @@
 module.exports = class RoleMonitor{
     constructor() {
         this.message = [""];
-        this.cont = 0;
+        this.contParche = 0;
     }
 
     run(creep){
@@ -17,11 +17,11 @@ module.exports = class RoleMonitor{
     }
 
     creepSaySlow(creep){
-        if(this.cont < this.message.length){
-            creep.say(this.message[this.cont]);
-            this.cont = this.cont +1;
+        if(this.contParche < this.message.length){
+            creep.say(this.message[this.contParche]);
+            this.contParche = this.contParche +1;
         }else{
-            this.cont = 0;
+            this.contParche = 0;
         }
     }
 
