@@ -96,7 +96,8 @@ class CallGame{
     setTickOutSay(delayTicksCreeps,name){
         console.log("ticks game: "+Game.time);
         if(Game.time % delayTicksCreeps == 0) {
-            this.isCreateCreepParcheSlow(name);
+           let isCreate =  this.isCreateCreepParcheSlow(name);
+            console.log("creep name "+name+" state "+ isCreate);
         }
     }
 
