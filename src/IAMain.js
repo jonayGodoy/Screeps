@@ -21,7 +21,11 @@ class IAMain {
 
         this.dao = new Dao();
         this.listCreepData = [];
-        this.listCreepData = this.dao.loadListCreepData();
+        let newList = this.dao.loadListCreepData();
+        if(newList != undefined){
+            this.listCreepData = newList;
+        }
+
 
 
     }
