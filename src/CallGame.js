@@ -78,8 +78,8 @@ class CallGame{
     cleanMemoryCreep() {
         for (var name in Memory.creeps) {
          //   console.log("creeps  en la memoria "+name);
-            console.log("creeps Muertos en la memoria "+name+ "  ticks" +Game.creeps[name].ticksToLive);
-            if (/*Game.creeps[name].ticksToLive === undefined*/false) {
+        //    console.log("creeps Muertos en la memoria "+name+ "  ticks" +Game.creeps[name].ticksToLive);
+            if (Game.creeps[name] != undefined) {
                 console.log("creeps Muertos en la memoria "+name+ "  ticks" +Game.creeps[name].ticksToLive);
                 delete Memory.creeps[name];
             }
