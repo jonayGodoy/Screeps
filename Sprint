@@ -7,6 +7,7 @@ Backlog------------------
 +añadir a la ruleCreateCreeps un contructor altenativo donde puedes elegir nivel
 +crear un mensaje de alerta si un pasivo para de ejecutarse
 + crear rol explorator
++crear comportamiento de esperar en para los roles
 refactor ruleBuildExtension
 Sprint------------
 

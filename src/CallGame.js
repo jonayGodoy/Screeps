@@ -1,7 +1,7 @@
 const constants = require('Constants');
 const constantsGame = require('ConstantsGame');
 var CreepData = require('CreepData');
-//var ia = require('IAMain');
+var ia = require('IAMain');
 class CallGame{
 
     constructor() {
@@ -53,11 +53,9 @@ class CallGame{
 
 
     saveListIAcreepData(nameCreep){
-
         let creep = Game.creeps[nameCreep];
         let creepData = new CreepData(creep.id,creep.memory.role);
         ia.addCreepListData(creepData);
-
     }
 
 
