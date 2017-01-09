@@ -3,7 +3,8 @@ var EngineRules = require('EngineRules');
 var RuleCreateCreeps = require('./RuleCreateCreeps');
 var RuleBuildExtension = require('./RuleBuildExtension');
 var RuleRenovateCreeps = require('./RuleRenovateCreeps');
-var Dao = require('./RuleRenovateCreeps');{
+var Dao = require('./RuleRenovateCreeps');
+class IAMain {
     constructor() {
         this.rulesListActivesSortedByPriority = [
             new RuleCreateCreeps(2,constants.HARVESTER()),
@@ -17,7 +18,7 @@ var Dao = require('./RuleRenovateCreeps');{
         ];
 
         this.listCreepData = [];
-       // load(this.listCreepData);
+     //   load(this.listCreepData);
 
         this.engineRules = new EngineRules(this.rulesListActivesSortedByPriority, this.rulesListPasiveSortedByPriority);
 
@@ -29,7 +30,7 @@ var Dao = require('./RuleRenovateCreeps');{
 
     addCreepListData(creepData){
        this.listCreepData.push(creepData);
-        save(this.listCreepData);
+   //     save(this.listCreepData);
     }
 
 };
