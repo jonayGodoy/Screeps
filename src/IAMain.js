@@ -42,8 +42,10 @@ class IAMain {
 
     printListCreepData(){
         var message = "";
+
+        //getRoleCreepData()
         for(var index in this.listCreepData){
-            message = message +(this.listCreepData.length+"||   The creepData his index is "+this.listCreepData[index].getRoleCreepData()+" \n");
+            message = message +(this.listCreepData.length+"||   The creepData his index is "+this.listCreepData[index].role+" \n");
         }
         return message;
     }
