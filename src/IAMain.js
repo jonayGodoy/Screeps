@@ -21,7 +21,7 @@ class IAMain {
 
         this.dao = new Dao();
         this.listCreepData = [];
-        this.listCreepData = this.dao.loadListCreepData();
+        this.dao.loadListCreepData();
 
 
     }

@@ -7,10 +7,10 @@ module.exports = class Dao{
     }
 
 
-    loadListCreepData(){
+    loadListCreepData(rulesListCreepData){
         console.log("llamada al load");
         let firstSpawn = callGame.getFirstSpawn();
-        var newRuleListCreepData = [];
+        let newRuleListCreepData = [];
 
         if (firstSpawn.room.memory.stateIARuleActive != undefined ) {
             for (var index in  firstSpawn.room.memory.stateIARuleActive) {
@@ -18,7 +18,7 @@ module.exports = class Dao{
                 let creepData = new CreepData(fakeCreepData.id,fakeCreepData.role);
                 newRuleListCreepData.push(creepData);
             }
-            return newRuleListCreepData;
+            rulesListCreepData = newRuleListCreepData;
         }
     }
 
