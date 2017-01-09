@@ -94,11 +94,10 @@ class CallGame{
         let isCreate = false;
         if(isNotError){
             isCreate = (this.ticksWithDelayPARCHE(name) != undefined);
-            console.log(isNotError && isCreate+" name "+name+ " TICKS1 "+this.ticksWithDelayPARCHE(name)+ " IScREATE "+isCreate);
         }
 
         if(isNotError && isCreate)
-        console.log(isNotError && isCreate+" name "+name+ " TICKS1 "+this.ticksWithDelayPARCHE(name)+ " IScREATE "+isCreate);
+        console.log(isNotError && isCreate+" name "+name+ " TICKS1 "+this.ticksWithDelayPARCHE(name)+ " IScREATE "+isCreate+ " role "+Game.creeps[name]);
 
         return isNotError && isCreate;
     }
