@@ -10,11 +10,11 @@ class IAMain {
             new RuleCreateCreeps(2,constants.HARVESTER()),
             new RuleCreateCreeps(1,constants.MONITOR()),
             new RuleCreateCreeps(2,constants.UPGRADER()),
-            new RuleBuildExtension()
+          //  new RuleBuildExtension()
         ];
 
         this.rulesListPasiveSortedByPriority =[
-            new RuleRenovateCreeps()
+        //    new RuleRenovateCreeps()
         ];
 
         this.engineRules = new EngineRules(this.rulesListActivesSortedByPriority, this.rulesListPasiveSortedByPriority);
