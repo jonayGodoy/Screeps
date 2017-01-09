@@ -1,10 +1,10 @@
 const constants = require('Constants');
 const constantsGame = require('ConstantsGame');
 var CreepData = require('CreepData');
-var ia = require('IAMain');
-class CallGame{
+module.exports  = class CallGame{
 
-    constructor() {
+    constructor(ia) {
+        this.ia = ia;
         this.firstSpawn = null;
 
         this.structureCreepsBasic = [[WORK, CARRY, MOVE], undefined];
@@ -18,11 +18,11 @@ class CallGame{
 
     }
 
-    getCreeps(){
+    static getCreeps(){
         return Game.creeps;
     }
 
-    calculateCostCreep(partsCreep){
+    static calculateCostCreep(partsCreep){
         let costTotal = 0;
         for(var index in partsCreep){
             costTotal = costTotal + constantsGame.getCostPartCreep(partsCreep[index]);
@@ -31,7 +31,7 @@ class CallGame{
         return costTotal;
     }
 
-    getFirstSpawn(){
+    static getFirstSpawn(){
         if( this.firstSpawn == null || this.firstSpawn == undefined){
             var firstSpawn;
             for(var name in Game.spawns) {
@@ -46,20 +46,20 @@ class CallGame{
     }
 
 
-    createCreeper(role){
+    static createCreeper(role){
         let structureCreeps = this.structureCreepsList[role];
         return this.getFirstSpawn().createCreep(structureCreeps[0], structureCreeps[1], {role: role});
     }
 
 
-    saveListIAcreepData(nameCreep){
+    static saveListIAcreepData(nameCreep){
         let creep = Game.creeps[nameCreep];
         let creepData = new CreepData(creep.id,creep.memory.role);
-        ia.addCreepListData(creepData);
+        this.ia.addCreepListData(creepData);
     }
 
 
-    deleteCreep(creep){
+    static deleteCreep(creep){
         creep.suicide();
         this.cleanMemoryCreep();
     }
@@ -74,10 +74,10 @@ class CallGame{
         }
     }
 
-    findCreepersForRole(role){
+    static findCreepersForRole(role){
         return _.filter(Game.creeps, (creep) => creep.memory.role == role);
     }
 
 
 }
-module.exports  = new CallGame();
+
