@@ -14,17 +14,15 @@ module.exports  = class RuleCreateCreeps extends RuleActive_Abstract{
 
     conditionRule(){
         let roleListCreeps = callGame.findCreepersForRole(this.role);
-
-
-        let condition = (roleListCreeps.length >= this.quantity);;
-
-        this.contParche = roleListCreeps.length;
-
-        return condition;
+        return (roleListCreeps.length >= this.quantity);
     }
 
     behaviorRule() {
-       let info = callGame.createCreeper(this.role+"_"+this.contParche,this.role);
-        console.log(info);
+
+        let roleListCreeps = callGame.findCreepersForRole(this.role);
+
+
+
+        callGame.createCreeper(this.role+"_"+roleListCreeps.length,this.role);
     }
 };
