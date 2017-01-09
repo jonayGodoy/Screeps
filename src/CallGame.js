@@ -97,7 +97,7 @@ class CallGame{
         }
 
 
-        console.log("----"+isNotError && isCreate+" name "+name+ " TICKS1 "+this.ticksWithDelayPARCHE(name)+ " IScREATE "+isCreate+ " role "+Game.creeps[name].memory.role);
+        console.log(isNotError && isCreate+" name "+name+ " TICKS1 "+this.ticksWithDelayPARCHE(name)+ " IScREATE "+isCreate+ " role "+Game.creeps[name].memory.role);
 
         return isNotError && isCreate;
     }
