@@ -2,7 +2,6 @@ const constants = require('Constants');
 var RulePasive_Abstract = require('./RulePasive_Abstract');
 var RuleActive_Abstract = require('./RuleActive_Abstract');
 var roleManager = require('RoleManager');
-var callGame = require('CallGame');
 var Dao = require('Dao');
 
 module.exports = class EngineRules{
