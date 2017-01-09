@@ -17,7 +17,6 @@ class CallGame{
         this.structureCreepsList[constants.UPGRADER()] = this.structureCreepsBasic;
         this.structureCreepsList[constants.MONITOR()] = this.structureCreepsBasic;
 
-
     }
 
     getCreeps(){
@@ -91,6 +90,7 @@ class CallGame{
 
     isCreateCreep(name) {
         //repared
+        console.log("estado"+_.isString(name));
         return _.isString(name);
     }
 
