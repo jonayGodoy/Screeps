@@ -55,20 +55,19 @@ class CallGame{
     createCreeper(role){
         let structureCreeps = this.structureCreepsList[role];
         let nameCreep = this.getFirstSpawn().createCreep(structureCreeps[0], structureCreeps[1], {role: role});
-        // parche this.saveListIAcreepData(nameCreep);
+        this.saveListIAcreepData(nameCreep);
         return nameCreep;
     }
 
-/*
+
     saveListIAcreepData(nameCreep){
-        //error por bug
         if(this.isCreateCreep(nameCreep)){
             let creep = Game.creeps[nameCreep];
             let creepData = new CreepData(creep.id,creep.memory.role);
             this.ia.addCreepListData(creepData);
         }
     }
-*/
+
 
     deleteCreep(creep){
         creep.suicide();
@@ -89,7 +88,6 @@ class CallGame{
         return _.filter(Game.creeps, (creep) => creep.memory.role == role);
     }
 
-    /*
     isCreateCreep(name) {
         //repared
         let isCreate = false;
@@ -104,7 +102,7 @@ class CallGame{
 
         return _.isString(name) && isCreate;
     }
-*/
+
 
 
 
