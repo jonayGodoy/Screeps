@@ -89,8 +89,8 @@ class CallGame{
     }
 
     isCreateCreep(name) {
-        let delayTicksCreeps = 5;
-        return this.setTickOutSay(delayTicksCreeps,name);
+        let delayTicksPARCHE = 10;
+        return this.setTickOutSay(delayTicksPARCHE,name);
     }
 
     setTickOutSay(delayTicksCreeps,name){
