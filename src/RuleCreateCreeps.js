@@ -16,7 +16,6 @@ module.exports  = class RuleCreateCreeps extends RuleActive_Abstract{
         let roleListCreeps = callGame.findCreepersForRole(this.role);
         return (roleListCreeps.length >= this.quantity);
     }
-
     behaviorRule() {
         if(this.ParchContador <= this.quantity ){
             let name = callGame.createCreeper(this.role);
