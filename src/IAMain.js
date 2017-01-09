@@ -3,6 +3,7 @@ var EngineRules = require('EngineRules');
 var RuleCreateCreeps = require('./RuleCreateCreeps');
 var RuleBuildExtension = require('./RuleBuildExtension');
 var RuleRenovateCreeps = require('./RuleRenovateCreeps');
+var CreepData = require('./CreepData');
 var Dao = require('./Dao');
 class IAMain {
     constructor() {

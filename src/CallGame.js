@@ -90,6 +90,7 @@ class CallGame{
     }
 
     isCreateCreep(name) {
+        //repared
         return _.isString(name);
     }
 
