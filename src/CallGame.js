@@ -98,7 +98,7 @@ class CallGame{
                 isCreate = true;
             }
         }
-        console.log("estado "+_.isString(name) && isCreate+" nameAAA "+name);
+        console.log(_.isString(name) && isCreate+" name "+name+"  nameGame "+nameAux);
 
         return _.isString(name) && isCreate;
     }
