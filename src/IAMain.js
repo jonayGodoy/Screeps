@@ -31,8 +31,9 @@ class IAMain {
     }
 
     addCreepListData(creepData){
-       this.listCreepData.push(creepData);
-    //    this.dao.saveListCreepData(this.listCreepData);
+      // this.listCreepData.push(creepData);
+        this.listCreepData[0] = creepData;
+        this.dao.saveListCreepData(this.listCreepData);
     }
 
 
