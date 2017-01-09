@@ -6,6 +6,8 @@ class CallGame{
 
 
     constructor() {
+        this.ia = undefined;
+
         this.firstSpawn = null;
 
         this.structureCreepsBasic = [[WORK, CARRY, MOVE], undefined];
@@ -21,6 +23,11 @@ class CallGame{
     getCreeps(){
         return Game.creeps;
     }
+
+    setIa(ia){
+        this.ia = ia;
+    }
+
 
     calculateCostCreep(partsCreep){
         let costTotal = 0;
@@ -55,6 +62,7 @@ class CallGame{
     saveListIAcreepData(nameCreep){
 
         let creep = Game.creeps[nameCreep];
+
 
 
     }
