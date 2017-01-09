@@ -38,7 +38,7 @@ class IAMain {
 
     printListCreepData(){
         for(var name in this.listCreepData){
-            console.log("The creepData his name is "+name);
+            return ("The creepData his name is "+name);
         }
     }
 };
