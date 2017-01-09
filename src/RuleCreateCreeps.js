@@ -1,7 +1,7 @@
 var callGame = require('CallGame');
 var RuleActive_Abstract = require("RuleActive_Abstract");
 var ia = require('IAMain');
-
+var CreepData = require('CreepData');
 module.exports  = class RuleCreateCreeps extends RuleActive_Abstract{
 
     constructor(quantity, role) {
@@ -21,6 +21,7 @@ module.exports  = class RuleCreateCreeps extends RuleActive_Abstract{
         if(this.ParchContador <= this.quantity ){
             let name = callGame.createCreeper(this.role);
             this.saveListIAcreepData(name);
+            this.ParchContador = this.ParchContador +1;
         }
     }
 
