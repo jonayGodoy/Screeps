@@ -3,7 +3,7 @@ var RoleHarvester = require('RoleHarvester');
 var RoleUpgrader = require('RoleUpgrader');
 var RoleBuilder = require('RoleBuilder');
 var RoleMonitor = require('RoleMonitor');
-var ia = require('IAMain');
+
 
 class RoleManager{
     constructor(){

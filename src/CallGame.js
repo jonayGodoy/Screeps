@@ -1,7 +1,7 @@
 const constants = require('Constants');
 const constantsGame = require('ConstantsGame');
 var CreepData = require('CreepData');
-//var ia = require('IAMain');
+var ia = require('IAMain');
 class CallGame{
 
     constructor() {
