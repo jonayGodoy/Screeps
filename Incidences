@@ -28,3 +28,4 @@ ver como usar el polimorfismo en ECMAScript6
 ++++ cuando creo creeps el juego me crea un montons de creeps en memoria
 refactor monitor qye pase por callGame
 +la lista tiene un delay importante de cuando se ahce a cuando se ponse hacer
++saveListIAcreepData DA FUNCIONA DE MANERA ERRONEA CUANDO DE ACEELERA EL SIMULADOR
