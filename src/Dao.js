@@ -12,7 +12,6 @@ module.exports = class Dao{
 
 
     saveRuleListActive(rulesListActivesSortedByPriority) {
-        console.log("call dao");
         callGame.getFirstSpawn().room.memory.stateIARuleActive = rulesListActivesSortedByPriority;
     }
 
