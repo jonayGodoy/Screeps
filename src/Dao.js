@@ -1,13 +1,17 @@
 var callGame = require('CallGame');
 module.exports = class Dao{
 
-    saveListCreepData(){
-
+    saveListCreepData(rulesListCreepData){
+        callGame.getFirstSpawn().room.memory.stateIAListCreepData = rulesListCreepData;
     }
 
 
-    loadListCreepData(){
+    loadListCreepData(rulesListCreepData){
+        let firstSpawn = callGame.getFirstSpawn();
 
+        if (firstSpawn.room.memory.stateIARuleActive != undefined ) {
+            rulesListCreepData = firstSpawn.room.memory.stateIARuleActive;
+        }
     }
 
 
