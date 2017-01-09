@@ -81,7 +81,7 @@ class CallGame{
             console.log("creeps Muertos en la memoria "+name+ "  ticks" +Game.creeps[name].ticksToLive);
             if (!Game.creeps[name]) {
                 console.log("creeps Muertos en la memoria "+name+ "  ticks" +Game.creeps[name].ticksToLive);
-                delete Memory.creeps[name];
+                 Memory.creeps[name] = null;
             }
         }
     }
