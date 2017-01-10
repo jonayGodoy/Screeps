@@ -66,7 +66,7 @@ class CallGame{
         creep.suicide();
 
         let memoryAux = Memory.creeps;
-        memoryAux.creeps.splice(nameCreep, 1);
+       // memoryAux.creeps.splice(nameCreep, 1);
         for(var memory in memory){
             console.log(memory);
         }
