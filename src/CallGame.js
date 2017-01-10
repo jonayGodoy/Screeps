@@ -56,18 +56,9 @@ class CallGame{
     createCreeper(name, role){
         let structureCreeps = this.structureCreepsList[role];
         let nameCreep = this.getFirstSpawn().createCreep(structureCreeps[0], name, {role: role});
-       // this.saveListIAcreepData(nameCreep);
         return nameCreep;
     }
 
-
-    saveListIAcreepData(nameCreep){
-        if(this.isCreateCreep(nameCreep)){
-            let creep = Game.creeps[nameCreep];
-            let creepData = new CreepData(creep.id,creep.memory.role);
-            this.ia.addCreepListData(creepData);
-        }
-    }
 
 
     deleteCreep(creep){
@@ -77,16 +68,6 @@ class CallGame{
        // this.cleanMemoryCreep();
     }
 
-    cleanMemoryCreep() {
-        for (var name in Memory.creeps) {
-         //   console.log("creeps  en la memoria "+name);
-        //    console.log("creeps Muertos en la memoria "+name+ "  ticks" +Game.creeps[name].ticksToLive);
-            if (Game.creeps[name] != undefined && Game.creeps[name].ticksToLive === undefined) {
-                console.log("creeps Muertos en la memoria "+name+ "  ticks " +Game.creeps[name].ticksToLive);
-                delete Memory.creeps[name];
-            }
-        }
-    }
 
     findCreepersForRole(role){
         return _.filter(Game.creeps, (creep) => creep.memory.role == role);
@@ -95,15 +76,6 @@ class CallGame{
     isCreateCreep(name) {
         return _.isString(name);
     }
-
-
-    ticksWithDelayPARCHE(name){
-        let delayTicksCreeps = 10;
-        if(Game.time % delayTicksCreeps == 0) {
-            return Game.creeps[name].ticksToLive;
-        }
-    }
-
 
 
 }

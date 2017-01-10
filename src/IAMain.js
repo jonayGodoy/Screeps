@@ -19,33 +19,13 @@ class IAMain {
 
         this.engineRules = new EngineRules(this.rulesListActivesSortedByPriority, this.rulesListPasiveSortedByPriority);
 
-        this.dao = new Dao();
-        this.listCreepData = [];
-        this.listCreepData = this.dao.loadListCreepData(this.listCreepData);
-
-
-
     }
 
     updateIA(){
         this.engineRules.updateRules();
     }
 
-    addCreepListData(creepData){
-        this.listCreepData.push(creepData);
-        this.dao.saveListCreepData(this.listCreepData);
-    }
 
-
-    printListCreepData(){
-        var message = "";
-
-        //getRoleCreepData()
-        for(var index in this.listCreepData){
-            message = message +(this.listCreepData.length+"||   The creepData his index is "+this.listCreepData[index].role+" \n");
-        }
-        return message;
-    }
 };
 
 module.exports  = new IAMain();
