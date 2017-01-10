@@ -60,7 +60,6 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
             if(this.isCreepOld(creep)){
                 return creep;
             }
-
         }
         return undefined;
     }
