@@ -16,7 +16,7 @@ module.exports = class EngineRules{
     updateRules(){
         this.updateRuleActiveListForPriority();
         this.updateRulePasiveListForPriority();
-        this.dao.saveRuleListActive();
+        this.dao.saveRuleListActive( this.rulesListActivesSortedByPriority);
     }
 
     updateRuleActiveListForPriority() {
