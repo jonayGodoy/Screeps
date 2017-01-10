@@ -27,7 +27,7 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
                     let role = creepOldGame.memory.role;
                     console.log("name----------------"+creepOldGame.name+"---------------------");
                     console.log("role----------------"+creepOldGame.memory.role+"---------------------");
-                    this.creepOld = new CreepData(creepOldGame.name,creepOldGame.memory.role);
+                    this.creepOld = new CreepData(name,role);
                     this.dao.saveRenovateCreep(creepOldGame);
                     return false;
                 }
