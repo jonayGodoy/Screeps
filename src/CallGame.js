@@ -67,11 +67,11 @@ class CallGame{
 
         let memoryAux = Memory.creeps;
        // memoryAux.creeps.splice(nameCreep, 1);
-        for(var memory in memory){
-            console.log(memory);
+        for(var name in memoryAux){
+            console.log(memoryAux[name]);
         }
        delete Memory.creeps;
-        Memory.creeps = memoryAux;
+
 
           //  console.log(field);
 
