@@ -39,7 +39,7 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
         if(this.creepOld != undefined) {
             let nameOldCreep = this.creepOld.getNameCreepData();
             let rolOldCreep = this.creepOld.getRoleCreepData();
-
+            console.log("role----------------"+nameOldCreep+"---------------------");
             let result = callGame.createCreeper(nameOldCreep,rolOldCreep);
             if (this.isCreateCreep(result)) {
                 let reset = undefined;
