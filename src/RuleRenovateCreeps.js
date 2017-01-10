@@ -25,8 +25,6 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
                 if (creepOldGame != undefined) {
                     let name = creepOldGame.name;
                     let role = creepOldGame.memory.role;
-                    console.log("name----------------"+creepOldGame.name+"---------------------");
-                    console.log("role----------------"+creepOldGame.memory.role+"---------------------");
                     this.creepOld = new CreepData(name,role);
                     this.dao.saveRenovateCreep(creepOldGame);
                     return false;
@@ -44,11 +42,13 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
             let nameOldCreep = this.creepOld.getNameCreepData();
             let roleOldCreep = this.creepOld.getRoleCreepData();
 
+            console.log("name----------------"+nameOldCreep+"---------------------");
+            console.log("role----------------"+roleOldCreep+"---------------------");
             let result = callGame.createCreeper(nameOldCreep,roleOldCreep);
             if (this.isCreateCreep(result)) {
                 let reset = undefined;
-                this.creepOld = reset;
-                this.dao.saveRenovateCreep(reset);
+      //          this.creepOld = reset;
+        //        this.dao.saveRenovateCreep(reset);
             }
             console.log(result+" Revivido");
         }
