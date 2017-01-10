@@ -56,7 +56,7 @@ module.exports = class RuleBuildExtension extends RuleActive_Abstract{
         let structureExtension = room.find(FIND_CONSTRUCTION_SITES, {
             filter: (structure) => {
                 return (structure.structureType == STRUCTURE_EXTENSION) &&
-                    (structure.pos.x != posFirstSpawn.x + i) &&
+                    (structure.pos.x != posFirstSpawn.x ) &&
                     (structure.pos.y != posFirstSpawn.y);
             }
         });

@@ -3,35 +3,66 @@ var callGame = require('CallGame');
 module.exports  = class RuleBuildStructures  extends RuleActive_Abstract{
 
 
-    constructor(quantity,requiredLevel,structure_types) {
-        //5//2//FIND_CONSTRUCTION_SITES
+    constructor(quantity,pos,requiredLevel,structure_types) {
+      //  firstSpawn.pos//5//2//STRUCTURE_EXTENSION
         super("BuildStructures");
         this.quantity = quantity;
         this.requiredLevel = requiredLevel;
-        this.structure_types = structure_types;
+        this.structure_type = structure_types;
+        this.startCoordinate = pos;
+        this.room = callGame.getFirstSpawn().room;
     }
 
     conditionRule(){
-        let room = callGame.getFirstSpawn().room;
-        let levelRoom = room.controller.level;
-        let numberSites =   this.numberSitesStructure(room, this.structure_types);
+        let levelRoom = this.room.controller.level;
+        let numberSites =   this.numberSitesStructure();
 
 
         return (levelRoom <= this.requiredLevel) && (numberSites >= this.quantity);
     }
 
     behaviorRule(){
-        //override
+        let numberSiteExtensions = this.numberSitesExtensions();
+
+        if(numberSiteExtensions < this.quantity){
+            this.generateExtensionParallelDownToSpawn(this.startCoordinate,this.quantity);
+        }
     }
 
-    numberSitesStructure(room,structure_types) {
-        return room.find(FIND_CONSTRUCTION_SITES, {
+    numberSitesStructure() {
+        return this.room.find(FIND_CONSTRUCTION_SITES, {
             filter: (structure) => {
-                return (structure.structureType == structure_types );
+                return (structure.structureType == this.structure_type );
             }
         }).length;
     }
 
+
+
+    generateExtensionParallelDownToSpawn() {
+
+        let marginX = parseInt((-((this.quantity)/2)));
+        let marginY = -3;
+        for (let i = marginX; i < this.quantity + marginX; i++) {
+            //incidencia extraer un metodo
+            if (!this.existStructureExtension(this.startCoordinate)) {
+                this.room.createConstructionSite(this.startCoordinate.x + i, this.startCoordinate.y +marginY, this.structure_type)
+            }
+
+        }
+    };
+
+    existStructureExtension(){
+        let structureExtension = this.room.find(FIND_CONSTRUCTION_SITES, {
+            filter: (structure) => {
+                return (structure.structureType == this.structure_type) &&
+                    (structure.pos.x != this.startCoordinate.x) &&
+                    (structure.pos.y != this.startCoordinate.y);
+            }
+        });
+
+        return (structureExtension[0] != null || structureExtension[0] != undefined);
+    }
 
 };
 

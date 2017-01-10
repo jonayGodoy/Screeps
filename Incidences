@@ -26,4 +26,5 @@ refactorBuildExtension dividir en dos clases;
 ++++ cuando creo creeps el juego me crea un montons de creeps en memoria
 refactor monitor qye pase por callGame
 +LOS NOMBRE se reutilaz para evitar problemas con los metodos de los creeps
++refactorizar las reglas cuando se cumpla la condicion ejecutar el comportamiento y no cuando no se cumpla
 //renovate no revie upgrates
