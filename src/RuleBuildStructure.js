@@ -42,7 +42,7 @@ module.exports  = class RuleBuildStructures  extends RuleActive_Abstract{
     generateExtensionParallelDownToSpawn() {
 
         let marginX = parseInt((-((this.quantity)/2)));
-        let marginY = -3;
+        let marginY = +2;
         for (let i = marginX; i < this.quantity + marginX; i++) {
             //incidencia extraer un metodo
             if (!this.existStructure()) {
