@@ -11,6 +11,8 @@ Backlog------------------
 refactor ruleBuildExtension
 +informe con todas las reglas que se han ejecutados y sus resultados
 +mirar que es grunt
++aññadir seguridad
++ crear un IA inteligente que se pregunte que recursos falta o que nesecita para crecer y ejecute las reglas en consecuenscia
 Sprint------------
 
 +guardar y crear un lista de creeps que renovar
