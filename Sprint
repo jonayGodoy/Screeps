@@ -13,10 +13,10 @@ refactor ruleBuildExtension
 +mirar que es grunt
 Sprint------------
 
-
++guardar y crear un lista de creeps que renovar
++los creepes de mueren de viejos remplazarlos
 +refactor roles
 +que los creeps busquen nuevos sitios con energia
-+los creepes de mueren de viejos remplazarlos
 +crear celulas más potentes y que createcreeper de callGame, como las reglas rulerenovate y RulecreateCreeps se adapten a el
 +añadir test
 

@@ -11,7 +11,7 @@ module.exports = class RoleMonitor{
     }
 
     setTickOutSay(creep, delayTicksCreeps){
-        if(callGame.getTimeTicks % delayTicksCreeps == 0) {
+        if(callGame.getTimeTicks() % delayTicksCreeps == 0) {
             this.creepSaySlow(creep);
         }
 
