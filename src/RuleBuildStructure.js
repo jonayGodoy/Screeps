@@ -22,7 +22,7 @@ module.exports  = class RuleBuildStructures  extends RuleActive_Abstract{
     }
 
     behaviorRule(){
-        let numberSiteExtensions = this.numberSitesExtensions();
+        let numberSiteExtensions = this.numberSitesStructure();
 
         if(numberSiteExtensions < this.quantity){
             this.generateExtensionParallelDownToSpawn(this.startCoordinate,this.quantity);
@@ -45,14 +45,14 @@ module.exports  = class RuleBuildStructures  extends RuleActive_Abstract{
         let marginY = -3;
         for (let i = marginX; i < this.quantity + marginX; i++) {
             //incidencia extraer un metodo
-            if (!this.existStructureExtension(this.startCoordinate)) {
+            if (!this.existStructure()) {
                 this.room.createConstructionSite(this.startCoordinate.x + i, this.startCoordinate.y +marginY, this.structure_type)
             }
 
         }
     };
 
-    existStructureExtension(){
+    existStructure(){
         let structureExtension = this.room.find(FIND_CONSTRUCTION_SITES, {
             filter: (structure) => {
                 return (structure.structureType == this.structure_type) &&
