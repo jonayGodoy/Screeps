@@ -8,7 +8,7 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
 
     constructor() {
         super("RenovateCreeps ");
-        this.limitTicks = 5;
+        this.limitTicks = 10;
         this.creepOld = undefined;
     }
 
@@ -39,6 +39,7 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
             if (this.isCreateCreep(result)) {
                 this.creepOld = undefined;
             }
+            console.log(result+" Revivido");
         }
 
     }
