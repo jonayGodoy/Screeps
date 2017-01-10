@@ -25,7 +25,7 @@ module.exports  = class RuleBuildStructures  extends RuleActive_Abstract{
         let numberSiteExtensions = this.numberSitesStructure();
 
         if(numberSiteExtensions < this.quantity){
-            this.generateExtensionParallelDownToSpawn(this.startCoordinate,this.quantity);
+            this.generateExtensionParallelDownToSpawn();
         }
     }
 
