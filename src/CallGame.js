@@ -64,7 +64,8 @@ class CallGame{
     deleteCreep(creep){
         let nameCreep = creep.name;
         creep.suicide();
-        delete Memory.creeps[nameCreep];
+        let field =delete Memory.creeps[nameCreep];
+            console.log(field);
        // this.cleanMemoryCreep();
     }
 
