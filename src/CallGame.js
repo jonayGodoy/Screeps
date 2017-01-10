@@ -93,18 +93,7 @@ class CallGame{
     }
 
     isCreateCreep(name) {
-        //repared
-        let isNotError = _.isString(name);
-        /*
-        let isCreate = false;
-        if(isNotError){
-            isCreate = (this.ticksWithDelayPARCHE(name) != undefined);
-        }
-        */
-
-   //     console.log(isNotError && isCreate+" name "+name+ " TICKS1 "+this.ticksWithDelayPARCHE(name)+ " IScREATE "+isCreate+ " role "+Game.creeps[name].memory.role);
-
-        return isNotError;
+        return _.isString(name);
     }
 
 
