@@ -55,7 +55,6 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
 
             }
 
-        }
     }
 
     existOldCreep(listCreep){
