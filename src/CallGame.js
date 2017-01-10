@@ -60,41 +60,6 @@ class CallGame{
     }
 
 
-    deleteCreep(creep){
-        let nameCreep = creep.name;
-        creep.suicide();
-
-      //  let memoryDelete = [];
-        let memoryAux = Memory.creeps;
-       // memoryAux.creeps.splice(nameCreep, 1);
-
-        for(var name in  Memory.creeps){
-            memoryAux[name] = Memory.creeps[name];
-        }
-
-        Memory.creeps = [];
-        console.log("sss");
-
-
-        for(var name in  Memory.memoryAux){
-            Memory.creeps[name] =  memoryAux[name] ;
-        }
-
-
-        //  for(var name2 in memoryDelete){
-     //       if(nameCreep !== name2){
-     //           Memory.creeps[name2] = memoryAux[name2];
-      //      }
-     //   }
-
-     //  delete Memory.creeps;
-
-
-          //  console.log(field);
-
-    }
-
-
     findCreepersForRole(role){
         return _.filter(Game.creeps, (creep) => creep.memory.role == role);
     }

@@ -31,30 +31,14 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
 
 
     behaviorRule() {
-      //  console.log("llama rule behavior");
-        /*
-        if(this.creepOld != undefined) {
-            let result = callGame.createCreeper(this.creepOld.memory.role);
-
-            if (this.isCreateCreep(result)) {
-              callGame.deleteCreep(this.creepOld);
-                this.creepOld = undefined;
-            } else {
-                return constantsGame.getErrorCreateCreeps(result);
-            }
-        }
-        */
-
         if(this.creepOld != undefined) {
             let nameOldCreep = this.creepOld.name;
             let rolOldCreep = this.creepOld.memory.role;
-        //    callGame.deleteCreep(this.creepOld);
 
             let result = callGame.createCreeper(nameOldCreep,rolOldCreep);
             if (this.isCreateCreep(result)) {
                 this.creepOld = undefined;
             }
-            console.log(result);
         }
 
     }
