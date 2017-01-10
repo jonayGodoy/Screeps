@@ -29,4 +29,5 @@ refactor monitor qye pase por callGame
 +refactorizar las reglas cuando se cumpla la condicion ejecutar el comportamiento y no cuando no se cumpla
 +el dao de renovar los creep dará error si se crean varios creeps al mismo tiempo
 +cambiar los var de los forin por let
++ahora
 //renovate no revie upgrates
