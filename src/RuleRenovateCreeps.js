@@ -18,7 +18,10 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
         if(this.creepOld == undefined) {
             for (var index in listRoleSorterForPriority) {
                 let listCreep = callGame.findCreepersForRole(listRoleSorterForPriority[index]);
-                if (this.existOldCreep(listCreep)) {
+
+                let creepOldGame = this.existOldCreep(listCreep);
+                if (creepOldGame != undefined) {
+                    this.creepOld = new CreepData(creepOldGame.name,creepOldGame.memory.role);
                     return false;
                 }
             }
@@ -48,11 +51,11 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
         for(var index in listCreep){
             let creep = listCreep[index];
             if(this.isCreepOld(creep)){
-                this.creepOld = new CreepData(creep.name,creep.memory.role);
-                return true;
+                return creep;
             }
 
         }
+        return undefined;
     }
 
     isCreepOld(creep){
