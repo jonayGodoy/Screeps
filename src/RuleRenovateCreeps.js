@@ -35,7 +35,6 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
         return true;
     }
 
-
     behaviorRule() {
         if(this.creepOld != undefined) {
             let nameOldCreep = this.creepOld.getNameCreepData();
