@@ -1,6 +1,7 @@
 const constants = require('Constants');
 var CreepData = require('CreepData');
 var callGame = require('CallGame');
+var Dao = require('./Dao');
 var RulePasive_Abstract = require("RulePasive_Abstract");
 
 
@@ -10,6 +11,7 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
         super("RenovateCreeps ");
         this.limitTicks = 10;
         this.creepOld = undefined;
+        this.dao = new Dao();
     }
 
     conditionRule(){
@@ -59,12 +61,7 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
     }
 
     isCreepOld(creep){
-        if(creep.ticksToLive <= this.limitTicks){
-            return true;
-        }else{
-            return false;
-        }
-
+        return (creep.ticksToLive <= this.limitTicks);
     }
 
     isCreateCreep(result) {

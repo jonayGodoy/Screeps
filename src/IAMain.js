@@ -3,7 +3,6 @@ var EngineRules = require('EngineRules');
 var RuleCreateCreeps = require('RuleCreateCreeps');
 var RuleBuildStructure = require('RuleBuildStructure');
 var RuleRenovateCreeps = require('RuleRenovateCreeps');
-var Dao = require('./Dao');
 var callGame = require('CallGame');
 class IAMain {
     constructor() {
@@ -20,7 +19,6 @@ class IAMain {
         ];
 
         this.engineRules = new EngineRules(this.rulesListActivesSortedByPriority, this.rulesListPasiveSortedByPriority);
-
     }
 
     updateIA(){
