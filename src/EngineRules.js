@@ -41,27 +41,46 @@ module.exports = class EngineRules{
         }
     }
 
-
-    executeRuleOnce(ruleAddState) {
-        if (!this.done) {
-            this.done = this.conditionRule();
-
-            if (this.done) {
-                return this.done;
-            } else {
-                this.behaviorRule();
+    updateRuleActiveListForPriorityTemporal() {
+        let done = true;
+        for (var index in  this.rulesListActivesSortedByPriority) {
+            let ruleAddState = this.rulesListActivesSortedByPriority[index];
+            if (ruleAddState[STATE]) {
+                ruleAddState[STATE] = this.executeRuleOnce(ruleAddState);
+                if (!ruleAddState[STATE]) {
+                    this.printState(ruleAddState);
+                    this.rulesListActivesSortedByPriority[index] = ruleAddState;
+                }
             }
         }
-        return this.done;
+    }
+
+
+
+
+
+    executeRuleOnce(ruleAddState) {
+        let rule = ruleAddState[RULE_ACTIVE];
+
+        if (!ruleAddState[STATE]) {
+            ruleAddState[STATE] = rule.conditionRule();
+
+            if (ruleAddState[STATE]) {
+                return ruleAddState[STATE];
+            } else {
+                rule.behaviorRule();
+            }
+        }
+        return ruleAddState[STATE];
     }
 
 
     executeContinually(rule){
-        if (!this.conditionRule()) {
-            this.behaviorRule();
+        if (!rule.conditionRule()) {
+            rule.behaviorRule();
         }
 
-        return !this.conditionRule();
+        return !rule.conditionRule();
     }
 
 
