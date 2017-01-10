@@ -47,7 +47,7 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
 
         if(this.creepOld != undefined) {
             let nameOldCreep = this.creepOld.name;
-            let rolOldCreep = this.creepOld.role;
+            let rolOldCreep = this.creepOld.memory.role;
             callGame.deleteCreep(this.creepOld);
             this.creepOld = undefined;
             let isCreate = false;
