@@ -4,6 +4,7 @@ module.exports = class Dao{
 
 
     saveRuleListActive(rulesListActivesSortedByPriority) {
+        console.log("calll         m");
         callGame.getFirstSpawn().room.memory.stateIARuleActive = rulesListActivesSortedByPriority;
     }
 
