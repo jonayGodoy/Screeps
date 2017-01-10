@@ -60,7 +60,6 @@ class CallGame{
     }
 
 
-
     deleteCreep(creep){
         let nameCreep = creep.name;
         creep.suicide();
