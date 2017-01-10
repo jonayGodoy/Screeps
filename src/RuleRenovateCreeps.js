@@ -8,7 +8,7 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
 
     constructor() {
         super("RenovateCreeps ");
-        this.limitTicks = 200;
+        this.limitTicks = 5;
         this.creepOld = undefined;
     }
 
@@ -48,7 +48,7 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
         if(this.creepOld != undefined) {
             let nameOldCreep = this.creepOld.name;
             let rolOldCreep = this.creepOld.memory.role;
-            callGame.deleteCreep(this.creepOld);
+        //    callGame.deleteCreep(this.creepOld);
 
             let result = callGame.createCreeper(nameOldCreep,rolOldCreep);
             if (this.isCreateCreep(result)) {
