@@ -54,6 +54,7 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
             if (this.isCreateCreep(result)) {
                 this.creepOld = undefined;
             }
+            console.log(result);
         }
 
     }
