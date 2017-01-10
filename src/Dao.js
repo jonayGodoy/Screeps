@@ -1,6 +1,13 @@
 var callGame = require('CallGame');
 module.exports = class Dao{
 
+    saveRenovateCreep(){
+
+    }
+
+    loadRenovateCreep(){
+
+    }
 
 
     saveRuleListActive(rulesListActivesSortedByPriority) {

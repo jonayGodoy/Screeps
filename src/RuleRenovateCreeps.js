@@ -1,5 +1,5 @@
 const constants = require('Constants');
-const constantsGame = require('ConstantsGame');
+var CreepData = require('CreepData');
 var callGame = require('CallGame');
 var RulePasive_Abstract = require("RulePasive_Abstract");
 
@@ -32,8 +32,8 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
 
     behaviorRule() {
         if(this.creepOld != undefined) {
-            let nameOldCreep = this.creepOld.name;
-            let rolOldCreep = this.creepOld.memory.role;
+            let nameOldCreep = this.creepOld.getNameCreepData();
+            let rolOldCreep = this.creepOld.getRoleCreepData();
 
             let result = callGame.createCreeper(nameOldCreep,rolOldCreep);
             if (this.isCreateCreep(result)) {
@@ -48,7 +48,7 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
         for(var index in listCreep){
             let creep = listCreep[index];
             if(this.isCreepOld(creep)){
-                this.creepOld = creep;
+                this.creepOld = new CreepData(creep.name,creep.memory.role);
                 return true;
             }
 

@@ -1,12 +1,12 @@
 module.exports = class CreepData{
 
-    constructor(id,role) {
-        this.id = id;
+    constructor(name,role) {
+        this.name = name;
         this.role = role;
     }
 
-    getIdCreepData(){
-        return this.id;
+    getNameCreepData(){
+        return this.name;
     }
 
     getRoleCreepData(){

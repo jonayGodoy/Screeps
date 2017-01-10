@@ -27,4 +27,5 @@ refactorBuildExtension dividir en dos clases;
 refactor monitor qye pase por callGame
 +LOS NOMBRE se reutilaz para evitar problemas con los metodos de los creeps
 +refactorizar las reglas cuando se cumpla la condicion ejecutar el comportamiento y no cuando no se cumpla
++el dao de renovar los creep dará error si se crean varios creeps al mismo tiempo
 //renovate no revie upgrates
