@@ -65,20 +65,15 @@ class CallGame{
         let nameCreep = creep.name;
         creep.suicide();
 
-        let memoryAux = [];
+        let memoryDelete = [];
+        let memoryAux = Memory.creeps;
        // memoryAux.creeps.splice(nameCreep, 1);
-        for(var name1 in Memory.creeps){
-            console.log("name Memoria "+name1);
-            if(nameCreep !== name1){
-                memoryAux[name1] = Memory.creeps[name1];
-            }
-        }
-        Memory.creeps = memoryAux;
 
-        for(var name2 in memoryAux){
-            console.log("name Memoria "+name2);
+        Memory.creeps = memoryDelete;
+
+        for(var name2 in memoryDelete){
             if(nameCreep !== name2){
-                Memory.creeps[name2] =  memoryAux[name2];
+                Memory.creeps[name2] = memoryAux[name2];
             }
         }
 
