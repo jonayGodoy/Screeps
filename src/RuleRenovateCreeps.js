@@ -52,7 +52,6 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
             }
             console.log(result+" Revivido");
         }
-
     }
 
     existOldCreep(listCreep){
