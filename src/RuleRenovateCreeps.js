@@ -10,8 +10,8 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
     constructor() {
         super("RenovateCreeps ");
         this.limitTicks = 10;
-        this.creepOld = undefined;
         this.dao = new Dao();
+        this.creepOld = this.dao.loadRenovateCreep();
     }
 
     conditionRule(){
@@ -24,6 +24,7 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
                 let creepOldGame = this.existOldCreep(listCreep);
                 if (creepOldGame != undefined) {
                     this.creepOld = new CreepData(creepOldGame.name,creepOldGame.memory.role);
+                    this.dao.saveRenovateCreep(creepOldGame);
                     return false;
                 }
             }
