@@ -1,3 +1,4 @@
+var callGame = require('CallGame');
 module.exports = class RoleMonitor{
     constructor() {
         this.message = [""];
@@ -10,7 +11,7 @@ module.exports = class RoleMonitor{
     }
 
     setTickOutSay(creep, delayTicksCreeps){
-        if(Game.time % delayTicksCreeps == 0) {
+        if(callGame.getTimeTicks % delayTicksCreeps == 0) {
             this.creepSaySlow(creep);
         }
 

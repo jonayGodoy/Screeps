@@ -6,8 +6,6 @@ class CallGame{
 
 
     constructor() {
-        this.ia = undefined;
-
         this.firstSpawn = null;
 
         this.structureCreepsBasic = [[WORK, CARRY, MOVE]];
@@ -24,9 +22,6 @@ class CallGame{
         return Game.creeps;
     }
 
-    setIa(ia){
-        this.ia = ia;
-    }
 
 
     calculateCostCreep(partsCreep){
@@ -64,10 +59,14 @@ class CallGame{
         return _.filter(Game.creeps, (creep) => creep.memory.role == role);
     }
 
+    /*
     isCreateCreep(name) {
         return _.isString(name);
+    }*/
+
+
+    getTimeTicks(){
+        return Game.time;
     }
-
-
 }
 module.exports  = new CallGame();

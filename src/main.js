@@ -1,7 +1,6 @@
 var ia = require('IAMain');
 var roleManager = require('RoleManager');
 var callGame = require('CallGame');
-callGame.setIa(ia);
 //se resetea por el serve
 
 
