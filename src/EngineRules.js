@@ -3,6 +3,8 @@ var RulePasive_Abstract = require('./RulePasive_Abstract');
 var RuleActive_Abstract = require('./RuleActive_Abstract');
 var roleManager = require('RoleManager');
 var Dao = require('Dao');
+const RULE_ACTIVE = 1;
+const STATE =2;
 
 module.exports = class EngineRules{
     constructor(rulesListActivesSortedByPriority,rulesListPasivesSortedByPriority) {
@@ -40,7 +42,7 @@ module.exports = class EngineRules{
     }
 
 
-    executeRuleOnce() {
+    executeRuleOnce(ruleAddState) {
         if (!this.done) {
             this.done = this.conditionRule();
 
@@ -54,7 +56,7 @@ module.exports = class EngineRules{
     }
 
 
-    executeContinually(){
+    executeContinually(rule){
         if (!this.conditionRule()) {
             this.behaviorRule();
         }
