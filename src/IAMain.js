@@ -1,7 +1,6 @@
 const constants = require('Constants');
 var EngineRules = require('EngineRules');
 var RuleCreateCreeps = require('RuleCreateCreeps');
-var RuleBuildExtension = require('RuleBuildExtension');
 var RuleBuildStructure = require('RuleBuildStructure');
 var RuleRenovateCreeps = require('RuleRenovateCreeps');
 var Dao = require('./Dao');
@@ -14,7 +13,6 @@ class IAMain {
             new RuleCreateCreeps(2,constants.UPGRADER()),
             new RuleCreateCreeps(2,constants.BUILDER()),
             new RuleBuildStructure(5,callGame.getFirstSpawn().pos,2,STRUCTURE_EXTENSION)
-          //  new RuleBuildExtension()
         ];
 
         this.rulesListPasiveSortedByPriority =[
