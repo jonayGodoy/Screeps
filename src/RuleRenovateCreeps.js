@@ -54,6 +54,7 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
             while(!isCreate){
                 console.log("nameCrep "+nameOldCreep+" "+"role "+rolOldCreep);
                 let result = callGame.createCreeper(nameOldCreep,rolOldCreep);
+                console.log("result "+result);
                 isCreate = this.isCreateCreep(result);
             }
 
