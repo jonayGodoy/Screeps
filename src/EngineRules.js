@@ -40,6 +40,27 @@ module.exports = class EngineRules{
     }
 
 
+    executeRuleOnce() {
+        if (!this.done) {
+            this.done = this.conditionRule();
+
+            if (this.done) {
+                return this.done;
+            } else {
+                this.behaviorRule();
+            }
+        }
+        return this.done;
+    }
+
+
+    executeContinually(){
+        if (!this.conditionRule()) {
+            this.behaviorRule();
+        }
+
+        return !this.conditionRule();
+    }
 
     printState(rule) {
         if(roleManager.getRole(constants.MONITOR()) != undefined){
