@@ -62,6 +62,17 @@ module.exports = class EngineRules{
         return !this.conditionRule();
     }
 
+
+    addSupportStatetoActiveList(rulesListActivesWithoutState){
+        let listActiveAddListState = [];
+
+        for(var index in rulesListActivesWithoutState){
+            let ruleAddState = [rulesListActivesWithoutState[index],false];
+            listActiveAddListState[index] = ruleAddState;
+        }
+        return listActiveAddListState;
+    }
+
     printState(rule) {
         if(roleManager.getRole(constants.MONITOR()) != undefined){
             let message = "executing rule: " + rule.getNameRule();
