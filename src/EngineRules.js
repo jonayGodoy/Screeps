@@ -79,7 +79,6 @@ module.exports = class EngineRules{
         if (!rule.conditionRule()) {
             rule.behaviorRule();
         }
-
         return !rule.conditionRule();
     }
 
