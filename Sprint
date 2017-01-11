@@ -12,6 +12,7 @@ refactor ruleBuildExtension
 +informe con todas las reglas que se han ejecutados y sus resultados
 +mirar que es grunt
 +aññadir seguridad
++monitorizar y listar los tiempos en conseguir hitos y crear hitos
 + crear un IA inteligente que se pregunte que recursos falta o que nesecita para crecer y ejecute las reglas en consecuenscia
 refactorizar RuleBuildStructure usando constantes(-7)
 Sprint------------
