@@ -12,7 +12,7 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
         this.limitTicks = 10;
         this.dao = new Dao();
         this.creepOld = this.dao.loadRenovateCreep();
-        if(this.creepOld == undefined) {
+        if(this.creepOld != undefined) {
             let nameOldCreep = this.creepOld.getNameCreepData();
             let roleOldCreep = this.creepOld.getRoleCreepData();
 
