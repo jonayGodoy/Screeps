@@ -17,10 +17,9 @@ module.exports = class Dao{
         if ((firstSpawn.room.memory.RenovatingCreep  != undefined)) {
 
                 let creepOldMemory = firstSpawn.room.memory.RenovatingCreep;
-                console.log("memory----------------"+creepOldMemory+"---------------------");
-                console.log("name----------------"+creepOldMemory.name+"---------------------");
-                console.log("role----------------"+creepOldMemory.role+"---------------------");
-
+            //    console.log("memory----------------"+creepOldMemory+"---------------------");
+            //    console.log("name----------------"+creepOldMemory.name+"---------------------");
+             //   console.log("role----------------"+creepOldMemory.role+"---------------------");
 
                 return new CreepData(creepOldMemory.name,creepOldMemory.role);
 
