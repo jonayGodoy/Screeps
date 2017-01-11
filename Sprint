@@ -13,6 +13,7 @@ refactor ruleBuildExtension
 +mirar que es grunt
 +aññadir seguridad
 + crear un IA inteligente que se pregunte que recursos falta o que nesecita para crecer y ejecute las reglas en consecuenscia
+refactorizar RuleBuildStructure usando constantes(-7)
 Sprint------------
 
 refactoriazar motor de reglas
