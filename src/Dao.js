@@ -3,7 +3,12 @@ var CreepData = require('CreepData');
 module.exports = class Dao{
 
     saveRenovateCreep(oldCreep){
-        callGame.getFirstSpawn().room.memory.RenovatingCreep = new CreepData(oldCreep.name,oldCreep.role);
+    //    callGame.getFirstSpawn().room.memory.RenovatingCreep = new CreepData(oldCreep.name,oldCreep.role);
+       let arraySaveOldCreep = [];
+        arraySaveOldCreep["name"]=oldCreep.name;
+        arraySaveOldCreep["role"]=oldCreep.role;
+
+        callGame.getFirstSpawn().room.memory.RenovatingCreep = arraySaveOldCreep;
     }
 
     loadRenovateCreep(){
