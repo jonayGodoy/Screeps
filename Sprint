@@ -15,6 +15,7 @@ refactor ruleBuildExtension
 +monitorizar y listar los tiempos en conseguir hitos y crear hitos
 + crear un IA inteligente que se pregunte que recursos falta o que nesecita para crecer y ejecute las reglas en consecuenscia
 //pasos inicio, 5 extensiones(energia), creeper + potentes y más creeper poblacion, carreteras,energia+, creep + potentes, torretas
+//construir muros
 refactorizar RuleBuildStructure usando constantes(-7)
 Sprint------------
 
