@@ -16,6 +16,7 @@ refactor ruleBuildExtension
 Sprint------------
 
 refactoriazar motor de reglas
++refactorizar la reglas que cuando se cumpla la condicion se lanze el comportamiento
 +refactor roles problemas de mantenimiento
 +añadir test
 +que los creeps busquen nuevos sitios con energia
