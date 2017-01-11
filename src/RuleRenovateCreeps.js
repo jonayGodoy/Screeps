@@ -12,6 +12,13 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
         this.limitTicks = 10;
         this.dao = new Dao();
         this.creepOld = this.dao.loadRenovateCreep();
+        if(this.creepOld == undefined) {
+            let nameOldCreep = this.creepOld.getNameCreepData();
+            let roleOldCreep = this.creepOld.getRoleCreepData();
+
+            console.log("name----------------"+nameOldCreep+"---------------------");
+            console.log("role----------------"+roleOldCreep+"---------------------");
+        }
     }
 
     conditionRule(){
@@ -42,8 +49,6 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
             let nameOldCreep = this.creepOld.getNameCreepData();
             let roleOldCreep = this.creepOld.getRoleCreepData();
 
-            console.log("name----------------"+nameOldCreep+"---------------------");
-            console.log("role----------------"+roleOldCreep+"---------------------");
             let result = callGame.createCreeper(nameOldCreep,roleOldCreep);
             console.log(result+" Revivido");
             if (this.isCreateCreep(result)) {
