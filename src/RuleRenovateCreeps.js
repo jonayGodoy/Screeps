@@ -23,6 +23,7 @@ module.exports  = class RuleRenovateCreeps extends RulePasive_Abstract{
                 let listCreep = callGame.findCreepersForRole(listRoleSorterForPriority[index]);
 
                 let creepOldGame = this.existOldCreep(listCreep);
+                console.log(creepOldGame.toString());
                 if (creepOldGame != undefined) {
                     let name = creepOldGame.name;
                     let role = creepOldGame.memory.role;
