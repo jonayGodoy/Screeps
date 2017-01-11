@@ -8,8 +8,9 @@ module.exports = class Dao{
            arraySaveOldCreep["name"] = oldCreep.name;
            arraySaveOldCreep["role"] = oldCreep.role;
            callGame.getFirstSpawn().room.memory.RenovatingCreep = arraySaveOldCreep;
+           console.log("--------------Guardado---------");
        }else{
-           callGame.getFirstSpawn().room.memory.RenovatingCreep = undefined;
+           delete callGame.getFirstSpawn().room.memory.RenovatingCreep;
        }
 
     }
