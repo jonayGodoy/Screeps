@@ -17,7 +17,7 @@ module.exports = class Dao{
     loadRenovateCreep(){
         let firstSpawn = callGame.getFirstSpawn();
 
-        if (firstSpawn.room.memory.RenovatingCreep["name"] != undefined &&  firstSpawn.room.memory.RenovatingCreep["role"]  != undefined) {
+        if ((firstSpawn.room.memory.RenovatingCreep  != undefined) || (firstSpawn.room.memory.RenovatingCreep["name"] != undefined &&  firstSpawn.room.memory.RenovatingCreep["role"]  != undefined)) {
                 let creepOldMemory = firstSpawn.room.memory.RenovatingCreep;
             console.log("name----------------"+creepOldMemory.name+"---------------------");
             console.log("role----------------"+creepOldMemory.role+"---------------------");
