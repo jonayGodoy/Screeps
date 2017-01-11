@@ -37,7 +37,8 @@ module.exports = class EngineRules{
     updateRulePasiveListForPriority() {
         for (var index in  this.rulesListPasivesSortedByPriority) {
             let rule = this.rulesListPasivesSortedByPriority[index];
-            this.executeContinually(rule);
+         //   rule.execute();
+            this.executeRuleOnce(rule);
         }
     }
 
@@ -79,6 +80,7 @@ module.exports = class EngineRules{
         if (!rule.conditionRule()) {
             rule.behaviorRule();
         }
+
         return !rule.conditionRule();
     }
 
