@@ -60,14 +60,14 @@ module.exports = class EngineRules{
 
     executeRuleOnce(ruleAddState) {
         let rule = ruleAddState[RULE_ACTIVE];
-        console.log("rule ¿? "+rule);
 
         if (!ruleAddState[STATE]) {//refactorizar
             ruleAddState[STATE] = !rule.conditionRule();
-
+            console.log("state ¿? "+ruleAddState[STATE]);
             if (ruleAddState[STATE]) {
                 return ruleAddState[STATE];
             } else {
+                console.log("behavior ¿? "+rule);
                 rule.behaviorRule();
             }
         }
