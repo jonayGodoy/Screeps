@@ -62,9 +62,7 @@ module.exports = class EngineRules{
 
         if (!ruleAddState[STATE]) {//refactorizar
             ruleAddState[STATE] = !rule.conditionRule();
-            console.log("state ¿? "+ruleAddState[STATE]);
             if (ruleAddState[STATE]) {
-                console.log("behavior ¿? "+rule);
                 rule.behaviorRule();
             } else {
                 return ruleAddState[STATE];
@@ -85,8 +83,9 @@ module.exports = class EngineRules{
 
     addSupportStatetoActiveList(rulesListActivesWithoutState){
         let listActiveAddListState = [];
-//refactor true
+
         for(var index in rulesListActivesWithoutState){
+            console.log("rule "+index+" "+rulesListActivesWithoutState[index].getNameRule());
             let ruleAddState = [rulesListActivesWithoutState[index],false];
             listActiveAddListState[index] = ruleAddState;
         }
