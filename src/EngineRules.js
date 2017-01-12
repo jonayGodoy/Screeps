@@ -61,14 +61,15 @@ module.exports = class EngineRules{
         let rule = ruleAddState[RULE_ACTIVE];
 
         if (!ruleAddState[STATE]) {//refactorizar
-            ruleAddState[STATE] = !rule.conditionRule();
-            if (ruleAddState[STATE]) {
+            if (!rule.conditionRule()) {
                 rule.behaviorRule();
             } else {
-                return ruleAddState[STATE];
+                return ruleAddState[STATE] = true;
             }
+        }else{
+            return ruleAddState[STATE];
         }
-        return ruleAddState[STATE];
+
     }
 
 
@@ -85,9 +86,9 @@ module.exports = class EngineRules{
         let listActiveAddListState = [];
 
         for(var index in rulesListActivesWithoutState){
-            console.log("rule "+index+" "+rulesListActivesWithoutState[index].getNameRule());
             let ruleAddState = [rulesListActivesWithoutState[index],false];
             listActiveAddListState[index] = ruleAddState;
+            console.log("rule "+index+" "+(listActiveAddListState[index])[RULE_ACTIVE].getNameRule());
         }
         return listActiveAddListState;
     }
