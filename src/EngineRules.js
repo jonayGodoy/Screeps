@@ -3,8 +3,8 @@ var RulePasive_Abstract = require('./RulePasive_Abstract');
 var RuleActive_Abstract = require('./RuleActive_Abstract');
 var roleManager = require('RoleManager');
 var Dao = require('Dao');
-const RULE_ACTIVE = 1;
-const STATE =2;
+const RULE_ACTIVE = 0;
+const STATE =1;
 
 module.exports = class EngineRules{
     constructor(rulesListActivesSortedByPriority,rulesListPasivesSortedByPriority) {
@@ -60,7 +60,7 @@ module.exports = class EngineRules{
 
     executeRuleOnce(ruleAddState) {
         let rule = ruleAddState[RULE_ACTIVE];
-        console.log("ruele ¿? "+rule);
+        console.log("rule ¿? "+rule);
 
         if (!ruleAddState[STATE]) {//refactorizar
             ruleAddState[STATE] = !rule.conditionRule();
