@@ -33,7 +33,7 @@ module.exports = class EngineRules{
             this.rulesListActivesSortedByPriority[index] = ruleAddState;
             ruleAddState[constants.RULE_ACTIVE_STATE()] = this.executeRuleOnce(ruleAddState);
             stopList = !ruleAddState[constants.RULE_ACTIVE_STATE()];
-            if(stopList){
+            if(!stopList){
                 this.printState(ruleAddState[constants.RULE_ACTIVE()]);
             }
             index++;
