@@ -67,6 +67,7 @@ module.exports = class EngineRules{
             ruleAddState[STATE] = this.executeRuleOnce(ruleAddState);
             stopList = !ruleAddState[STATE];
 
+            index++;
         }
     }
 
