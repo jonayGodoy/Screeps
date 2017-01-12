@@ -64,10 +64,10 @@ module.exports = class EngineRules{
             ruleAddState[STATE] = !rule.conditionRule();
             console.log("state ¿? "+ruleAddState[STATE]);
             if (ruleAddState[STATE]) {
-                return ruleAddState[STATE];
-            } else {
                 console.log("behavior ¿? "+rule);
                 rule.behaviorRule();
+            } else {
+                return ruleAddState[STATE];
             }
         }
         return ruleAddState[STATE];
