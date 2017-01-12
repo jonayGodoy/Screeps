@@ -52,7 +52,6 @@ module.exports = class EngineRules{
                     stopList = !ruleAddState[STATE];
                     let parche = undefined;
                     return parche;
-                }else{
                 }
         }
     }
