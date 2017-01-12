@@ -64,7 +64,8 @@ module.exports = class EngineRules{
             if (!rule.conditionRule()) {
                 rule.behaviorRule();
             } else {
-                return ruleAddState[STATE] = true;
+                ruleAddState[STATE] = true
+                return  ruleAddState[STATE];
             }
         }else{
             return ruleAddState[STATE];
