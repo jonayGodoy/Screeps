@@ -44,10 +44,11 @@ module.exports = class EngineRules{
     updateRuleActiveListForPriority() {
         for (var index in  this.rulesListActivesSortedByPriority) {
             let ruleAddState = this.rulesListActivesSortedByPriority[index];
-               let stateRule = this.executeRuleOnce(ruleAddState);
-                if (stateRule) {
+                if (ruleAddState[STATE]) {
                     this.printState(ruleAddState[RULE_ACTIVE]);
                     this.rulesListActivesSortedByPriority[index] = ruleAddState;
+                }else{
+                    ruleAddState[STATE] =this.executeRuleOnce(ruleAddState);
                 }
         }
     }
