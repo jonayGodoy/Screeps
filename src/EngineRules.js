@@ -3,8 +3,6 @@ var RulePasive_Abstract = require('./RulePasive_Abstract');
 var RuleActive_Abstract = require('./RuleActive_Abstract');
 var roleManager = require('RoleManager');
 var Dao = require('Dao');
-const RULE_ACTIVE = 0;
-const STATE =1;
 
 module.exports = class EngineRules{
     constructor(rulesListActivesSortedByPriority,rulesListPasivesSortedByPriority) {
@@ -12,7 +10,7 @@ module.exports = class EngineRules{
         this.rulesListPasivesSortedByPriority = rulesListPasivesSortedByPriority;
 
         this.dao = new Dao();
-    //    this.dao.loadRuleListActives(rulesListActivesSortedByPriority);
+        this.dao.loadRuleListActives(rulesListActivesSortedByPriority);
     }
 
     updateRules(){
@@ -20,20 +18,7 @@ module.exports = class EngineRules{
         this.updateRulePasiveListForPriority();
         this.dao.saveRuleListActive( this.rulesListActivesSortedByPriority);
     }
-/*
-    updateRuleActiveListForPriority() {
-        let done = true;
-        for (var index in  this.rulesListActivesSortedByPriority) {
-            let rule = this.rulesListActivesSortedByPriority[index];
-            if (done) {
-                done = rule.execute();
-                if (!done) {
-                    this.printState(rule);
-                }
-            }
-        }
-    }
-*/
+
     updateRulePasiveListForPriority() {
         for (var index in  this.rulesListPasivesSortedByPriority) {
             let rule = this.rulesListPasivesSortedByPriority[index];
@@ -46,10 +31,10 @@ module.exports = class EngineRules{
         let stopList = false;
         while(!stopList && (index <this.rulesListActivesSortedByPriority.length)){
             let ruleAddState = this.rulesListActivesSortedByPriority[index];
-            this.printState(ruleAddState[RULE_ACTIVE]);
+            this.printState(ruleAddState[constants.RULE_ACTIVE()]);
             this.rulesListActivesSortedByPriority[index] = ruleAddState;
-            ruleAddState[STATE] = this.executeRuleOnce(ruleAddState);
-            stopList = !ruleAddState[STATE];
+            ruleAddState[constants.RULE_ACTIVE_STATE()] = this.executeRuleOnce(ruleAddState);
+            stopList = !ruleAddState[constants.RULE_ACTIVE_STATE()];
 
             index++;
         }
@@ -58,18 +43,17 @@ module.exports = class EngineRules{
 
 
     executeRuleOnce(ruleAddState) {
-        let rule = ruleAddState[RULE_ACTIVE];
-        if (!ruleAddState[STATE]) {
+        let rule = ruleAddState[constants.RULE_ACTIVE()];
+        if (!ruleAddState[constants.RULE_ACTIVE_STATE()]) {
             if (!rule.conditionRule()) {
                 rule.behaviorRule();
             } else {
-                ruleAddState[STATE] = true
-                return  ruleAddState[STATE];
+                ruleAddState[constants.RULE_ACTIVE_STATE()] = true
+                return  ruleAddState[constants.RULE_ACTIVE_STATE()];
             }
         }else{
-            return ruleAddState[STATE];
+            return ruleAddState[constants.RULE_ACTIVE_STATE()];
         }
-
     }
 
 

@@ -15,14 +15,11 @@ module.exports = class Dao{
         let firstSpawn = callGame.getFirstSpawn();
 
         if ((firstSpawn.room.memory.RenovatingCreep  != undefined)) {
-
                 let creepOldMemory = firstSpawn.room.memory.RenovatingCreep;
             //    console.log("memory----------------"+creepOldMemory+"---------------------");
             //    console.log("name----------------"+creepOldMemory.name+"---------------------");
              //   console.log("role----------------"+creepOldMemory.role+"---------------------");
-
                 return new CreepData(creepOldMemory.name,creepOldMemory.role);
-
         }else{
             return undefined;
         }
@@ -40,7 +37,7 @@ module.exports = class Dao{
 
         if (firstSpawn.room.memory.stateIARuleActive != undefined ) {
             for (var index in  ruleList) {
-                let rule = ruleList[index];
+                let ruleAddState = ruleList[index];
                 rule.setDone(firstSpawn.room.memory.stateIARuleActive[index].done);
             }
         }
