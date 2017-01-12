@@ -8,7 +8,7 @@ const STATE =2;
 
 module.exports = class EngineRules{
     constructor(rulesListActivesSortedByPriority,rulesListPasivesSortedByPriority) {
-        this.rulesListActivesSortedByPriority = rulesListActivesSortedByPriority;
+        this.rulesListActivesSortedByPriority = this.addSupportStatetoActiveList(rulesListActivesSortedByPriority);
         this.rulesListPasivesSortedByPriority = rulesListPasivesSortedByPriority;
 
         this.dao = new Dao();
@@ -18,9 +18,9 @@ module.exports = class EngineRules{
     updateRules(){
         this.updateRuleActiveListForPriority();
         this.updateRulePasiveListForPriority();
-        this.dao.saveRuleListActive( this.rulesListActivesSortedByPriority);
+     // this.dao.saveRuleListActive( this.rulesListActivesSortedByPriority);
     }
-
+/*
     updateRuleActiveListForPriority() {
         let done = true;
         for (var index in  this.rulesListActivesSortedByPriority) {
@@ -33,7 +33,7 @@ module.exports = class EngineRules{
             }
         }
     }
-
+*/
     updateRulePasiveListForPriority() {
         for (var index in  this.rulesListPasivesSortedByPriority) {
             let rule = this.rulesListPasivesSortedByPriority[index];
@@ -42,8 +42,7 @@ module.exports = class EngineRules{
         }
     }
 
-    updateRuleActiveListForPriorityTemporal() {
-        let done = true;
+    updateRuleActiveListForPriority() {
         for (var index in  this.rulesListActivesSortedByPriority) {
             let ruleAddState = this.rulesListActivesSortedByPriority[index];
             if (ruleAddState[STATE]) {
@@ -63,8 +62,8 @@ module.exports = class EngineRules{
     executeRuleOnce(ruleAddState) {
         let rule = ruleAddState[RULE_ACTIVE];
 
-        if (!ruleAddState[STATE]) {
-            ruleAddState[STATE] = rule.conditionRule();
+        if (!ruleAddState[STATE]) {//refactorizar
+            ruleAddState[STATE] = !rule.conditionRule();
 
             if (ruleAddState[STATE]) {
                 return ruleAddState[STATE];
@@ -87,7 +86,7 @@ module.exports = class EngineRules{
 
     addSupportStatetoActiveList(rulesListActivesWithoutState){
         let listActiveAddListState = [];
-
+//refactor true
         for(var index in rulesListActivesWithoutState){
             let ruleAddState = [rulesListActivesWithoutState[index],false];
             listActiveAddListState[index] = ruleAddState;
