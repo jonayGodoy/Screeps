@@ -12,13 +12,13 @@ module.exports = class EngineRules{
         this.rulesListPasivesSortedByPriority = rulesListPasivesSortedByPriority;
 
         this.dao = new Dao();
-        this.dao.loadRuleListActives(rulesListActivesSortedByPriority);
+    //    this.dao.loadRuleListActives(rulesListActivesSortedByPriority);
     }
 
     updateRules(){
         this.updateRuleActiveListForPriority();
         this.updateRulePasiveListForPriority();
-     // this.dao.saveRuleListActive( this.rulesListActivesSortedByPriority);
+        this.dao.saveRuleListActive( this.rulesListActivesSortedByPriority);
     }
 /*
     updateRuleActiveListForPriority() {
