@@ -1,5 +1,6 @@
 var callGame = require('CallGame');
 var CreepData = require('CreepData');
+const constants = require('Constants');
 module.exports = class Dao{
 
     saveRenovateCreep(oldCreep){
@@ -34,11 +35,10 @@ module.exports = class Dao{
 
     loadRuleListActives(ruleList) {
         let firstSpawn = callGame.getFirstSpawn();
-
         if (firstSpawn.room.memory.stateIARuleActive != undefined ) {
             for (var index in  ruleList) {
-                let ruleAddState = ruleList[index];
-                rule.setDone(firstSpawn.room.memory.stateIARuleActive[index].done);
+                let state = (firstSpawn.room.memory.stateIARuleActive[index])[constants.RULE_ACTIVE_STATE()];
+                (ruleList[index])[constants.RULE_ACTIVE_STATE()] = state;
             }
         }
     }
