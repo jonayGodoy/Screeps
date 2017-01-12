@@ -1,4 +1,4 @@
-var RuleActive_Abstract = require("RuleActive_Abstract");
+var Rule_Abstract = require("Rule_Abstract");
 var callGame = require('CallGame');
 module.exports  = class RuleBuildStructures  extends RuleActive_Abstract{
 
