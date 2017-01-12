@@ -58,9 +58,8 @@ module.exports = class EngineRules{
         }*/
 
         let index = 0;
-        let bucleFor = index <this.rulesListActivesSortedByPriority.length;
         let stopList = false;
-        while(!stopList && bucleFor){
+        while(!stopList && (index <this.rulesListActivesSortedByPriority.length)){
             let ruleAddState = this.rulesListActivesSortedByPriority[index];
             this.printState(ruleAddState[RULE_ACTIVE]);
             this.rulesListActivesSortedByPriority[index] = ruleAddState;
