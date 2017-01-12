@@ -54,7 +54,6 @@ module.exports = class EngineRules{
 
 
 
-
     executeRuleOnce(ruleAddState) {
         let rule = ruleAddState[RULE_ACTIVE];
         console.log("rule "+rule.getNameRule()+" state "+!ruleAddState[STATE]);
