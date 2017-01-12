@@ -51,7 +51,9 @@ module.exports = class EngineRules{
                     ruleAddState[STATE] = this.executeRuleOnce(ruleAddState);
                     stopList = !ruleAddState[STATE];
                     let parche = undefined;
-                    return parche;
+                    if(stopList){
+                        return parche;
+                    }
 
         }
     }
