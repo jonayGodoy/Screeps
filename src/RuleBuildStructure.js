@@ -1,6 +1,6 @@
 var Rule_Abstract = require("Rule_Abstract");
 var callGame = require('CallGame');
-module.exports  = class RuleBuildStructures  extends RuleActive_Abstract{
+module.exports  = class RuleBuildStructures  extends Rule_Abstract{
 
 
     constructor(quantity,pos,requiredLevel,structure_types) {
