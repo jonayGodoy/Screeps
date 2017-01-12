@@ -37,7 +37,6 @@ module.exports = class EngineRules{
     updateRulePasiveListForPriority() {
         for (var index in  this.rulesListPasivesSortedByPriority) {
             let rule = this.rulesListPasivesSortedByPriority[index];
-         //   rule.execute();
             this.executeContinually(rule);
         }
     }
@@ -45,9 +44,9 @@ module.exports = class EngineRules{
     updateRuleActiveListForPriority() {
         for (var index in  this.rulesListActivesSortedByPriority) {
             let ruleAddState = this.rulesListActivesSortedByPriority[index];
-            if (ruleAddState[STATE]) {
+            if (!ruleAddState[STATE]) {
                 ruleAddState[STATE] = this.executeRuleOnce(ruleAddState);
-                if (!ruleAddState[STATE]) {
+                if (ruleAddState[STATE]) {
                     this.printState(ruleAddState);
                     this.rulesListActivesSortedByPriority[index] = ruleAddState;
                 }
@@ -90,6 +89,7 @@ module.exports = class EngineRules{
         for(var index in rulesListActivesWithoutState){
             let ruleAddState = [rulesListActivesWithoutState[index],false];
             listActiveAddListState[index] = ruleAddState;
+
         }
         return listActiveAddListState;
     }
