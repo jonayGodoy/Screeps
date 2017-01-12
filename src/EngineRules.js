@@ -65,7 +65,6 @@ module.exports = class EngineRules{
         let rule = ruleAddState[RULE_ACTIVE];
         if (!ruleAddState[STATE]) {
             if (!rule.conditionRule()) {
-                console.log("rule "+rule.getNameRule()+" condition "+rule.conditionRule());
                 rule.behaviorRule();
             } else {
                 ruleAddState[STATE] = true
