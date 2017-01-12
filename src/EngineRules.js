@@ -60,6 +60,7 @@ module.exports = class EngineRules{
 
     executeRuleOnce(ruleAddState) {
         let rule = ruleAddState[RULE_ACTIVE];
+        console.log("ruele ¿? "+rule);
 
         if (!ruleAddState[STATE]) {//refactorizar
             ruleAddState[STATE] = !rule.conditionRule();
@@ -89,7 +90,6 @@ module.exports = class EngineRules{
         for(var index in rulesListActivesWithoutState){
             let ruleAddState = [rulesListActivesWithoutState[index],false];
             listActiveAddListState[index] = ruleAddState;
-
         }
         return listActiveAddListState;
     }
