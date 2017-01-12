@@ -48,9 +48,10 @@ module.exports = class EngineRules{
                 if (!stateList) {
                     this.printState(ruleAddState[RULE_ACTIVE]);
                     this.rulesListActivesSortedByPriority[index] = ruleAddState;
-                    //Sin terminar
                     ruleAddState[STATE] = this.executeRuleOnce(ruleAddState);
                     stateList = ruleAddState[STATE];
+                    let parche = undefined;
+                    return parche;
                 }else{
                     ruleAddState[STATE] = this.executeRuleOnce(ruleAddState);
                     stateList = ruleAddState[STATE];
