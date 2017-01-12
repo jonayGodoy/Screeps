@@ -47,7 +47,7 @@ module.exports = class EngineRules{
             if (!ruleAddState[STATE]) {
                 ruleAddState[STATE] = this.executeRuleOnce(ruleAddState);
                 if (ruleAddState[STATE]) {
-                    this.printState(ruleAddState);
+                    this.printState(ruleAddState[RULE_ACTIVE]);
                     this.rulesListActivesSortedByPriority[index] = ruleAddState;
                 }
             }
