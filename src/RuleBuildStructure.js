@@ -17,7 +17,6 @@ module.exports  = class RuleBuildStructures  extends RuleActive_Abstract{
         let levelRoom = this.room.controller.level;
         let numberSites =   this.numberSitesStructure();
 
-
         return (levelRoom <= this.requiredLevel) && (numberSites >= this.quantity);
     }
 
