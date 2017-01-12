@@ -45,14 +45,14 @@ module.exports = class EngineRules{
         let stopList = false;
         for (var index in  this.rulesListActivesSortedByPriority) {
             let ruleAddState = this.rulesListActivesSortedByPriority[index];
-                if (!stopList) {
+              //  if (!stopList) {
                     this.printState(ruleAddState[RULE_ACTIVE]);
                     this.rulesListActivesSortedByPriority[index] = ruleAddState;
                     ruleAddState[STATE] = this.executeRuleOnce(ruleAddState);
                     stopList = !ruleAddState[STATE];
                     let parche = undefined;
                     return parche;
-                }
+
         }
     }
 
