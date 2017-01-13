@@ -19,8 +19,7 @@ refactor ruleBuildExtension
 refactorizar RuleBuildStructure usando constantes(-7)
 Sprint------------
 
-+refactoriazar motor de reglas
-+refactorizar execute reglas que behaviorRule retorne
++refactorizar motor de reglas y reglas
 +arreglar load
 +refactorizar la reglas que cuando se cumpla la condicion se lanze el comportamiento
 +refactor roles problemas de mantenimiento
