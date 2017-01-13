@@ -30,13 +30,13 @@ module.exports = class EngineRules{
         let stopList = false;
         while(!stopList && (index <this.rulesListActivesSortedByPriority.length)){
             let ruleAddState = this.rulesListActivesSortedByPriority[index];
-            this.rulesListActivesSortedByPriority[index] = ruleAddState;
             ruleAddState[constants.RULE_ACTIVE_STATE()] = this.executeRuleOnce(ruleAddState);
             stopList = !ruleAddState[constants.RULE_ACTIVE_STATE()];
             console.log(" estado "+stopList);
             if(!stopList){
                 this.printState(ruleAddState[constants.RULE_ACTIVE()]);
             }
+            this.rulesListActivesSortedByPriority[index] = ruleAddState;
             index++;
         }
     }

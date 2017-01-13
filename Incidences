@@ -30,5 +30,6 @@ refactor monitor qye pase por callGame
 +el dao de renovar los creep dará error si se crean varios creeps al mismo tiempo
 en el dao en el load para evitar que te lea el campo name tienes que meter un if dentro de otro
 +cambiar los var de los forin por let
++refactorizar nombre con el estado de las reglas como hecho
 +ahora
 //renovate no revie upgrates
