@@ -47,7 +47,7 @@ module.exports = class EngineRules{
         if (!ruleAddState[constants.RULE_ACTIVE_STATE()]) {
             if ( rule.conditionRule()) {
                 let behaviorStateRule = rule.behaviorRule();
-                console.log("codition "+!rule.conditionRule()+" behavior "+behaviorStateRule);
+                console.log("codition "+rule.conditionRule()+" behavior "+behaviorStateRule);
                 ruleAddState[constants.RULE_ACTIVE_STATE()] = !rule.conditionRule() && behaviorStateRule;
             }
         }
