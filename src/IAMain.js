@@ -10,8 +10,8 @@ class IAMain {
             new RuleCreateCreeps(2,constants.HARVESTER()),
             new RuleCreateCreeps(1,constants.MONITOR()),
             new RuleCreateCreeps(2,constants.UPGRADER()),
-            new RuleCreateCreeps(2,constants.BUILDER()),
-            new RuleBuildStructure(5,callGame.getFirstSpawn().pos,2,STRUCTURE_EXTENSION)
+            new RuleBuildStructure(5,callGame.getFirstSpawn().pos,2,STRUCTURE_EXTENSION),
+            new RuleCreateCreeps(2,constants.BUILDER())
         ];
 
         this.rulesListPasiveSortedByPriority =[
