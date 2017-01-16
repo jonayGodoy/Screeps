@@ -45,7 +45,7 @@ module.exports = class EngineRules{
     executeRuleOnce(ruleAddState) {
         let rule = ruleAddState[constants.RULE_ACTIVE()];
         if (!ruleAddState[constants.RULE_ACTIVE_STATE()]) {
-            if (!rule.conditionRule()) {
+            if (rule.conditionRule()) {
                 rule.behaviorRule();
             } else {
                 ruleAddState[constants.RULE_ACTIVE_STATE()] = true
@@ -58,10 +58,10 @@ module.exports = class EngineRules{
 
 
     executeContinually(rule){
-        if (!rule.conditionRule()) {
+        if (rule.conditionRule()) {
             rule.behaviorRule();
         }
-        return !rule.conditionRule();
+        return rule.conditionRule();
     }
 
 

@@ -28,14 +28,14 @@ module.exports  = class RuleRenovateCreeps extends Rule_Abstract{
                     let role = creepOldGame.memory.role;
                     this.creepOld = new CreepData(name,role);
                     this.dao.saveRenovateCreep(creepOldGame);
-                    return false;
+                    return true;
                 }
             }
         }else{
-            return false;
+            return true;
         }
 
-        return true;
+        return false;
     }
 
     behaviorRule() {

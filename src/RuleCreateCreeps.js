@@ -14,7 +14,7 @@ module.exports  = class RuleCreateCreeps extends Rule_Abstract{
 
     conditionRule(){
         let roleListCreeps = callGame.findCreepersForRole(this.role);
-        return (roleListCreeps.length >= this.quantity);
+        return (roleListCreeps.length <= this.quantity);
     }
 
     behaviorRule() {
