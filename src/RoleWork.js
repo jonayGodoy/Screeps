@@ -27,7 +27,7 @@ module.exports = class RoleWork{
             if(this.recharge){
                 creep.say("Recharge");
             }else{
-                creep.say("Work");
+                creep.say("Work "+creep.name);
             }
             this.recharge = bool;
         }
