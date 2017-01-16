@@ -1,42 +1,16 @@
 
- class Constants {
+ const constants = {
 
     //const incidencia
-     constructor() {
-         this.harvester = "harvester";
-         this.upgrader = "upgrader";
-         this.builder = "builder";
-         this.monitor = "monitor";
-         this.rule_active = 0;
-         this.rule_active_state = 1;
-     }
-
-     HARVESTER() {
-         return this.harvester;
-     }
-
-     UPGRADER() {
-         return this.upgrader;
-     }
-
-     BUILDER() {
-         return this.builder;
-     }
-
-     MONITOR(){
-         return this.monitor;
-     }
-
-     RULE_ACTIVE() {
-         return  this.rule_active;
-     }
-
-     RULE_ACTIVE_STATE(){
-         return this.rule_active_state;
-     }
+     HARVESTER: "harvester",
+     UPGRADER: "upgrader",
+     BUILDER: "builder",
+     MONITOR: "monitor",
+     RULE_ACTIVE: 0,
+     RULE_ACTIVE_STATE: 1
+     };
 
 
-};
 
-module.exports  = new Constants();
+module.exports  = constants;
 

@@ -37,8 +37,8 @@ module.exports = class Dao{
         let firstSpawn = callGame.getFirstSpawn();
         if (firstSpawn.room.memory.stateIARuleActive != undefined ) {
             for (var index in  ruleList) {
-                let state = (firstSpawn.room.memory.stateIARuleActive[index])[constants.RULE_ACTIVE_STATE()];
-                (ruleList[index])[constants.RULE_ACTIVE_STATE()] = state;
+                let state = (firstSpawn.room.memory.stateIARuleActive[index])[constants.RULE_ACTIVE_STATE];
+                (ruleList[index])[constants.RULE_ACTIVE_STATE] = state;
             }
         }
     }

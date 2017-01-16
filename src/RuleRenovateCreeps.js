@@ -16,7 +16,7 @@ module.exports  = class RuleRenovateCreeps extends Rule_Abstract{
     }
 
     conditionRule(){
-        var listRoleSorterForPriority = [constants.HARVESTER(),constants.MONITOR(),constants.UPGRADER(),constants.BUILDER()];
+        var listRoleSorterForPriority = [constants.HARVESTER,constants.MONITOR,constants.UPGRADER,constants.BUILDER];
 
         if(this.creepOld == undefined) {
             for (var index in listRoleSorterForPriority) {

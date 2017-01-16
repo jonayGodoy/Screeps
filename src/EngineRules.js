@@ -30,11 +30,11 @@ module.exports = class EngineRules{
         let stopList = false;
         while(!stopList && (index <this.rulesListActivesSortedByPriority.length)){
             let ruleAddState = this.rulesListActivesSortedByPriority[index];
-            ruleAddState[constants.RULE_ACTIVE_STATE()] = this.executeRuleOnce(ruleAddState);
-            stopList = !ruleAddState[constants.RULE_ACTIVE_STATE()];
+            ruleAddState[constants.RULE_ACTIVE_STATE] = this.executeRuleOnce(ruleAddState);
+            stopList = !ruleAddState[constants.RULE_ACTIVE_STATE];
          //   console.log(" estado "+stopList);
             if(stopList){
-                this.printState(ruleAddState[constants.RULE_ACTIVE()]);
+                this.printState(ruleAddState[constants.RULE_ACTIVE]);
             }
             this.rulesListActivesSortedByPriority[index] = ruleAddState;
             index++;
@@ -44,15 +44,15 @@ module.exports = class EngineRules{
 
 
      executeRuleOnce(ruleAddState) {
-     let rule = ruleAddState[constants.RULE_ACTIVE()];
-     if (!ruleAddState[constants.RULE_ACTIVE_STATE()]) {
+     let rule = ruleAddState[constants.RULE_ACTIVE];
+     if (!ruleAddState[constants.RULE_ACTIVE_STATE]) {
          if ( rule.conditionRule()) {
              rule.behaviorRule();
          }
-         ruleAddState[constants.RULE_ACTIVE_STATE()] = !rule.conditionRule();
+         ruleAddState[constants.RULE_ACTIVE_STATE] = !rule.conditionRule();
      }
 
-     return  ruleAddState[constants.RULE_ACTIVE_STATE()];
+     return  ruleAddState[constants.RULE_ACTIVE_STATE];
      }
 
 
@@ -75,9 +75,9 @@ module.exports = class EngineRules{
     }
 
     printState(rule) {
-        if(roleManager.getRole(constants.MONITOR()) != undefined){
+        if(roleManager.getRole(constants.MONITOR) != undefined){
             let message = "executing rule: " + rule.getNameRule();
-            roleManager.getRole(constants.MONITOR()).creepMonitorPrint(message);
+            roleManager.getRole(constants.MONITOR).creepMonitorPrint(message);
         }
 
     }

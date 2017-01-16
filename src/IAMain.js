@@ -7,11 +7,11 @@ var callGame = require('CallGame');
 class IAMain {
     constructor() {
         this.rulesListActivesSortedByPriority = [
-            new RuleCreateCreeps(2,constants.HARVESTER()),
-            new RuleCreateCreeps(1,constants.MONITOR()),
-            new RuleCreateCreeps(2,constants.UPGRADER()),
+            new RuleCreateCreeps(2,constants.HARVESTER),
+            new RuleCreateCreeps(1,constants.MONITOR),
+            new RuleCreateCreeps(2,constants.UPGRADER),
             new RuleBuildStructure(5,callGame.getFirstSpawn().pos,2,STRUCTURE_EXTENSION),
-            new RuleCreateCreeps(2,constants.BUILDER())
+            new RuleCreateCreeps(2,constants.BUILDER)
         ];
 
         this.rulesListPasiveSortedByPriority =[
