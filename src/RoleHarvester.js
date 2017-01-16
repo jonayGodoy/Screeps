@@ -1,8 +1,7 @@
 var RoleWork_Abstract = require('RoleWork_Abstract');
 module.exports = class RoleHarvester extends RoleWork_Abstract{
 
-    run(creep){
-        console.log("zzzz");
+    work(creep){
         var targets = creep.room.find(FIND_STRUCTURES, {
             filter: (structure) => {
                 return (structure.structureType == STRUCTURE_EXTENSION ||
