@@ -15,14 +15,10 @@ module.exports = class RoleWork{
         else {
             this.changeRecharge(false,creep)
             this.roleObject.run(creep);
-
         }
-
-
     }
 
     changeRecharge(bool,creep){
-
         if(this.recharge != bool){
             this.recharge = bool;
             if(this.recharge){
