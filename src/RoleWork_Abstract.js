@@ -1,4 +1,4 @@
-module.exports = class RoleWork{
+module.exports = class RoleWork_Abstract{
     constructor(roleObject) {
         this.roleObject = roleObject;
     }
