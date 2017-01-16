@@ -1,5 +1,19 @@
 class ConstantsGame {
 
+    /*
+     var SizeEnum = {
+     SMALL: 1 ,
+     MEDIUM: 2 ,
+     LARGE: 3 ,
+     properties: {
+     1: {name: "small" , value: 1 , code: "S" },
+     2: {name: "medium" , value: 2 , code: "M" },
+     3: {name: "large" , value: 3 , code: "L" }
+     }
+     };
+     */
+
+
     constructor() {
         this.listPartsCreep = [];
         this.listPartsCreep[MOVE] = [50, "Decreases fatigue by 2 points per tick and affect velocity"];
