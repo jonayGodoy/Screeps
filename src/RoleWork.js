@@ -24,12 +24,12 @@ module.exports = class RoleWork{
     changeRecharge(bool,creep){
 
         if(this.recharge != bool){
+            this.recharge = bool;
             if(this.recharge){
                 creep.say("Recharge");
             }else{
                 creep.say("Work "+creep.name);
             }
-            this.recharge = bool;
         }
 
     }
