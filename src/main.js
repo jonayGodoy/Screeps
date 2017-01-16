@@ -11,7 +11,7 @@ module.exports.loop = function () {
 
     let serialize = JSON.stringify(new RoleMonitor());
     let obj = JSON.parse(serialize);
-    console.log(obj.run());
+    console.log(obj.run);
 
 
 
