@@ -9,7 +9,6 @@ module.exports  = class RuleCreateCreeps extends Rule_Abstract{
         this.quantity = quantity;
         this.role = role;
         this.contParche = 0;
-
     }
 
     conditionRule(){
