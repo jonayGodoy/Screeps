@@ -20,6 +20,7 @@ refactor ruleBuildExtension
 refactorizar RuleBuildStructure usando constantes(-7)
 +que los creeps busquen nuevos sitios con energia
 +crear celulas más potentes y que createcreeper de callGame, como las reglas rulerenovate y RulecreateCreeps se adapten a
++arreglar duplicacion en haverster
 Sprint------------
 
 +refactor roles duplicacion
