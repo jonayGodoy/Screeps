@@ -5,7 +5,7 @@ module.exports  = class RuleBuildStructures  extends Rule_Abstract{
 
     constructor(quantity,pos,requiredLevel,structure_types) {
       //  firstSpawn.pos//5//2//STRUCTURE_EXTENSION
-        super("BuildStructures ");
+        super("BuildStructures "+structure_types);
         this.quantity = quantity;
         this.requiredLevel = requiredLevel;
         this.structure_type = structure_types;
