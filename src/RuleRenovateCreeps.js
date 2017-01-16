@@ -50,6 +50,7 @@ module.exports  = class RuleRenovateCreeps extends Rule_Abstract{
                 this.creepOld = reset;
                 this.dao.saveRenovateCreep(reset);
             }
+            return this.isCreateCreep(result);
 
         }
     }

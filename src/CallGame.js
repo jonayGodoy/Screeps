@@ -59,10 +59,10 @@ class CallGame{
         return _.filter(Game.creeps, (creep) => creep.memory.role == role);
     }
 
-    /*
+
     isCreateCreep(name) {
         return _.isString(name);
-    }*/
+    }
 
 
     getTimeTicks(){

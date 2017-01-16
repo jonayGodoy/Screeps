@@ -25,7 +25,9 @@ module.exports  = class RuleBuildStructures  extends Rule_Abstract{
 
         if(numberSiteExtensions < this.quantity){
             this.generateExtensionParallelDownToSpawn();
+            return true;
         }
+        return false;
     }
 
     numberSitesStructure() {

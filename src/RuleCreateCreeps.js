@@ -20,6 +20,9 @@ module.exports  = class RuleCreateCreeps extends Rule_Abstract{
     behaviorRule() {
         let roleListCreeps = callGame.findCreepersForRole(this.role);
 
-        callGame.createCreeper(this.role+"_"+roleListCreeps.length,this.role);
+        let result = callGame.createCreeper(this.role+"_"+roleListCreeps.length,this.role);
+
+
+        return callGame.isCreateCreep(result);
     }
 };
