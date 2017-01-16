@@ -61,7 +61,7 @@ class CallGame{
 
 
     isCreateCreep(name) {
-        let isCreeper = (_.filter(Game.creeps, ((creep) => creep.name == name && creep.ticksToLive < 1500 && creep.ticksToLive > 0)).length == 1);
+        let isCreeper = (_.filter(Game.creeps, ((creep) => creep.name == name)).length == 1);
         console.log("iscreper "+isCreeper);
         return _.isString(name);
     }
