@@ -1,5 +1,5 @@
 var RoleWork_Abstract = require('RoleWork_Abstract');
-module.exports = class RoleWork_Abstract extends RoleWork{
+module.exports = class RoleWork_Abstract extends RoleWork_Abstract{
 
     work(creep){
         var targets = creep.room.find(FIND_CONSTRUCTION_SITES);
