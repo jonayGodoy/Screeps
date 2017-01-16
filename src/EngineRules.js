@@ -41,19 +41,35 @@ module.exports = class EngineRules{
         }
     }
 
-
+/*
     executeRuleOnce(ruleAddState) {
         let rule = ruleAddState[constants.RULE_ACTIVE()];
         if (!ruleAddState[constants.RULE_ACTIVE_STATE()]) {
-            if ( rule.conditionRule()) {
-                let behaviorStateRule = rule.behaviorRule();
-                console.log("codition "+rule.conditionRule()+" behavior "+behaviorStateRule);
-                ruleAddState[constants.RULE_ACTIVE_STATE()] = !rule.conditionRule() && behaviorStateRule;
+            if (rule.conditionRule()) {
+                rule.behaviorRule();
+            } else {
+                ruleAddState[constants.RULE_ACTIVE_STATE()] = true
+                return  ruleAddState[constants.RULE_ACTIVE_STATE()];
             }
+        }else{
+            return ruleAddState[constants.RULE_ACTIVE_STATE()];
         }
-
-        return  ruleAddState[constants.RULE_ACTIVE_STATE()];
     }
+*/
+
+
+     executeRuleOnce(ruleAddState) {
+     let rule = ruleAddState[constants.RULE_ACTIVE()];
+     if (!ruleAddState[constants.RULE_ACTIVE_STATE()]) {
+     if ( rule.conditionRule()) {
+         let behaviorStateRule = rule.behaviorRule();
+         console.log("codition "+rule.conditionRule()+" behavior "+behaviorStateRule);
+         ruleAddState[constants.RULE_ACTIVE_STATE()] = true && behaviorStateRule;
+     }
+     }
+
+     return  ruleAddState[constants.RULE_ACTIVE_STATE()];
+     }
 
 
     executeContinually(rule){

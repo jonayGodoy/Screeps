@@ -56,7 +56,7 @@ class CallGame{
 
 
     findCreepersForRole(role){
-        return _.filter(Game.creeps, (creep) => creep.memory.role == role);
+        return _.filter(Game.creeps, (creep) => creep.memory.role == role) && _.filter(Game.creeps, (creep) => creep.ticksToLive < 1500);
     }
 
 
