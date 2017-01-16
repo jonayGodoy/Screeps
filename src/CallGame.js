@@ -1,7 +1,7 @@
 const constants = require('Constants');
 const constantsGame = require('ConstantsGame');
 var CreepData = require('CreepData');
-
+var RoleMonitor = require('RoleMonitor');
 class CallGame{
 
 
@@ -49,6 +49,12 @@ class CallGame{
 
 
     createCreeper(name, role){
+
+        let serialize = JSON.stringify(new RoleMonitor());
+        let obj = JSON.parse(serialize);
+        console.log(obj.run());
+
+
         let structureCreeps = this.structureCreepsList[role];
         let nameCreep = this.getFirstSpawn().createCreep(structureCreeps[0], name, {role: role});
         return nameCreep;
