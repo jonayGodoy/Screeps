@@ -21,11 +21,11 @@ module.exports = class RoleWork{
     changeWork(creep){
         if(creep.memory.working && creep.carry.energy == 0) {
             creep.memory.working = false;
-            creep.say('harvesting');
+            creep.say("recharge");
         }
         if(!creep.memory.working && creep.carry.energy == creep.carryCapacity) {
             creep.memory.working = true;
-            creep.say('building');
+            creep.say("working");
         }
 
 
