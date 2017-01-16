@@ -41,21 +41,6 @@ module.exports = class EngineRules{
         }
     }
 
-/*
-    executeRuleOnce(ruleAddState) {
-        let rule = ruleAddState[constants.RULE_ACTIVE()];
-        if (!ruleAddState[constants.RULE_ACTIVE_STATE()]) {
-            if (rule.conditionRule()) {
-                rule.behaviorRule();
-            } else {
-                ruleAddState[constants.RULE_ACTIVE_STATE()] = true
-                return  ruleAddState[constants.RULE_ACTIVE_STATE()];
-            }
-        }else{
-            return ruleAddState[constants.RULE_ACTIVE_STATE()];
-        }
-    }
-*/
 
 
      executeRuleOnce(ruleAddState) {
