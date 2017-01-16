@@ -16,7 +16,7 @@ module.exports  = class RuleBuildStructures  extends Rule_Abstract{
     conditionRule(){
         let levelRoom = this.room.controller.level;
         let numberSites =   this.numberSitesStructure();
-        console.log("levelRoom "+levelRoom+" numberSites "+numberSites);
+   //     console.log("levelRoom "+levelRoom+" numberSites "+numberSites);
         return (levelRoom <= this.requiredLevel) && (numberSites < this.quantity);
     }
 
