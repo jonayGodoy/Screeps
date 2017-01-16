@@ -22,7 +22,7 @@ module.exports  = class RuleCreateCreeps extends Rule_Abstract{
 
         let result = callGame.createCreeper(this.role+"_"+roleListCreeps.length,this.role);
 
-
         return callGame.isCreateCreep(result);
+
     }
 };
