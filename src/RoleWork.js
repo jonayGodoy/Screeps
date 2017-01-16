@@ -1,7 +1,7 @@
 module.exports = class RoleWork{
     constructor(roleObject) {
         this.roleObject = roleObject;
-        this.isRecharge = false;
+        this.isRecharge = true;
     }
 
     run(creep){
