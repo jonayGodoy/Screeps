@@ -6,7 +6,7 @@ module.exports = class RoleWork{
 
     run(creep){
         if(!this.isRecharge && creep.carry.energy == 0) {
-            this.changeRecharge(true,creep)
+            this.changeRecharge(true,creep);
             var sources = creep.room.find(FIND_SOURCES);
             if(creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(sources[0]);
@@ -14,7 +14,7 @@ module.exports = class RoleWork{
         }
         else {
             if(creep.carry.energy == creep.carryCapacity && this.isRecharge) {
-                this.changeRecharge(false, creep)
+                this.changeRecharge(false, creep);
                 this.roleObject.run(creep);
             }
         }
