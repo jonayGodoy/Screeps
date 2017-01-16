@@ -7,7 +7,7 @@ module.exports = class RoleWork{
         this.changeWork(creep);
 
         if(creep.memory.working) {
-            this.work();
+            this.work(creep);
         }
         else {
             this.recharge(creep);
