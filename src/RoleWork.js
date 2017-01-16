@@ -13,8 +13,10 @@ module.exports = class RoleWork{
             }
         }
         else {
-            this.changeRecharge(false,creep)
-            this.roleObject.run(creep);
+            if( creep.carry.energy == creep.carryCapacity) {
+                this.changeRecharge(false, creep)
+                this.roleObject.run(creep);
+            }
         }
     }
 
