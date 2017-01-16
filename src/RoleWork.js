@@ -13,7 +13,8 @@ module.exports = class RoleWork{
         }
         else {
             creep.say("Work");
-            this.roleObject.run();
+            this.roleObject.run(creep);
+
         }
     }
 
