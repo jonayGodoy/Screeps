@@ -1,8 +1,4 @@
 module.exports = class RoleWork_Abstract{
-    constructor(roleObject) {
-        this.roleObject = roleObject;
-    }
-
     run(creep){
         this.changeWork(creep);
 
@@ -27,7 +23,7 @@ module.exports = class RoleWork_Abstract{
     }
 
     work(creep){
-        this.roleObject.run(creep);
+       //override
     }
 
     recharge(creep){
