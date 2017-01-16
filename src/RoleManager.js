@@ -11,7 +11,7 @@ class RoleManager{
         this.roleList = [];
         this.roleList[constants.HARVESTER()] = new RoleHarvester();
         this.roleList[constants.UPGRADER()] = new RoleUpgrader();
-     //   this.roleList[constants.BUILDER()] = new RoleBuilder();
+        this.roleList[constants.BUILDER()] = new RoleBuilder();
         this.roleList[constants.MONITOR()] =  new RoleMonitor();
     }
 
