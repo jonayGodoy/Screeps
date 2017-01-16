@@ -1,7 +1,5 @@
 
  const constants = {
-
-    //const incidencia
      HARVESTER: "harvester",
      UPGRADER: "upgrader",
      BUILDER: "builder",
