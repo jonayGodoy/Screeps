@@ -1,4 +1,5 @@
 Backlog------------------
++que la IAMain pueda cambir los roles de los creeps sengun conveniencia
 +que si los creepes tiene energia no obstruyan a los que no tienen(ZONA DE ESPERA)flag
 +crear consola
 +mirar si puedes acceder a archivos
@@ -17,13 +18,12 @@ refactor ruleBuildExtension
 //pasos inicio, 5 extensiones(energia), creeper + potentes y más creeper poblacion, carreteras,energia+, creep + potentes, torretas
 //construir muros
 refactorizar RuleBuildStructure usando constantes(-7)
++que los creeps busquen nuevos sitios con energia
++crear celulas más potentes y que createcreeper de callGame, como las reglas rulerenovate y RulecreateCreeps se adapten a
 Sprint------------
 
-
-+refactorizar la reglas que cuando se cumpla la condicion se lanze el comportamiento
-+refactor roles problemas de mantenimiento
++refactor roles duplicacion
++refactor cosntantes roles problemas de mantenimiento
 +añadir test
-+que los creeps busquen nuevos sitios con energia
-+crear celulas más potentes y que createcreeper de callGame, como las reglas rulerenovate y RulecreateCreeps se adapten a el
 
 
