@@ -1,5 +1,4 @@
 var ia = require('IAMain');
-var roleManager = require('RoleManager');
 var callGame = require('CallGame');
 
 class Main {
@@ -7,6 +6,7 @@ class Main {
     constructor(ia,callGame) {
         this.ia = ia;
         this.callGame = callGame;
+        this.roleManager = require('RoleManager');
     }
 
     mainExecute() {
@@ -17,7 +17,7 @@ class Main {
     creepsUpdate() {
         for (var name in this.callGame.getCreeps()) {
             var creep = this.callGame.getCreeps()[name];
-            roleManager.runCreeps(creep);
+            this.roleManager.runCreeps(creep);
         }
     }
 }
