@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f49cdee7-62f0-494a-a901-386df8a6322e" name="Default" comment="i start to refactor code for test">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainClass.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.js" afterPath="$PROJECT_DIR$/src/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainClass.js" afterPath="$PROJECT_DIR$/src/MainClass.js" />
     </list>
     <ignored path="Screeps.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,8 +67,8 @@
       <file leaf-file-name="MainClass.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MainClass.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.085427135">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6264657">
+              <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -123,8 +122,8 @@
         <option value="$PROJECT_DIR$/node_modules/mocha/package.json" />
         <option value="$PROJECT_DIR$/test/GreenTest.js" />
         <option value="$PROJECT_DIR$/Sprint" />
-        <option value="$PROJECT_DIR$/src/MainClass.js" />
         <option value="$PROJECT_DIR$/src/main.js" />
+        <option value="$PROJECT_DIR$/src/MainClass.js" />
       </list>
     </option>
   </component>
@@ -357,7 +356,13 @@
       <option name="project" value="LOCAL" />
       <updated>1487174161189</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="i start to refactor code for test">
+      <created>1487174823861</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1487174823861</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -566,8 +571,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainClass.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.085427135">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6264657">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
           <folding />
         </state>
       </provider>
