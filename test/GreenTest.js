@@ -1,8 +1,9 @@
 var saludar = function () { return '¡Hola Mundo!'; };
+var assert = require("assert");
 
 describe('Hola mundo', function () {
     it('debe saludar al mundo', function () {
-        expect(saludar()).toEqual('¡Hola Mundo!');
+        assert.equal(saludar(), '¡Hola Mundo!');
     });
 });
 
