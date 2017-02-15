@@ -17,6 +17,7 @@ class Main {
     creepsUpdate() {
         for (var name in this.callGame.getCreeps()) {
             var creep = this.callGame.getCreeps()[name];
+            console.log(creep);
             this.roleManager.runCreeps(creep);
         }
     }
